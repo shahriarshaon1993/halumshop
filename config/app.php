@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Halum Shop'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://127.0.0.1:8000'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Dhaka',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'base64:6NUHAn3fZT8pgqFeNn4xNN/3uBUign9dmaLykEpcEpE='),
 
     'cipher' => 'AES-256-CBC',
 
