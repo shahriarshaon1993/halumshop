@@ -4,6 +4,9 @@ Halum Shop is an open sourece ecommerce platform management system using laravel
 
 ## Packages Used
 
+-   Install `composer require laravel/ui`
+-   Install ` php artisan ui bootstrap`
+
 ## Installation Instructions
 
 -   Clone the repo.
