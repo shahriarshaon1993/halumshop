@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
+    {{-- Start Header Section --}}
     <header class="header">
+        {{-- Start Header Top --}}
         <div class="header__top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
@@ -39,7 +41,10 @@
                 </div>
             </div>
         </div>
-        <div class="container header__middle">
+        {{-- End Header Top --}}
+
+        {{-- Start Middle Section --}}
+        <div class="container-fluid header__middle">
             <div class="row">
                 <div class="col-lg-3">
                     <a href="navbar-brand">
@@ -66,7 +71,69 @@
                 </div>
             </div>
         </div>
+        {{-- End Middle Section --}}
+
+        {{-- Start Navbar --}}
+        <div class="container-fluid header__main">
+            <div class="row px-xl-5">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <a class="header__main__toggle d-flex align-items-center justify-content-between w-100" data-toggle="collapse" href="#navbar-vertical">
+                        <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
+                        <i class="fa fa-angle-down text-dark"></i>
+                    </a>
+                    <nav class="header__main__drowp collapse position-absolute navbar navbar-vertical align-items-start" id="navbar-vertical">
+                        <div class="navbar-nav w-100">
+                            <div class="nav-item dropdown dropright">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dresses <i class="fa fa-angle-right float-right mt-1"></i></a>
+                                <div class="header__main__drowp__sub dropdown-menu position-absolute rounded-0 border-0 m-0">
+                                    <a href="" class="dropdown-item">Men's Dresses</a>
+                                    <a href="" class="dropdown-item">Women's Dresses</a>
+                                    <a href="" class="dropdown-item">Baby's Dresses</a>
+                                </div>
+                            </div>
+                            <a href="" class="nav-item nav-link">Shirts</a>
+                            <a href="" class="nav-item nav-link">Jeans</a>
+                            <a href="" class="nav-item nav-link">Swimwear</a>
+                            <a href="" class="nav-item nav-link">Sleepwear</a>
+                            <a href="" class="nav-item nav-link">Sportswear</a>
+                            <a href="" class="nav-item nav-link">Jumpsuits</a>
+                            <a href="" class="nav-item nav-link">Blazers</a>
+                            <a href="" class="nav-item nav-link">Jackets</a>
+                            <a href="" class="nav-item nav-link">Shoes</a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-9">
+                    <nav class="navbar header__navbar__main navbar-expand-lg navbar-dark py-lg-0 px-0">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="navbar-nav mr-auto py-0">
+                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="shop.html" class="nav-item nav-link">About</a>
+                                <a href="detail.html" class="nav-item nav-link">Blog</a>
+                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            </div>
+                            <div class="navbar-nav header__navbar__main__cart ml-auto py-0 d-none d-lg-block">
+                                <a href="#" class="btn px-0">
+                                    <i class="fa fa-heart text-primary"></i>
+                                    <span class="badge text-dark">0</span>
+                                </a>
+                                <a href="#" class="btn px-0 ml-3">
+                                    <i class="fa fa-shopping-cart text-primary"></i>
+                                    <span class="badge text-dark">0</span>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        {{-- End Navbar --}}
+
     </header>
+    {{-- Start Header Section --}}
 
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
