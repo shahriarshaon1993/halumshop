@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Halum Shop'),
+    'name' => env('APP_NAME', 'halumshop.com'),
 
     /*
     |--------------------------------------------------------------------------
