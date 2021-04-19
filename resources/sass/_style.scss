@@ -24,8 +24,8 @@ body {
 
 .header {
     &__top {
-        background-color: rgb(219, 112, 147);
-        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
+        background-color: #fddde6;
+        box-shadow: 0px -2px 5px 0px rgb(0 0 0 / 35%);
 
         &__left {
             padding: 10px 0 13px;
@@ -67,19 +67,37 @@ body {
                     }
                 }
             }
+        }
+    }
 
-            &__auth {
-                display: inline-block;
+    &__middle {
+        &__logo {
+            width: 120px;
+        }
 
-                a {
-                    display: block;
-                    font-size: 14px;
-                    color: #1c1c1c;
-                    transition: all 0.35s;
+        &__search {
+            input[type="text"] {
+                width: 20rem !important;
+                background: antiquewhite;
 
-                    &:hover {
-                        opacity: 0.7;
-                    }
+                &:focus {
+                    background: antiquewhite;
+                    outline: none;
+                }
+            }
+        }
+
+        &__auth {
+            display: inline-block;
+
+            a {
+                display: block;
+                font-size: 1.3rem;
+                color: #1c1c1c;
+                transition: all 0.35s;
+
+                &:hover {
+                    opacity: 0.7;
                 }
             }
         }

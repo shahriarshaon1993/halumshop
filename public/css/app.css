@@ -13019,8 +13019,8 @@ body {
 }
 
 .header__top {
-  background-color: palevioletred;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
+  background-color: #fddde6;
+  box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.35);
 }
 .header__top__left {
   padding: 10px 0 13px;
@@ -13055,15 +13055,26 @@ body {
 .header__top__right__social a:hover {
   opacity: 0.7;
 }
-.header__top__right__auth {
+.header__middle__logo {
+  width: 120px;
+}
+.header__middle__search input[type=text] {
+  width: 20rem !important;
+  background: antiquewhite;
+}
+.header__middle__search input[type=text]:focus {
+  background: antiquewhite;
+  outline: none;
+}
+.header__middle__auth {
   display: inline-block;
 }
-.header__top__right__auth a {
+.header__middle__auth a {
   display: block;
-  font-size: 14px;
+  font-size: 1.3rem;
   color: #1c1c1c;
   transition: all 0.35s;
 }
-.header__top__right__auth a:hover {
+.header__middle__auth a:hover {
   opacity: 0.7;
 }
