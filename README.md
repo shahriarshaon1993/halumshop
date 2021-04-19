@@ -1,6 +1,6 @@
 ## Halum Shop
 
-Halum Shop is an open sourece ecommerce platform management system using laravel 8.
+Halum Shop is an open source ecommerce platform management system using Bootstrap, Sass, Javascript, Php laravel 8.
 
 ## Packages Used
 
