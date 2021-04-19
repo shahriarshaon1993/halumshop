@@ -13035,6 +13035,13 @@ body {
 .header__top__left ul li:last-child {
   margin-right: 0;
 }
+@media (max-width: 768px) {
+  .header__top__left ul li {
+    display: block;
+    text-align: center;
+    margin: 0;
+  }
+}
 .header__top__right {
   text-align: right;
   padding: 10px 0 13px;
@@ -13054,6 +13061,16 @@ body {
 .header__top__right__social a:hover {
   opacity: 0.7;
 }
+@media (max-width: 768px) {
+  .header__top__right__social {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .header__top__right {
+    text-align: center;
+  }
+}
 .header__middle__logo {
   width: 120px;
 }
@@ -13067,6 +13084,7 @@ body {
 }
 .header__middle__auth {
   display: inline-block;
+  margin: 2rem 1.5rem;
 }
 .header__middle__auth a {
   display: block;
@@ -13076,6 +13094,11 @@ body {
 }
 .header__middle__auth a:hover {
   opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .header__middle {
+    text-align: center;
+  }
 }
 .header__main {
   background-color: hotpink;
