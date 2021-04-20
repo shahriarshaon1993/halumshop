@@ -202,7 +202,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="section-title">
-                        <h4>New Product</h4>
+                        <h4>All Product</h4>
                     </div>
                 </div>
             </div>
@@ -468,6 +468,27 @@
         </div>
     </section>
     {{-- End Product Section --}}
+
+    {{-- START SUBCRIBE --}}
+    <section class="subscribe py-5">
+        <div class="container py-4">
+            <div class="row d-flex justify-content-center py-5">
+                <div class="col-md-6 subscribe__text">
+                    <h2>Subcribe to our Newsletter</h2>
+                    <span>Get e-mail updates about our latest shops and special offers</span>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <form action="#" class="subscribe__form">
+                        <div class="form-group d-flex">
+                            <input type="text" class="form-control" name="" id="" placeholder="Enter e-mail address">
+                            <input type="submit" class="submit px-3" value="Subscribe">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- END SUBCRIBE --}}
 
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
