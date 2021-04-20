@@ -62,10 +62,14 @@
                     </form>
                 </div>
                 <div class="col-lg-3 d-flex justify-content-center align-items-center">
-                    <div class="header__middle__auth">
+                    <div class="header__middle__cart">
                         <a href="#">
-                            <i class="fa fa-user"></i>
-                            Sign In
+                            <i class="fa fa-heart fa-2x"></i>
+                            <span>0</span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-shopping-cart fa-2x"></i>
+                            <span>0</span>
                         </a>
                     </div>
                 </div>
@@ -109,20 +113,15 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto py-0">
+                            <div class="navbar-nav text-center mr-auto py-0">
                                 <a href="index.html" class="nav-item nav-link active">Home</a>
                                 <a href="shop.html" class="nav-item nav-link">About</a>
                                 <a href="detail.html" class="nav-item nav-link">Blog</a>
                                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                             </div>
-                            <div class="navbar-nav header__navbar__main__cart ml-auto py-0 d-none d-lg-block">
-                                <a href="#" class="btn px-0">
-                                    <i class="fa fa-heart text-primary"></i>
-                                    <span class="badge text-dark">0</span>
-                                </a>
-                                <a href="#" class="btn px-0 ml-3">
-                                    <i class="fa fa-shopping-cart text-primary"></i>
-                                    <span class="badge text-dark">0</span>
+                            <div class="form-inline my-2 my-lg-0 justify-content-center">
+                                <a href="shop.html" class="nav-item nav-link">
+                                    <i class="fa fa-sign-in mx-2"></i>Sign In
                                 </a>
                             </div>
                         </div>
