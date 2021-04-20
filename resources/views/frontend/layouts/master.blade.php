@@ -196,6 +196,279 @@
     </section>
     {{-- End Category Section --}}
 
+    {{-- Start Product Section --}}
+    <section class="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="section-title">
+                        <h4>New Product</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row product__gallery">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                            {{-- <a href="#" class="btn btn-sm btn-success mt-3">Add To Cart</a> --}}
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card product__item">
+                        <div class="product__item__img">
+                            <img src="{{ asset('photos/category-2.jpg') }}" alt="" class="card-img-top">
+                            <div class="label new">New</div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6 class="card-title">Card Title</h6>
+                            <div class="product__price">
+                                BDT 490
+                                <span>BDT 890</span>
+                            </div>
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                <a href="{{ asset('photos/category-2.jpg') }}" class="image-popup">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-heart"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="image-popup">
+                                    <span class="fa fa-shopping-cart"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- End Product Section --}}
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
