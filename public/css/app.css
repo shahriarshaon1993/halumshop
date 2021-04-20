@@ -13090,19 +13090,30 @@ body {
   width: 120px;
 }
 .header__middle__search input[type=text] {
-  width: 20rem !important;
-  background: antiquewhite;
+  display: block;
+  position: relative;
+  width: 30rem;
+  line-height: 50px;
+  border: none !important;
+  outline: none !important;
+  padding-left: 26px;
+  color: #7f7f7f;
+  float: left;
 }
-.header__middle__search input[type=text]:focus {
-  background: antiquewhite;
-  outline: none;
+@media (max-width: 768px) {
+  .header__middle__search input[type=text] {
+    width: 18rem;
+  }
+}
+.header__middle__search button {
+  background-color: #ff6fff;
 }
 .header__middle__cart {
   margin: 2rem 0;
 }
 .header__middle__cart a {
   text-decoration: none;
-  color: #ff5ccd;
+  color: #ff6fff;
   margin: 0 0.5rem;
 }
 .header__middle__cart span {

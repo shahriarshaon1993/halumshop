@@ -56,7 +56,7 @@
                         <div class="input-group header__middle__search">
                             <input type="text" class="form-control" placeholder="Search for products">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+                                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </form>

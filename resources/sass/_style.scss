@@ -104,13 +104,23 @@ body {
 
         &__search {
             input[type="text"] {
-                width: 20rem !important;
-                background: antiquewhite;
+                display: block;
+                position: relative;
+                width: 30rem;
+                line-height: 50px;
+                border: none !important;
+                outline: none !important;
+                padding-left: 26px;
+                color: #7f7f7f;
+                float: left;
 
-                &:focus {
-                    background: antiquewhite;
-                    outline: none;
+                @media (max-width: 768px) {
+                    width: 18rem;
                 }
+            }
+
+            button {
+                background-color: $lightpink;
             }
         }
 
@@ -119,7 +129,7 @@ body {
 
             a {
                 text-decoration: none;
-                color: $hotpink;
+                color: $lightpink;
                 margin: 0 0.5rem;
             }
 
