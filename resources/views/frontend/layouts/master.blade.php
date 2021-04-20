@@ -134,6 +134,68 @@
     </header>
     {{-- Start Header Section --}}
 
+    {{-- Start Category Section --}}
+    <section class="categories">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <div class="categories__item categories__large__item set-bg" style="background-image: url('{{ asset('photos/category-1.jpg') }}')">
+                        <div class="categories__text">
+                            <h2>Women’s fashion</h2>
+                            <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore edolore magna aliquapendisse ultrices gravida.</p>
+                            <a href="#" class="text-decoration-none">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" style="background-image: url('{{ asset("photos/category-2.jpg") }}')">
+                                <div class="categories__text">
+                                    <h4>Men's fashion</h4>
+                                    <p>358 items</p>
+                                    <a href="#">Show now</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" style="background-image: url('{{ asset("photos/category-3.jpg") }}')">
+                                <div class="categories__text">
+                                    <h4>Men's fashion</h4>
+                                    <p>358 items</p>
+                                    <a href="#">Show now</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" style="background-image: url('{{ asset("photos/category-4.jpg") }}')">
+                                <div class="categories__text">
+                                    <h4>Men's fashion</h4>
+                                    <p>358 items</p>
+                                    <a href="#">Show now</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" style="background-image: url('{{ asset("photos/category-5.jpg") }}')">
+                                <div class="categories__text">
+                                    <h4>Men's fashion</h4>
+                                <p>358 items</p>
+                                <a href="#">Show now</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- End Category Section --}}
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
