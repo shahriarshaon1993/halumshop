@@ -7,6 +7,7 @@ Halum Shop is an open source ecommerce platform management system using Bootstra
 -   Install `composer require laravel/ui`
 -   Install ` php artisan ui bootstrap`
 -   Install ` npm install font-awesome --save`
+-   Install ` npm install swiper`
 
 ## Installation Instructions
 
