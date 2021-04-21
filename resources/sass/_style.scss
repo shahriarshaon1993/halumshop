@@ -196,7 +196,7 @@ body {
 
         &__toggle {
             background-color: $lightpink;
-            height: 70px;
+            height: 50px;
             padding: 0 30px;
             border-radius: none !important;
             text-decoration: none;
@@ -244,7 +244,7 @@ body {
     &__navbar {
         &__main {
             .nav-link {
-                padding: 22px 8px !important;
+                padding: 12px 8px !important;
                 font-size: $normal-font-size !important;
                 color: $font-color !important;
                 font-weight: 500;

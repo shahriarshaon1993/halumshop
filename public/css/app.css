@@ -13730,7 +13730,7 @@ body {
 }
 .header__main__toggle {
   background-color: #ff6fff;
-  height: 70px;
+  height: 50px;
   padding: 0 30px;
   border-radius: none !important;
   text-decoration: none;
@@ -13766,7 +13766,7 @@ body {
   background-color: #ffcff1;
 }
 .header__navbar__main .nav-link {
-  padding: 22px 8px !important;
+  padding: 12px 8px !important;
   font-size: 1rem !important;
   color: #1c1c1c !important;
   font-weight: 500;
