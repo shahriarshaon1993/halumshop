@@ -55,9 +55,28 @@ body {
 .product-navbar {
     @media (max-width: 768px) {
         position: absolute;
-        top: 76px;
+        top: 3px;
+        left: 0;
         z-index: 999999;
         width: 220px;
+
+        .header__main__toggle {
+            h6 {
+                font-size: 14px;
+            }
+        }
+
+        .header__main__drowp {
+            .header__main__drowp__sub {
+                a {
+                    font-size: 14px;
+                }
+            }
+
+            .nav-link {
+                font-size: 14px;
+            }
+        }
     }
 }
 

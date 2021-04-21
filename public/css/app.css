@@ -13610,9 +13610,19 @@ body {
 @media (max-width: 768px) {
   .product-navbar {
     position: absolute;
-    top: 76px;
+    top: 3px;
+    left: 0;
     z-index: 999999;
     width: 220px;
+  }
+  .product-navbar .header__main__toggle h6 {
+    font-size: 14px;
+  }
+  .product-navbar .header__main__drowp .header__main__drowp__sub a {
+    font-size: 14px;
+  }
+  .product-navbar .header__main__drowp .nav-link {
+    font-size: 14px;
   }
 }
 

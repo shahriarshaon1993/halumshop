@@ -99,7 +99,7 @@
                 <div class="col-lg-9">
                     <nav class="navbar header__navbar__main navbar-expand-lg navbar-dark py-lg-0 px-0">
                         <a class="navbar-brand" href="#">
-                            <img src="{{ asset('photos/logo.png') }}" alt="" style="width: 40%;">
+
                         </a>
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
