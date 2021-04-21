@@ -13592,6 +13592,12 @@ body {
   font-family: "Cairo", sans-serif;
 }
 
+.set-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
 .section-title {
   margin-bottom: 45px;
 }
@@ -13788,11 +13794,6 @@ body {
 .categories__item.categories__large__item {
   height: 638px;
   padding-left: 70px;
-}
-.categories .set-bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
 }
 .categories__text {
   max-width: 480px;
@@ -13994,4 +13995,83 @@ body {
 .trend__item__text .product__price {
   color: #111111;
   font-weight: 600;
+}
+
+.blog {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.blog__item {
+  margin-bottom: 30px;
+}
+.blog__item__text {
+  padding-top: 25px;
+}
+.blog__item__text ul {
+  margin-bottom: 15px;
+}
+.blog__item__text ul li {
+  font-size: 16px;
+  color: #b2b2b2;
+  list-style: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+.blog__item__text ul li:last-child {
+  margin-right: 0;
+}
+.blog__item__text h5 {
+  margin-bottom: 12px;
+}
+.blog__item__text h5 a {
+  font-size: 20px;
+  color: #1c1c1c;
+  font-weight: 700;
+}
+.blog__item__text p {
+  margin-bottom: 25px;
+}
+
+.brand {
+  padding-top: 50px;
+}
+.brand__item {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.brand__item:hover .brand__text {
+  opacity: 1;
+  visibility: visible;
+}
+.brand__item:hover .brand__text::after {
+  opacity: 0.5;
+}
+.brand__text {
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all, 0.3s;
+}
+.brand__text::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  content: "";
+  opacity: 0;
+  z-index: -1;
+  transition: all, 0.3s;
+}
+.brand__text a {
+  font-size: 16px;
+  color: #1c1c1c;
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
 }

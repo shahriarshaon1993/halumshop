@@ -38,6 +38,12 @@ body {
     font-family: "Cairo", sans-serif;
 }
 
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
 .section-title {
     margin-bottom: 45px;
 
@@ -275,12 +281,6 @@ body {
             height: 638px;
             padding-left: 70px;
         }
-    }
-
-    .set-bg {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: top center;
     }
 
     &__text {
@@ -534,3 +534,102 @@ body {
     }
 }
 // END TREND
+
+// START BLOG
+.blog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &__item {
+        margin-bottom: 30px;
+
+        &__text {
+            padding-top: 25px;
+
+            ul {
+                margin-bottom: 15px;
+
+                li {
+                    font-size: 16px;
+                    color: #b2b2b2;
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 15px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            h5 {
+                margin-bottom: 12px;
+
+                a {
+                    font-size: 20px;
+                    color: $font-color;
+                    font-weight: 700;
+                }
+            }
+
+            p {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+// END BLOG
+
+// START BRAND
+.brand {
+    padding-top: 50px;
+
+    &__item {
+        height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            .brand__text {
+                opacity: 1;
+                visibility: visible;
+
+                &::after {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    &__text {
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all, 0.3s;
+
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            content: "";
+            opacity: 0;
+            z-index: -1;
+            transition: all, 0.3s;
+        }
+
+        a {
+            font-size: 16px;
+            color: $font-color;
+            font-weight: 500;
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}
+// END BRAND

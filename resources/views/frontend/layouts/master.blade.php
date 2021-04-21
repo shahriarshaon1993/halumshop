@@ -673,6 +673,151 @@
     </section>
     {{--END TREND --}}
 
+    {{-- START BLOG --}}
+    <div class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="section-title">
+                        <h4>Our Blog</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="{{ asset('photos/category-3.jpg') }}" alt="">
+                        </div>
+
+                        <div class="blog__item__text">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-calendar-o"></i>
+                                     May 4,2019
+                                </li>
+                                <li>
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </li>
+                            </ul>
+                            <h5>
+                                <a href="#">Cooking tips make cooking simple</a>
+                            </h5>
+                            <p>
+                                Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="{{ asset('photos/category-3.jpg') }}" alt="">
+                        </div>
+
+                        <div class="blog__item__text">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-calendar-o"></i>
+                                     May 4,2019
+                                </li>
+                                <li>
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </li>
+                            </ul>
+                            <h5>
+                                <a href="#">Cooking tips make cooking simple</a>
+                            </h5>
+                            <p>
+                                Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="{{ asset('photos/category-3.jpg') }}" alt="">
+                        </div>
+
+                        <div class="blog__item__text">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-calendar-o"></i>
+                                     May 4,2019
+                                </li>
+                                <li>
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </li>
+                            </ul>
+                            <h5>
+                                <a href="#">Cooking tips make cooking simple</a>
+                            </h5>
+                            <p>
+                                Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- END BLOG --}}
+
+    {{-- START BRAND --}}
+    <section class="brand">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
+                        <div class="brand__text">
+                            <a href="#">Facebbok</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
+                        <div class="brand__text">
+                            <a href="#">Facebbok</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
+                        <div class="brand__text">
+                            <a href="#">Facebbok</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
+                        <div class="brand__text">
+                            <a href="#">Facebbok</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
+                        <div class="brand__text">
+                            <a href="#">Facebbok</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                        <div class="brand__text">
+                            <a href="#">Facebbok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- END BRAND --}}
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
