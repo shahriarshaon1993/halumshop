@@ -13671,6 +13671,11 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  .header__top {
+    display: none;
+  }
+}
 .header__middle__logo {
   width: 120px;
 }
@@ -13708,6 +13713,7 @@ body {
 @media (max-width: 768px) {
   .header__middle {
     text-align: center;
+    display: none;
   }
 }
 .header__main {
@@ -13719,7 +13725,7 @@ body {
 .header__main.sticky {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 999999;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 .header__main__toggle {
@@ -14036,7 +14042,7 @@ body {
   padding-top: 50px;
 }
 .brand__item {
-  height: 320px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14150,4 +14156,16 @@ body {
 }
 .footer-bottom__text p i {
   color: red;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
 }

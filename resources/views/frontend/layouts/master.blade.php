@@ -768,53 +768,81 @@
     {{-- END BLOG --}}
 
     {{-- START BRAND --}}
-    <section class="brand">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
-                        <div class="brand__text">
-                            <a href="#">Facebbok</a>
-                        </div>
+    <section class="brand swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
-                        <div class="brand__text">
-                            <a href="#">Facebbok</a>
-                        </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
-                        <div class="brand__text">
-                            <a href="#">Facebbok</a>
-                        </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
-                        <div class="brand__text">
-                            <a href="#">Facebbok</a>
-                        </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/insta-5.jpg') }}")'>
-                        <div class="brand__text">
-                            <a href="#">Facebbok</a>
-                        </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
-                        <div class="brand__text">
-                            <a href="#">Facebbok</a>
-                        </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="brand__item set-bg" style='background-image: url("{{ asset('photos/category-5.jpg') }}")'>
+                    <div class="brand__text">
+                        <a href="#">Facebbok</a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
     </section>
     {{-- END BRAND --}}
 
