@@ -13598,6 +13598,15 @@ body {
   background-position: top center;
 }
 
+.navbar-brand {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    display: block;
+  }
+}
+
 .section-title {
   margin-bottom: 45px;
 }
@@ -13682,7 +13691,7 @@ body {
 .header__middle__search input[type=text] {
   display: block;
   position: relative;
-  width: 30rem;
+  width: 20rem;
   line-height: 50px;
   border: none !important;
   outline: none !important;
@@ -13780,6 +13789,20 @@ body {
 }
 .header__navbar__main .nav-link.active {
   color: #ffcff1 !important;
+}
+.header__navbar__cart {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  .header__navbar__cart {
+    display: block !important;
+  }
+}
+.header__navbar__cart .header__middle__cart a {
+  color: slateblue;
+}
+.header__navbar__cart .header__middle__cart a span {
+  color: inherit;
 }
 
 .categories {

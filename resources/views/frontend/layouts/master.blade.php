@@ -109,6 +109,9 @@
                 </div>
                 <div class="col-lg-9">
                     <nav class="navbar header__navbar__main navbar-expand-lg navbar-dark py-lg-0 px-0">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ asset('photos/logo.png') }}" alt="" style="width: 40%;">
+                        </a>
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -123,6 +126,18 @@
                                 <a href="shop.html" class="nav-item nav-link">
                                     <i class="fa fa-sign-in mx-2"></i>Sign In
                                 </a>
+                            </div>
+                            <div class="col-lg-3 d-flex justify-content-center align-items-center header__navbar__cart">
+                                <div class="header__middle__cart d-flex justify-content-center">
+                                    <a href="#">
+                                        <i class="fa fa-heart fa-2x"></i>
+                                        <span>0</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart fa-2x"></i>
+                                        <span>0</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </nav>

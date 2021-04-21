@@ -44,6 +44,14 @@ body {
     background-position: top center;
 }
 
+.navbar-brand {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
 .section-title {
     margin-bottom: 45px;
 
@@ -142,7 +150,7 @@ body {
             input[type="text"] {
                 display: block;
                 position: relative;
-                width: 30rem;
+                width: 20rem;
                 line-height: 50px;
                 border: none !important;
                 outline: none !important;
@@ -257,6 +265,24 @@ body {
 
                 &.active {
                     color: $shampoopink !important;
+                }
+            }
+        }
+
+        &__cart {
+            display: none !important;
+
+            @media (max-width: 768px) {
+                display: block !important;
+            }
+
+            .header__middle__cart {
+                a {
+                    color: slateblue;
+
+                    span {
+                        color: inherit;
+                    }
                 }
             }
         }
