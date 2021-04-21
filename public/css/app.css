@@ -13607,6 +13607,15 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .product-navbar {
+    position: absolute;
+    top: 76px;
+    z-index: 999999;
+    width: 220px;
+  }
+}
+
 .section-title {
   margin-bottom: 45px;
 }

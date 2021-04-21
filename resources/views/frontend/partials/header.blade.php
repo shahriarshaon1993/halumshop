@@ -69,7 +69,7 @@
         {{-- Start Navbar --}}
         <div class="container-fluid header__main">
             <div class="row px-xl-5">
-                <div class="col-lg-3 d-none d-lg-block">
+                <div class="col-lg-3 product-navbar">
                     <a class="header__main__toggle d-flex align-items-center justify-content-between w-100" data-toggle="collapse" href="#navbar-vertical">
                         <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
                         <i class="fa fa-angle-down text-dark"></i>
