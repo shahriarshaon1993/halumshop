@@ -46,7 +46,7 @@
         {{-- Start Middle Section --}}
         <div class="container-fluid header__middle">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 d-flex align-items-center pl-5">
                     <a href="navbar-brand">
                         <img src="{{ asset('photos/logo.png') }}" alt="Logo" class="header__middle__logo">
                     </a>
