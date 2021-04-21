@@ -13583,6 +13583,10 @@ p {
   margin: 0 0 15px 0;
 }
 
+img {
+  width: 100%;
+}
+
 body {
   background-color: #ffe6f2;
   font-family: "Cairo", sans-serif;
@@ -13590,6 +13594,22 @@ body {
 
 .section-title {
   margin-bottom: 45px;
+}
+.section-title h4 {
+  color: #1c1c1c;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+.section-title h4::after {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 70px;
+  background: #ca1515;
+  content: "";
 }
 
 .header__top {
@@ -13809,22 +13829,6 @@ body {
   padding-top: 60px;
   padding-bottom: 50px;
 }
-.product .section-title h4 {
-  color: #1c1c1c;
-  font-weight: 600;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-}
-.product .section-title h4::after {
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  height: 2px;
-  width: 70px;
-  background: #ca1515;
-  content: "";
-}
 .product__item {
   margin-bottom: 35px;
 }
@@ -13950,4 +13954,44 @@ body {
   border-radius: 0;
   font-size: 12px;
   background: #82ae46 !important;
+}
+
+.trend {
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.trend__content .section-title h4 {
+  font-size: 20px;
+}
+.trend__content .section-title h4::after {
+  bottom: -6px;
+}
+.trend__item {
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+.trend__item__pic {
+  float: left;
+  margin-right: 25px;
+}
+.trend__item__text {
+  overflow: hidden;
+}
+.trend__item__text h6 {
+  font-size: 14px;
+  color: #111111;
+  margin-bottom: 5px;
+}
+.trend__item__text .rating {
+  line-height: 18px;
+  margin-bottom: 6px;
+}
+.trend__item__text .rating i {
+  font-size: 10px;
+  color: #e3c01c;
+  margin-right: -4px;
+}
+.trend__item__text .product__price {
+  color: #111111;
+  font-weight: 600;
 }
