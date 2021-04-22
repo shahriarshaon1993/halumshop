@@ -10,19 +10,7 @@
         <h6 class="card-body-title">Edit Profile</h6>
         <p class="mg-b-20 mg-sm-b-30">You can change your profile</p>
 
-        @if ($errors->any())
-            <div class="alert alert-warning" role="alert">
-                @if (count($errors) > 1)
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @else
-                    {{ $errors->first() }}
-                @endif
-            </div>
-        @endif
+        @include('backend.partials._message')
 
         <div class="row mg-b-20">
             <div class="col-md-6">

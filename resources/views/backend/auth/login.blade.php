@@ -16,11 +16,22 @@
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('backend/css/starlight.css') }}">
 
+    {{-- Include Toaster-js --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/toaster.min.css') }}">
+    <script src="{{ asset('js/jquery-5.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/toaster.min.js') }}"></script>
+
     <style>
         button {
             cursor: pointer !important;
         }
     </style>
+
+    <script>
+        toastr.options = {
+            "closeButton": true,
+        }
+    </script>
 </head>
 
 <body>
@@ -35,19 +46,7 @@
 
                 <div class="tx-center mg-b-60">Halumshop Admin Panel</div>
 
-                @if ($errors->any())
-                    <div class="alert alert-warning" role="alert">
-                        @if (count($errors) > 1)
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @else
-                            {{ $errors->first() }}
-                        @endif
-                    </div>
-                @endif
+                @include('backend.partials._message')
 
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" placeholder="Enter your email" required>

@@ -1,4 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/toaster.js": "/js/toaster.js",
+    "/js/jquery-v-6.0.0.js": "/js/jquery-v-6.0.0.js",
+    "/css/app.css": "/css/app.css",
+    "/css/toaster.css": "/css/toaster.css"
 }

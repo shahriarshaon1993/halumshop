@@ -19,9 +19,20 @@ class AdminLoginController extends Controller
         $credentials = request()->only(['email', 'password']);
 
         if (Auth::guard('admin')->attempt($credentials, $request->remember)) {
-            return redirect()->route('dashboard');
+
+            $notification = array(
+                'message' => 'You are logged in successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('dashboard')->with($notification);
         }
 
-        return redirect()->back();
+        $notification = array(
+            'message' => 'These credentials do not match our records.',
+            'alert-type' => 'error'
+        );
+
+        return redirect()->back()->with($notification);
     }
 }

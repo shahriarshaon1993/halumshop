@@ -17,11 +17,22 @@
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('backend/css/starlight.css') }}">
 
+    {{-- Include Toaster-js --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/toaster.min.css') }}">
+    <script src="{{ asset('js/jquery-5.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/toaster.min.js') }}"></script>
+
     <style>
         button {
             cursor: pointer;
         }
     </style>
+
+    <script>
+        toastr.options = {
+            "closeButton": true,
+        }
+    </script>
 </head>
 
 <body>

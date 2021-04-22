@@ -26,7 +26,12 @@ class AdminProfileController extends Controller
         $admin = Admin::find(auth()->guard('admin')->user()->id);
 
         if (!Hash::check($request->current_password, $admin->password)) {
-            return "Current password not match";
+            $notification = array(
+                'message' => 'Current password not match',
+                'alert-type' => 'worning'
+            );
+
+            return redirect()->back()->with($notification);
         }
 
         $admin->password = Hash::make($request->password);
@@ -34,6 +39,11 @@ class AdminProfileController extends Controller
 
         Auth::logout();
 
-        return redirect()->route('admin.login');
+        $notification = array(
+            'message' => 'Password has been changed. please login again',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.login')->with($notification);
     }
 }
