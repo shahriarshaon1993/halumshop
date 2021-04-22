@@ -16,6 +16,12 @@
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('backend/css/starlight.css') }}">
+
+    <style>
+        button {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
