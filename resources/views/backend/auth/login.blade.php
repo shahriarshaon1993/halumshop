@@ -22,8 +22,8 @@
     <script type="text/javascript" src="{{ asset('js/toaster.min.js') }}"></script>
 
     <style>
-        button {
-            cursor: pointer !important;
+        .cursor-pointer {
+            cursor: pointer;
         }
     </style>
 
@@ -37,8 +37,7 @@
 <body>
 
     <div class="d-flex align-items-center justify-content-center bg-sl-primary ht-100v">
-        <form action="{{ route('admin.login') }}" method="POST">
-            @csrf
+        {{ Form::open(['route' => 'admin.login']) }}
             <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
                 <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">
                     Halumshop <span class="tx-info tx-normal">admin</span>
@@ -49,21 +48,21 @@
                 @include('backend.partials._message')
 
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                    {{ Form::email('email', null,['class' => 'form-control', 'placeholder' => 'Enter your email']) }}
                 </div><!-- form-group -->
 
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Enter your password">
+                    {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Enter your password']) }}
                 </div><!-- form-group -->
 
                 <div class="form-group">
-                    <label class="ckbox">
-                    <input type="checkbox" name="remember"><span>Remember me</span>
+                    {{ Form::label(null, null, ['class' => 'ckbox']) }}
+                    {{ Form::checkbox('remember', null) }} <span>Remember me</span>
                 </div><!-- form-group -->
 
-                <button type="submit" class="btn btn-info btn-block">Sign In</button>
-            </div><!-- login-wrapper -->
-        </form>
+                {{ Form::submit('Sign In',['class' => 'btn btn-info btn-block cursor-pointer']) }}
+            </div>
+        {{ Form::close() }}
     </div><!-- d-flex -->
 
     <script src="{{ asset('backend/lib/jquery/jquery.js') }}"></script>
