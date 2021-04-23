@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Auth\AdminLoginController;
 use App\Http\Controllers\Backend\Auth\AdminLogoutController;
 use App\Http\Controllers\Backend\Auth\AdminProfileController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('Backend')->prefix('admin')->group(function () {
+Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
     Route::post('/login', [AdminLoginController::class, 'proccessLogin']);
     Route::post('/logout', [AdminLogoutController::class, 'proccessLogout'])->name('admin.logout');
@@ -26,6 +27,9 @@ Route::namespace('Backend')->prefix('admin')->group(function () {
     Route::post('/change/password', [AdminProfileController::class, 'changePassword']);
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Categories
+    Route::resource('categories', CategoryController::class);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
