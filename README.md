@@ -11,6 +11,7 @@ Halum Shop is an open source ecommerce platform management system using Bootstra
 -   Install `composer require barryvdh/laravel-debugbar --dev`
 -   Install `npm install toaster-js`
 -   Install `npm install jquery`
+-   Install `composer require laravelcollective/html`
 
 ## Installation Instructions
 
