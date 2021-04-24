@@ -37,7 +37,7 @@
                                 <a href="#" class="btn btn-sm btn-warning">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="btn btn-sm btn-danger">
+                                <a href="javascript:void(0)" title="Delete" class="btn btn-sm btn-danger delete-category" data-toggle="modal" data-target="#modaldemo1" data-url="{{ url('admin/categories/'.$category->id) }}">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </a>
                             </td>
@@ -49,4 +49,19 @@
         </div><!-- table-wrapper -->
     </div><!-- card -->
 
+    <!-- Delete Modal -->
+    <x-delete>
+        <x-slot name="form">
+            {{ Form::open(['method' => 'DELETE', 'id' => 'deleteForm']) }}
+        </x-slot>
+    </x-delete>
+
+    <script type="text/javascript">
+       $(document).ready(function () {
+            $('.delete-category').click(function () {
+                var url = $(this).attr('data-url');
+                $("#deleteForm").attr("action", url);
+            });
+        });
+    </script>
 @endsection

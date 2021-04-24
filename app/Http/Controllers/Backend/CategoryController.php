@@ -4,13 +4,17 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Repositories\RepoInterface;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function __construct()
+    protected $category;
+
+    public function __construct(RepoInterface $category)
     {
         $this->middleware('auth:admin');
+        $this->category = $category;
     }
 
     /**
@@ -20,7 +24,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('id', 'name', 'banner')->simplePaginate(10);
+        $categories = $this->category->index();
         return view('backend.category.index', compact('categories'));
     }
 
@@ -87,6 +91,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->category->destroy($id);
+
+        $notification = array(
+            'message' => 'Category Deleted!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }

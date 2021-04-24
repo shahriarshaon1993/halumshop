@@ -40,6 +40,7 @@ class CategoryRepository implements RepoInterface
 
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
     }
 }
