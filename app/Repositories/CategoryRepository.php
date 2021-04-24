@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Category;
-use App\Repositories\RepoInterface;
+use App\Interface\RepoInterface;
 use Illuminate\Http\Request;
 
 class CategoryRepository implements RepoInterface
