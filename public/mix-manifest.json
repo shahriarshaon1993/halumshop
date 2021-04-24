@@ -1,7 +1,5 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/toaster.js": "/js/toaster.js",
-    "/js/jquery-v-6.0.0.js": "/js/jquery-v-6.0.0.js",
-    "/css/app.css": "/css/app.css",
-    "/css/toaster.css": "/css/toaster.css"
+    "/js/dashboard.js": "/js/dashboard.js",
+    "/css/app.css": "/css/app.css"
 }
