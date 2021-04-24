@@ -13,17 +13,7 @@ class CategoryRepository implements RepoInterface
         return Category::select('id', 'name', 'banner')->simplePaginate(10);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
     {
         //
     }
