@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($categories as $key => $category)
                         <tr>
-                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $categories->firstItem() + $key }}</td>
                             <td>{{ $category->name }}</td>
                             <td><img src="{{ asset($category->banner) }}" alt="Category Name" width="80px" height="50px"></td>
                             <td>
