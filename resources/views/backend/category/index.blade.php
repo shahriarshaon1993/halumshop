@@ -52,6 +52,7 @@
         </div><!-- table-wrapper -->
     </div><!-- card -->
 
+    {{-- Category Insert Modal --}}
     <x-insert>
         <x-slot name="title">
             Add a new category
@@ -77,6 +78,7 @@
             </div>
         </x-slot>
     </x-insert>
+    {{-- End Category Insert Modal --}}
 
     <!-- Delete Modal -->
     <x-delete>
