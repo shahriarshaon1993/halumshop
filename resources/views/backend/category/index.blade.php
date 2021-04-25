@@ -11,8 +11,11 @@
     @include('backend.partials._message')
 
     <div class="card pd-20 pd-sm-40">
-        <h6 class="card-body-title">Categories Table</h6>
-        <p class="mg-b-20 mg-sm-b-30">All categories list here</p>
+        <h6 class="card-body-title">Categories Table
+            <a href="javascript:void(0)" class="btn btn-sm btn-primary mg-b-10 float-right" data-toggle="modal" data-target="#modaldemo2">
+                 Add New <i class="fa fa-plus mg-r-10"></i>
+            </a>
+        </h6>
 
         <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">
@@ -29,7 +32,7 @@
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $category->name }}</td>
-                            <td><img src="{{ $category->banner }}" alt="Category Name" width="80px" height="50px"></td>
+                            <td><img src="{{ asset($category->banner) }}" alt="Category Name" width="80px" height="50px"></td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-info">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
@@ -49,19 +52,56 @@
         </div><!-- table-wrapper -->
     </div><!-- card -->
 
+    <x-insert>
+        <x-slot name="title">
+            Add a new category
+        </x-slot>
+
+        <x-slot name="form">
+            {{ Form::open(['route' => 'categories.store', 'files' => true]) }}
+        </x-slot>
+
+        <x-slot name="body">
+            <div class="form-group">
+                {{ Form::label('name', 'Category name', ['class' => 'form-control-label']) }}
+                {{ Form::text('name', null, ['class' => 'form-control','id' => 'name', 'placeholder' => 'Category name']) }}
+            </div>
+
+            <div class="form-group">
+                <label class="custom-file" for="banner">
+                    <input type="file" name="banner" id="banner" class="custom-file-input" onchange="readURL(this)">
+                    <span class="custom-file-control custom-file-control-primary"></span>
+                </label>
+                <br><br>
+                <img id="one">
+            </div>
+        </x-slot>
+    </x-insert>
+
     <!-- Delete Modal -->
     <x-delete>
         <x-slot name="form">
             {{ Form::open(['method' => 'DELETE', 'id' => 'deleteForm']) }}
         </x-slot>
     </x-delete>
+    <!--End Delete Modal -->
 
-    <script type="text/javascript">
-       $(document).ready(function () {
-            $('.delete-category').click(function () {
-                var url = $(this).attr('data-url');
-                $("#deleteForm").attr("action", url);
-            });
-        });
+    {{--Ajax Image loader --}}
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#one')
+                        .attr('src', e.target.result)
+                        .width(120)
+                        .height(80);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
+
+    {{-- For Dashboard operations --}}
+    <script src="{{ mix('js/dashboard.js') }}"></script>
 @endsection
