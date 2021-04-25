@@ -37,7 +37,7 @@
                                 <a href="#" class="btn btn-sm btn-info">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="btn btn-sm btn-warning">
+                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-warning">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </a>
                                 <a href="javascript:void(0)" title="Delete" class="btn btn-sm btn-danger delete-category" data-toggle="modal" data-target="#modaldemo1" data-url="{{ url('admin/categories/'.$category->id) }}">

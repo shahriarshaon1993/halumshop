@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use App\Interface\RepoInterface;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ class CategoryRepository implements RepoInterface
 {
     public function index()
     {
-        return Category::select('id', 'name', 'banner')->orderBy('id', 'DESC')->simplePaginate(10);
+        return Category::select('id', 'name', 'banner', 'slug')->orderBy('id', 'DESC')->simplePaginate(10);
     }
 
     public function store($request)
@@ -32,12 +33,24 @@ class CategoryRepository implements RepoInterface
 
     public function edit($id)
     {
-        //
+        return Category::find($id);
     }
 
-    public function update(Request $request, $id)
+    public function update($request, $category)
     {
-        //
+        $old_banner = $category->banner;
+        $new_banner = $request->banner;
+
+        $category->name = $request->name;
+
+        if ($request->banner) {
+            unlink($old_banner);
+            $file_name = uniqid('category_banner_', true) . Str::random(10) . '.' . $new_banner->getClientOriginalExtension();
+            Image::make($new_banner)->resize(780, 520)->save('media/categories/' . $file_name);
+            $category->banner = 'media/categories/' . $file_name;
+        }
+
+        $category->update();
     }
 
     public function destroy($id)

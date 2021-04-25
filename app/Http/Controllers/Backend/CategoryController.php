@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Interface\RepoInterface;
-use Illuminate\Http\Request;
+use App\Models\Category;
 
 
 class CategoryController extends Controller
@@ -18,24 +19,13 @@ class CategoryController extends Controller
         $this->category = $category;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $categories = $this->category->index();
         return view('backend.category.index', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(CategoryRequest $request)
+    public function store(StoreCategoryRequest $request)
     {
         $this->category->store($request);
 
@@ -47,35 +37,25 @@ class CategoryController extends Controller
         return Redirect()->back()->with($notification);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $category = $this->category->edit($slug);
+
+        return view('backend.category.edit', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $this->category->update($request, $category);
+
+        $notification = array(
+            'message' => 'Category Updated!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('categories.index')->with($notification);;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $this->category->destroy($id);
