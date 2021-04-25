@@ -13,7 +13,7 @@ class CategoryRepository implements RepoInterface
 {
     public function index()
     {
-        return Category::select('id', 'name', 'banner', 'slug')->orderBy('id', 'DESC')->simplePaginate(10);
+        return Category::select('id', 'name', 'banner', 'slug')->orderBy('id', 'DESC')->paginate(10);
     }
 
     public function store($request)

@@ -48,7 +48,10 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $categories->links() }}
+            <div class="d-flex justify-content-center">
+                {{ $categories->links() }}
+            </div>
+
         </div><!-- table-wrapper -->
     </div><!-- card -->
 
