@@ -2,10 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use App\Interface\RepoInterface;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
@@ -13,7 +11,7 @@ class CategoryRepository implements RepoInterface
 {
     public function index()
     {
-        return Category::select('id', 'name', 'banner', 'slug')->orderBy('id', 'DESC')->paginate(10);
+        return  Category::select('id', 'name', 'banner', 'slug')->orderBy('created_at', 'DESC')->paginate(10);
     }
 
     public function store($request)
