@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-use App\Events\CreatedCategoryEvent;
-use App\Events\DeletedCategoryEvent;
-use App\Events\UpdatedCategoryEvent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
