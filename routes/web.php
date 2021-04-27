@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Auth\AdminLogoutController;
 use App\Http\Controllers\Backend\Auth\AdminProfileController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,9 @@ Route::prefix('admin')->group(function () {
 
     // Categories
     Route::resource('categories', CategoryController::class);
+
+    // Subcategories
+    Route::resource('subcategories', SubcategoryController::class);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
