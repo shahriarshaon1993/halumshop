@@ -54,7 +54,7 @@ class CategoryController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('categories.index')->with($notification);;
+        return redirect()->route('categories.index')->with($notification);
     }
 
     public function destroy($id)
