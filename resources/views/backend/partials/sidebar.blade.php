@@ -32,6 +32,12 @@
                 <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Category</a></li>
                 <li class="nav-item"><a href="{{ route('subcategories.index') }}" class="nav-link">Sub Category</a></li>
             </ul>
+            <a href="{{ route('brands.index') }}" class="sl-menu-link">
+                <div class="sl-menu-item">
+                    <i class="fa fa-laptop tx-20"></i>
+                    <span class="menu-item-label">Brands</span>
+                </div><!-- menu-item -->
+            </a><!-- sl-menu-link -->
         </div><!-- sl-sideleft-menu -->
 
         <br>

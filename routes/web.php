@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Auth\AdminLoginController;
 use App\Http\Controllers\Backend\Auth\AdminLogoutController;
 use App\Http\Controllers\Backend\Auth\AdminProfileController;
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\SubcategoryController;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Admin Routes
+
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
     Route::post('/login', [AdminLoginController::class, 'proccessLogin']);
@@ -34,6 +37,9 @@ Route::prefix('admin')->group(function () {
 
     // Subcategories
     Route::resource('subcategories', SubcategoryController::class);
+
+    // Brands
+    Route::resource('brands', BrandController::class);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
