@@ -35,6 +35,7 @@
             <ul class="sl-menu-sub nav flex-column">
                 <li class="nav-item"><a href="{{ route('brands.index') }}" class="nav-link">Brands</a></li>
                 <li class="nav-item"><a href="{{ route('coupons.index') }}" class="nav-link">Coupons</a></li>
+                <li class="nav-item"><a href="{{ route('newslaters.index') }}" class="nav-link">Newslatter</a></li>
             </ul>
         </div><!-- sl-sideleft-menu -->
 

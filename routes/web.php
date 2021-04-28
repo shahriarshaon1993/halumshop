@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\NewslaterController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,11 @@ Route::prefix('admin')->group(function () {
 
     // Coupons
     Route::resource('coupons', CouponController::class)->only([
+        'index', 'store', 'destroy'
+    ]);
+
+    // Newslaters
+    Route::resource('newslaters', NewslaterController::class)->only([
         'index', 'store', 'destroy'
     ]);
 });

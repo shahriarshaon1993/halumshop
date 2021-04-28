@@ -2,11 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Admin;
-use App\Models\Brand;
-use App\Models\Category;
-use App\Models\Coupon;
-use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,10 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Admin::factory(1)->create();
-        Category::factory(5)->create();
-        Subcategory::factory(20)->create();
-        Brand::factory(10)->create();
-        Coupon::factory(5)->create();
+        \App\Models\Admin::factory(1)->create();
+        \App\Models\Category::factory(5)->create();
+        \App\Models\Subcategory::factory(20)->create();
+        \App\Models\Brand::factory(10)->create();
+        \App\Models\Coupon::factory(5)->create();
+        \App\Models\Newslater::factory(200)->create();
     }
 }
