@@ -34,16 +34,24 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Categories
-    Route::resource('categories', CategoryController::class);
+    Route::resource('categories', CategoryController::class)->except([
+        'create', 'show'
+    ]);
 
     // Subcategories
-    Route::resource('subcategories', SubcategoryController::class);
+    Route::resource('subcategories', SubcategoryController::class)->except([
+        'create', 'show'
+    ]);
 
     // Brands
-    Route::resource('brands', BrandController::class);
+    Route::resource('brands', BrandController::class)->except([
+        'create', 'show'
+    ]);
 
     // Coupons
-    Route::resource('coupons', CouponController::class);
+    Route::resource('coupons', CouponController::class)->only([
+        'index', 'store', 'destroy'
+    ]);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
