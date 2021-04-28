@@ -14,13 +14,6 @@
                     <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
                     <span class="menu-item-label">Dashboard</span>
                 </div><!-- menu-item -->
-            </a><!-- sl-menu-link -->
-            <a href="widgets.html" class="sl-menu-link">
-                <div class="sl-menu-item">
-                    <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
-                    <span class="menu-item-label">Cards &amp; Widgets</span>
-                </div><!-- menu-item -->
-            </a><!-- sl-menu-link -->
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon ion-grid tx-20"></i>
@@ -32,12 +25,17 @@
                 <li class="nav-item"><a href="{{ route('categories.index') }}" class="nav-link">Category</a></li>
                 <li class="nav-item"><a href="{{ route('subcategories.index') }}" class="nav-link">Sub Category</a></li>
             </ul>
-            <a href="{{ route('brands.index') }}" class="sl-menu-link">
+            <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
-                    <i class="fa fa-laptop tx-20"></i>
-                    <span class="menu-item-label">Brands</span>
+                    <i class="icon ion-settings tx-20"></i>
+                    <span class="menu-item-label">Tools</span>
+                    <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
+            <ul class="sl-menu-sub nav flex-column">
+                <li class="nav-item"><a href="{{ route('brands.index') }}" class="nav-link">Brands</a></li>
+                <li class="nav-item"><a href="{{ route('coupons.index') }}" class="nav-link">Coupons</a></li>
+            </ul>
         </div><!-- sl-sideleft-menu -->
 
         <br>

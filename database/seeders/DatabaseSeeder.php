@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Admin;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Coupon;
 use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 
@@ -22,5 +23,6 @@ class DatabaseSeeder extends Seeder
         Category::factory(5)->create();
         Subcategory::factory(20)->create();
         Brand::factory(10)->create();
+        Coupon::factory(5)->create();
     }
 }

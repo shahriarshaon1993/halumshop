@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Auth\AdminLogoutController;
 use App\Http\Controllers\Backend\Auth\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,9 @@ Route::prefix('admin')->group(function () {
 
     // Brands
     Route::resource('brands', BrandController::class);
+
+    // Coupons
+    Route::resource('coupons', CouponController::class);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
