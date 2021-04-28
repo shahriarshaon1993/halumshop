@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Brand::factory(10)->create();
         \App\Models\Coupon::factory(5)->create();
         \App\Models\Newslater::factory(200)->create();
+        \App\Models\Product::factory(200)->create();
     }
 }
