@@ -17,6 +17,11 @@
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('backend/css/starlight.css') }}">
 
+    <link href="{{ asset('backend/lib/summernote/summernote-bs4.css') }}" rel="stylesheet">
+
+    <!-- Multi tag input CDN -->
+    <link href="{{ asset('backend/css/tagsinput.css') }}" rel="stylesheet"/>
+
     {{-- Include Toaster-js --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/toaster.min.css') }}">
     <script src="{{ asset('js/jquery-5.js') }}"></script>
@@ -25,6 +30,10 @@
     <style>
         button {
             cursor: pointer;
+        }
+
+        .bootstrap-tagsinput {
+            width: 460px;
         }
     </style>
 
@@ -80,6 +89,23 @@
     <script src="{{ asset('backend/lib/Flot/jquery.flot.pie.js') }}"></script>
     <script src="{{ asset('backend/lib/Flot/jquery.flot.resize.js') }}"></script>
     <script src="{{ asset('backend/lib/flot-spline/jquery.flot.spline.js') }}"></script>
+
+    <script src="{{ asset('backend/lib/medium-editor/medium-editor.js')}}"></script>
+    <script src="{{ asset('backend/lib/summernote/summernote-bs4.min.js')}}"></script>
+    <script>
+        $(function () {
+            'use strict';
+
+            // Inline editor
+            var editor = new MediumEditor('.editable');
+
+            // Summernote editor
+            $('#summernote').summernote({
+                height: 150,
+                tooltip: false
+            })
+        });
+    </script>
 
     <script src="{{ asset('backend/js/starlight.js') }}"></script>
     <script src="{{ asset('backend/js/ResizeSensor.js') }}"></script>

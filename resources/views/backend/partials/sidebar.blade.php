@@ -37,6 +37,17 @@
                 <li class="nav-item"><a href="{{ route('coupons.index') }}" class="nav-link">Coupons</a></li>
                 <li class="nav-item"><a href="{{ route('newslaters.index') }}" class="nav-link">Newslatter</a></li>
             </ul>
+            <a href="#" class="sl-menu-link">
+                <div class="sl-menu-item">
+                    <i class="fa fa-suitcase tx-20"></i>
+                    <span class="menu-item-label">Products</span>
+                    <i class="menu-item-arrow fa fa-angle-down"></i>
+                </div><!-- menu-item -->
+            </a><!-- sl-menu-link -->
+            <ul class="sl-menu-sub nav flex-column">
+                <li class="nav-item"><a href="{{ route('products.index') }}" class="nav-link">All Products</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Add Product</a></li>
+            </ul>
         </div><!-- sl-sideleft-menu -->
 
         <br>

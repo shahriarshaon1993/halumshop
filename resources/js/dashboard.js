@@ -6,4 +6,3 @@ $(document).ready(function () {
         $("#deleteForm").attr("action", url);
     });
 });
-
