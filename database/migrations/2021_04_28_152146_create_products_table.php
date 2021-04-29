@@ -34,7 +34,6 @@ class CreateProductsTable extends Migration
             $table->string('video_link')->nullable();
             $table->tinyInteger('main_slider')->default(0);
             $table->tinyInteger('hot_deal')->default(0);
-            $table->tinyInteger('buyone_getone')->default(0);
             $table->tinyInteger('best_rated')->default(0);
             $table->tinyInteger('hot_new')->default(1);
             $table->tinyInteger('trand')->default(0);
