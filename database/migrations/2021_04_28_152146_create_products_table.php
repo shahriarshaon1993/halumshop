@@ -35,7 +35,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('main_slider')->default(0);
             $table->tinyInteger('hot_deal')->default(0);
             $table->tinyInteger('best_rated')->default(0);
-            $table->tinyInteger('hot_new')->default(1);
+            $table->tinyInteger('hot_new')->default(0);
             $table->tinyInteger('trand')->default(0);
 
             $table->string('image_one');
