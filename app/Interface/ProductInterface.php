@@ -5,7 +5,8 @@ namespace App\Interface;
 interface ProductInterface
 {
     public function index();
-    public function create();
+    public function getCategories();
+    public function getBrands();
     public function getSubCategory($category_id);
     public function store($request);
     public function show($id);

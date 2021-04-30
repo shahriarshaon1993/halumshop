@@ -17,11 +17,14 @@ class ProductRepository implements ProductInterface
         return Product::with('category')->select('id', 'product_title', 'product_quantity', 'image_one', 'category_id', 'product_code', 'status')->orderBy('created_at', 'DESC')->paginate(10);
     }
 
-    public function create()
+    public function getCategories()
     {
-        $categories = Category::select('id', 'name')->orderBy('name', 'ASC')->get();
-        $brands = Brand::select('id', 'name')->orderBy('name', 'ASC')->get();
-        return view('backend.products.create', compact('categories', 'brands'));
+        return Category::select('id', 'name')->orderBy('name', 'ASC')->get();
+    }
+
+    public function getBrands()
+    {
+        return Brand::select('id', 'name')->orderBy('name', 'ASC')->get();
     }
 
     public function getSubCategory($category_id)

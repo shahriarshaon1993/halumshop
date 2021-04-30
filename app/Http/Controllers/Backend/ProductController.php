@@ -35,7 +35,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return $this->product->create();
+        $categories = $this->product->getCategories();
+        $brands = $this->product->getBrands();
+
+        return view('backend.products.create', compact('categories', 'brands'));
     }
 
     public function getSubCategory($category_id)

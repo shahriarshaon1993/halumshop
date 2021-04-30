@@ -15,7 +15,7 @@
             </a>
         </h6>
         <div class="card-body bg-gray-200">
-            {{ Form::open(['route' => ['products.store'], 'files' => true]) }}
+            {{ Form::open(['route' => ['products.update'], 'files' => true]) }}
                 <div class="row mg-b-25">
                     <div class="col-md-4">
                         <div class="form-group">
