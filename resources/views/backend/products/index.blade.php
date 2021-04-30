@@ -56,7 +56,7 @@
                                     {{ Form::close() }}
                                 @endif
 
-                                <a href="#" class="btn btn-sm btn-info">
+                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-info">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
                                 <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-warning">

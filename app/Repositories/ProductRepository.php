@@ -100,7 +100,7 @@ class ProductRepository implements ProductInterface
 
     public function show($id)
     {
-        //
+        return Product::find($id);
     }
 
     public function edit($id)
