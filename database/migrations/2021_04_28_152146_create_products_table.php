@@ -41,9 +41,13 @@ class CreateProductsTable extends Migration
             $table->string('image_one');
             $table->string('image_two')->nullable();
             $table->string('image_three')->nullable();
-
             $table->tinyInteger('status')->default(1);
+
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 
