@@ -85,7 +85,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = $this->product->edit($id);
-        return view('backend.products.edit', compact('product'));
+        $categories = $this->product->getCategories();
+        $brands = $this->product->getBrands();
+        $subcategories = $this->product->getSubCategory($product->category_id);
+        return view('backend.products.edit', compact('product', 'categories', 'brands', 'subcategories'));
     }
 
     /**

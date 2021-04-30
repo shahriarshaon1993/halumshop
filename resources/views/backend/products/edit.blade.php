@@ -15,33 +15,33 @@
             </a>
         </h6>
         <div class="card-body bg-gray-200">
-            {{ Form::open(['route' => ['products.update'], 'files' => true]) }}
+            {{ Form::open(['route' => ['products.update', $product->id], 'files' => true]) }}
                 <div class="row mg-b-25">
                     <div class="col-md-4">
                         <div class="form-group">
                             {{ Form::label('product_title', 'Product Title',['class' => 'form-control-label']) }}
-                            {{ Form::text('product_title', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Title']) }}
+                            {{ Form::text('product_title', $product->product_title, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Title']) }}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             {{ Form::label('product_code', 'Product Code',['class' => 'form-control-label']) }}
-                            {{ Form::text('product_code', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Code']) }}
+                            {{ Form::text('product_code', $product->product_code, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Code']) }}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             {{ Form::label('product_quantity', 'Product Quantity',['class' => 'form-control-label']) }}
-                            {{ Form::number('product_quantity', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Quantity']) }}
+                            {{ Form::number('product_quantity', $product->product_quantity, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Quantity']) }}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             {{ Form::label('discount_price', 'Discount Price',['class' => 'form-control-label']) }}
-                            {{ Form::number('discount_price', null, ['class' => 'form-control mb-2', 'placeholder' => 'Discount Price']) }}
+                            {{ Form::number('discount_price', $product->discount_price, ['class' => 'form-control mb-2', 'placeholder' => 'Discount Price']) }}
                         </div>
                     </div>
 
@@ -51,7 +51,11 @@
                             <select id="category_id" name="category_id" class="form-control select2" data-placeholder="Choose Category">
                                 <option label="Choose category"></option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}"
+                                        @if ($category->id == $product->category_id)
+                                            {{ 'selected' }}
+                                        @endif
+                                    >{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -61,7 +65,13 @@
                         <div class="form-group">
                             {{ Form::label('subcategory_id', 'Sub Categories',['class' => 'form-control-label']) }}
                             <select id="subcategory_id" name="subcategory_id" class="form-control select2" data-placeholder="Choose sub category">
-
+                                @foreach ($subcategories as $subcategory)
+                                    <option value="{{ $subcategory->id }}"
+                                        @if ($subcategory->id == $product->subcategory_id)
+                                            {{ 'selected' }}
+                                        @endif
+                                    >{{ $subcategory->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -72,7 +82,11 @@
                             <select id="brand_id" name="brand_id" class="form-control select2" data-placeholder="Choose Brand">
                                 <option label="Choose Brand"></option>
                                 @foreach ($brands as $brand)
-                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                    <option value="{{ $brand->id }}"
+                                        @if ($brand->id == $product->brand_id)
+                                            {{ 'selected' }}
+                                        @endif
+                                    >{{ $brand->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -81,33 +95,35 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('product_size', 'Product Size',['class' => 'form-control-label']) }}
-                            {{ Form::text('product_size', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Size', 'data-role' => 'tagsinput']) }}
+                            {{ Form::text('product_size', $product->product_size, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Size', 'data-role' => 'tagsinput']) }}
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('product_color', 'Product Color',['class' => 'form-control-label']) }}
-                            {{ Form::text('product_color', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Color', 'data-role' => 'tagsinput']) }}
+                            {{ Form::text('product_color', $product->product_color, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Color', 'data-role' => 'tagsinput']) }}
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('selling_price', 'Selling Price',['class' => 'form-control-label']) }}
-                            {{ Form::number('selling_price', null, ['class' => 'form-control mb-2', 'placeholder' => 'Selling Price',]) }}
+                            {{ Form::number('selling_price', $product->selling_price, ['class' => 'form-control mb-2', 'placeholder' => 'Selling Price',]) }}
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         {{ Form::label('summernote', 'Product Details',['class' => 'form-control-label']) }}
-                        <textarea name="product_details" id="summernote" class="form-control"></textarea>
+                        <textarea name="product_details" id="summernote" class="form-control">
+                            {{ $product->product_details }}
+                        </textarea>
                     </div>
 
                     <div class="col-md-12 mt-3">
                         <div class="form-group">
                             {{ Form::label('video_link', 'Video Link',['class' => 'form-control-label']) }}
-                            {{ Form::text('video_link', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Product Video Link',]) }}
+                            {{ Form::text('video_link', $product->video_link, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Product Video Link',]) }}
                         </div>
                     </div>
 
@@ -119,7 +135,7 @@
                                 <span class="custom-file-control custom-file-control-primary"></span>
                             </label>
                             <br><br>
-                            <img id="one">
+                            <img src="{{ asset($product->image_one) }}" id="one" width="120px" height="80">
                         </div>
                     </div>
 
@@ -131,7 +147,7 @@
                                 <span class="custom-file-control custom-file-control-primary"></span>
                             </label>
                             <br><br>
-                            <img id="two">
+                            <img src="{{ asset($product->image_two) }}" id="two" width="120px" height="80">
                         </div>
                     </div>
 
@@ -143,7 +159,7 @@
                                 <span class="custom-file-control custom-file-control-primary"></span>
                             </label>
                             <br><br>
-                            <img id="three">
+                            <img src="{{ asset($product->image_three) }}" id="three" width="120px" height="80">
                         </div>
                     </div>
                 </div>
@@ -153,42 +169,62 @@
                 <div class="row mg-b-25">
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="main_slider">
+                            <input type="checkbox" name="main_slider"
+                                @if ($product->main_slider == 1)
+                                    {{ 'checked' }}
+                                @endif
+                            >
                             <span>Main Slider</span>
                         </label>
                     </div>
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="hot_deal">
+                            <input type="checkbox" name="hot_deal"
+                                @if ($product->hot_deal == 1)
+                                    {{ 'checked' }}
+                                @endif
+                            >
                             <span>Hot Deal</span>
                         </label>
                     </div>
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="best_rated">
+                            <input type="checkbox" name="best_rated"
+                                @if ($product->best_rated == 1)
+                                    {{ 'checked' }}
+                                @endif
+                            >
                             <span>Best Rated</span>
                         </label>
                     </div>
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="hot_new">
+                            <input type="checkbox" name="hot_new"
+                                @if ($product->hot_new == 1)
+                                    {{ 'checked' }}
+                                @endif
+                            >
                             <span>Hot new</span>
                         </label>
                     </div>
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="trand">
+                            <input type="checkbox" name="trand"
+                                @if ($product->trand == 1)
+                                    {{ 'checked' }}
+                                @endif
+                            >
                             <span>Trand</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="form-layout-footer">
-                    <button type="submit" class="btn btn-info mg-r-5">Store</button>
+                    <button type="submit" class="btn btn-info mg-r-5">Update</button>
                 </div>
             {{ Form::close() }}
         </div><!-- card -->
