@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Interface\PostInterface;
 use App\Models\Post;
 use App\Models\PostCategory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
@@ -28,6 +29,7 @@ class PostRepository implements PostInterface
         $image = $request->image;
 
         $post->postcategory_id  = $request->postcategory_id;
+        $post->user_id = Auth::guard('admin')->user()->id;
         $post->title_en = $request->title_en;
         $post->title_bn = $request->title_bn;
         $post->description_en = $request->description_en;
@@ -58,6 +60,7 @@ class PostRepository implements PostInterface
         $image = $request->image;
 
         $post->postcategory_id  = $request->postcategory_id;
+        $post->user_id = Auth::guard('admin')->user()->id;
         $post->title_en = $request->title_en;
         $post->title_bn = $request->title_bn;
         $post->description_en = $request->description_en;
