@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->longText('description_en');
             $table->longText('description_bn');
             $table->string('image');
+            $table->tinyInteger('status')->default(1);
             $table->foreign('postcategory_id')->references('id')->on('post_categories')->onDelete('cascade');
             $table->timestamps();
         });
