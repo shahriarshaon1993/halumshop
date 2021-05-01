@@ -105,7 +105,7 @@ class ProductRepository implements ProductInterface
 
     public function edit($id)
     {
-        return Product::with('category', 'subcategory', 'brand')->find($id);
+        return Product::find($id);
     }
 
     public function update($request, $product)
