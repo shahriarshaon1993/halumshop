@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NewslaterController;
 use App\Http\Controllers\Backend\PostCategoryController;
+use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,11 @@ Route::prefix('admin')->group(function () {
     Route::resource('post-categories', PostCategoryController::class)->except([
         'create', 'show'
     ]);
+
+    // Posts
+    Route::post('posts/inactive/{id}', [PostController::class, 'inactive'])->name('posts.inactive.store');
+    Route::post('posts/active/{id}', [PostController::class, 'active'])->name('posts.active.store');
+    Route::resource('posts', PostController::class);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');

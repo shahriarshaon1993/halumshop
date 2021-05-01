@@ -104,6 +104,12 @@
                 height: 150,
                 tooltip: false
             })
+
+            // Summernote two editor
+            $('#summernote-two').summernote({
+                height: 150,
+                tooltip: false
+            })
         });
     </script>
 
