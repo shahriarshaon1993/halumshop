@@ -23,8 +23,8 @@ class PostCategory extends Model
     public static function boot()
     {
         parent::boot();
-        static::creating(function ($post_category) {
-            $post_category->slug = Str::slug($post_category->name_en);
+        static::creating(function ($postCategory) {
+            $postCategory->slug = Str::slug($postCategory->name_en);
         });
     }
 }

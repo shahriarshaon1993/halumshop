@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NewslaterController;
+use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use Illuminate\Support\Facades\Route;
@@ -65,6 +66,11 @@ Route::prefix('admin')->group(function () {
     Route::post('products/active/{id}', [ProductController::class, 'active'])->name('active.store');
     Route::get('get/subcategory/{category_id}', [ProductController::class, 'getSubCategory']);
     Route::resource('products', ProductController::class);
+
+    // Post Categories
+    Route::resource('post-categories', PostCategoryController::class)->except([
+        'create', 'show'
+    ]);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
