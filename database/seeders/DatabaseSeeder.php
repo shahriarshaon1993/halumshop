@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Newslater::factory(200)->create();
         \App\Models\Product::factory(200)->create();
         \App\Models\PostCategory::factory(10)->create();
+        \App\Models\Post::factory(20)->create();
     }
 }
