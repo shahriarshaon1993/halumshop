@@ -99,7 +99,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->post->destroy($id);
+
+        $notification = array(
+            'message' => 'Post Deleted!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 
     public function inactive($id)

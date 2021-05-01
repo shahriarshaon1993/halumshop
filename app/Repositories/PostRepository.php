@@ -59,7 +59,13 @@ class PostRepository implements PostInterface
 
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        if ($post->image) {
+            unlink($post->image);
+        }
+
+        $post->delete();
     }
 
     public function inactive($id)
