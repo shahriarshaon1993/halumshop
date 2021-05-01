@@ -49,12 +49,28 @@ class PostRepository implements PostInterface
 
     public function edit($id)
     {
-        //
+        return Post::find($id);
     }
 
     public function update($request, $post)
     {
-        //
+        $old_image = $post->image;
+        $image = $request->image;
+
+        $post->postcategory_id  = $request->postcategory_id;
+        $post->title_en = $request->title_en;
+        $post->title_bn = $request->title_bn;
+        $post->description_en = $request->description_en;
+        $post->description_bn = $request->description_bn;
+
+        if ($image) {
+            unlink($old_image);
+            $file_name = uniqid('post_', true) . Str::random(10) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(780, 520)->save('media/posts/' . $file_name);
+            $post->image = 'media/posts/' . $file_name;
+        }
+
+        $post->update();
     }
 
     public function destroy($id)

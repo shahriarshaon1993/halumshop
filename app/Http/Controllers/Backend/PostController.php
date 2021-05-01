@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Interface\PostInterface;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -76,7 +78,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $postCategories = $this->post->create();
+        $post = $this->post->edit($id);
+
+        return view('backend.posts.edit', compact('postCategories', 'post'));
     }
 
     /**
@@ -86,9 +91,16 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $this->post->update($request, $post);
+
+        $notification = array(
+            'message' => 'Post Updated!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('posts.index')->with($notification);
     }
 
     /**
