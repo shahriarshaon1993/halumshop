@@ -101,4 +101,28 @@ class PostController extends Controller
     {
         //
     }
+
+    public function inactive($id)
+    {
+        $this->post->inactive($id);
+
+        $notification = array(
+            'message' => 'Post is inactive',
+            'alert-type' => 'success',
+        );
+
+        return Redirect()->back()->with($notification);
+    }
+
+    public function active($id)
+    {
+        $this->post->active($id);
+
+        $notification = array(
+            'message' => 'Post is active',
+            'alert-type' => 'success',
+        );
+
+        return Redirect()->back()->with($notification);
+    }
 }

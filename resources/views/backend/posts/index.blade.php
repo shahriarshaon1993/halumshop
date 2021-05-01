@@ -45,11 +45,11 @@
                             </td>
                             <td>
                                 @if ($post->status == 1)
-                                    {{ Form::open(['route' => ['inactive.store', $post->id], 'class' => 'd-inline-block']) }}
+                                    {{ Form::open(['route' => ['posts.inactive.store', $post->id], 'class' => 'd-inline-block']) }}
                                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-thumbs-down"></i></button>
                                     {{ Form::close() }}
                                 @else
-                                    {{ Form::open(['route' => ['active.store', $post->id], 'class' => 'd-inline-block']) }}
+                                    {{ Form::open(['route' => ['posts.active.store', $post->id], 'class' => 'd-inline-block']) }}
                                         <button type="submit" class="btn btn-sm btn-info"><i class="fa fa-thumbs-up"></i></button>
                                     {{ Form::close() }}
                                 @endif

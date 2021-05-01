@@ -64,11 +64,17 @@ class PostRepository implements PostInterface
 
     public function inactive($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->status = 0;
+        $post->update();
     }
 
     public function active($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->status = 0;
+        $post->update();
     }
 }
