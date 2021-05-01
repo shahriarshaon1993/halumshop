@@ -46,7 +46,7 @@
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
                 <li class="nav-item"><a href="{{ route('products.index') }}" class="nav-link">All Products</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Add Product</a></li>
+                <li class="nav-item"><a href="{{ route('products.create') }}" class="nav-link">Add Product</a></li>
             </ul>
         </div><!-- sl-sideleft-menu -->
 
