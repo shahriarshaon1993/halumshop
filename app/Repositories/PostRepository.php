@@ -46,7 +46,7 @@ class PostRepository implements PostInterface
 
     public function show($id)
     {
-        //
+        return Post::find($id);
     }
 
     public function edit($id)

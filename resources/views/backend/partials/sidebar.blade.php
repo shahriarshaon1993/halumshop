@@ -57,6 +57,8 @@
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
                 <li class="nav-item"><a href="{{ route('post-categories.index') }}" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">All Posts</a></li>
+                <li class="nav-item"><a href="{{ route('posts.create') }}" class="nav-link">Add Posts</a></li>
             </ul>
         </div><!-- sl-sideleft-menu -->
 

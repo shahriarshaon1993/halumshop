@@ -28,6 +28,11 @@ class Post extends Model
         });
     }
 
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
+
     public function postcategory()
     {
         return $this->belongsTo(PostCategory::class);
