@@ -25,7 +25,7 @@ class PostFactory extends Factory
     {
         return [
             'postcategory_id' => PostCategory::all()->random()->id,
-            'user_id' => Admin::all()->random()->id,
+            'admin_id' => Admin::all()->random()->id,
             'title_en' => $this->faker->unique()->text(30),
             'title_bn' => $this->faker->unique()->text(30),
             'description_en' => $this->faker->realText(),
