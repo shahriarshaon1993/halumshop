@@ -25,7 +25,7 @@ class CreatePostsTable extends Migration
             $table->string('image');
             $table->tinyInteger('status')->default(1);
             $table->foreign('postcategory_id')->references('id')->on('post_categories')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('admins')->onDelete('cascade');
+            $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
             $table->timestamps();
         });
     }
