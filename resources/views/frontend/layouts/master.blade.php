@@ -10,6 +10,9 @@
 </head>
 <body>
 
+    {{-- Sidebar --}}
+    @include('frontend.partials.sidebar')
+
     @include('frontend.partials.header')
 
     @yield('content')
