@@ -319,65 +319,13 @@ body {
 
 // START HEADER SECTION
 
-// START CATEGORY SECTION
-.categories {
-    overflow: hidden;
-    margin-top: 10px;
-
-    .container-fluid {
-        padding-right: 5px;
-    }
-
-    &__item {
-        height: 314px;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-        margin-bottom: 10px;
-        margin-right: 10px;
-
-        &.categories__large__item {
-            height: 638px;
-            padding-left: 70px;
-        }
-    }
-
-    &__text {
-        max-width: 480px;
-
-        h2 {
-            font-size: $big-font-size;
-            font-family: "Cookie", cursive;
-            color: $font-color;
-            margin-bottom: 5px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        a {
-            font-size: 14px;
-            color: $font-color;
-            text-transform: uppercase;
-            font-weight: 600;
-            position: relative;
-            padding: 0 0 3px;
-            display: inline-block;
-
-            &::after {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 2px;
-                width: 100%;
-                background: #ca1515;
-                content: "";
-            }
-        }
+// START BANNER SECTION
+.banner {
+    .carousel-item {
+        height: 420px;
     }
 }
-// END CATEGORY SECTION
+// END BANNER SECTION
 
 // START PRODUCT SECTION
 .product {
