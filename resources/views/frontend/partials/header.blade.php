@@ -19,24 +19,28 @@
                 </a>
             </div>
 
-            {{-- <ul class="sidebar__menu">
-                <hr>
-                <li class="sidebar__menu__item">
-                    <a href="#" class="sidebar__menu__item__link" data-content="Home">Home</a>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="sidebar__menu__item">
-                    <a href="#" class="sidebar__menu__item__link" data-content="About us">About us</a>
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Features</a>
                 </li>
-                <li class="sidebar__menu__item">
-                    <a href="#" class="sidebar__menu__item__link" data-content="Team">Team</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Dropdown link
+                        <i class="fa fa-arrow-right ml-5" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
                 </li>
-                <li class="sidebar__menu__item">
-                    <a href="#" class="sidebar__menu__item__link" data-content="Pricing">Pricing</a>
-                </li>
-                <li class="sidebar__menu__item">
-                    <a href="#" class="sidebar__menu__item__link" data-content="Contact">Contact</a>
-                </li>
-            </ul> --}}
+            </ul>
         </div>
     </div>
 
