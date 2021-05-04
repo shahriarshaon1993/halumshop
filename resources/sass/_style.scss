@@ -55,40 +55,6 @@ body {
     margin-left: auto;
 }
 
-@media (min-width: 500px) {
-    .container,
-    .container-sm {
-        max-width: 100%;
-    }
-}
-
-@media (min-width: 768px) {
-    .container,
-    .container-sm,
-    .container-md {
-        max-width: 100%;
-    }
-}
-
-@media (min-width: 992px) {
-    .container,
-    .container-sm,
-    .container-md,
-    .container-lg {
-        max-width: 100%;
-    }
-}
-
-@media (min-width: 1280px) {
-    .container,
-    .container-sm,
-    .container-md,
-    .container-lg,
-    .container-xl {
-        max-width: 1260px;
-    }
-}
-
 .set-bg {
     background-repeat: no-repeat;
     background-size: cover;
@@ -145,7 +111,7 @@ body {
     }
 }
 
-// START HEADER SECTION
+// START SIDEBAR SECTION
 .hamburger-menu {
     width: 3rem;
     height: 3rem;
@@ -378,16 +344,67 @@ body {
         left: 0;
     }
 }
-// END HEADER SECTION
+// END SIDEBAR SECTION
 
-// START HEADER SECTION NAVBAR
+// START HEADER NAVBAR SECTION
 .header {
     .navbar {
-        .navbar-collapse {
-            .navbar-nav {
-                .nav-item {
-                    .nav-link {
-                        font-size: $normal-font-size;
+        .container {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: space-between;
+
+            .navbar-brand {
+                padding-top: 0.625rem;
+                padding-bottom: 0.625rem;
+                margin-right: 1rem;
+                font-size: calc(1.3rem + 0.6vw);
+                white-space: nowrap;
+
+                img {
+                    display: block;
+                }
+            }
+
+            .navbar-collapse {
+                .navbar-nav {
+                    .nav-item {
+                        .nav-link {
+                            font-size: $normal-font-size;
+                        }
+                    }
+                }
+            }
+
+            .input-group {
+                background-color: #ffffff;
+
+                form {
+                    display: contents;
+                }
+
+                .form-control {
+                    font-size: $normal-font-size;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+                .rounded-end {
+                    border: #fff;
+                }
+
+                .input-group-append {
+                    button {
+                        i {
+                            font-size: $normal-font-size;
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                        }
                     }
                 }
             }
