@@ -301,7 +301,70 @@ body {
 // END SIDEBAR SECTION
 
 // START HEADER NAVBAR SECTION
+.header {
+    .navbar {
+        .container {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: space-between;
 
+            .navbar-brand {
+                padding-top: 0.625rem;
+                padding-bottom: 0.625rem;
+                margin-right: 1rem;
+                font-size: calc(1.3rem + 0.6vw);
+                white-space: nowrap;
+
+                img {
+                    display: block;
+                }
+            }
+
+            .navbar-collapse {
+                .navbar-nav {
+                    .nav-item {
+                        .nav-link {
+                            font-size: $normal-font-size;
+                        }
+                    }
+                }
+            }
+
+            .input-group {
+                background-color: #ffffff;
+
+                form {
+                    display: contents;
+                }
+
+                .form-control {
+                    font-size: $normal-font-size;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+                .rounded-end {
+                    border: #fff;
+                }
+
+                .input-group-append {
+                    button {
+                        i {
+                            font-size: $normal-font-size;
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 // END HEADER SECTION NAVBAR
 
 // START BANNER SECTION
