@@ -8,17 +8,6 @@
         </div>
 
         <div class="sidebar">
-            <div class="sidebar__social-media">
-                <a href="#">
-                    <i class="fa fa-heart"></i>
-                    <span>0</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>0</span>
-                </a>
-            </div>
-
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>

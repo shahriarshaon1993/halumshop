@@ -13742,46 +13742,6 @@ body {
 .sidebar__menu__item__link:hover::before {
   width: 100%;
 }
-.sidebar__social-media {
-  background: #343a40;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
-  position: absolute;
-  padding-right: 2rem;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
-}
-.sidebar__social-media a {
-  position: relative;
-}
-.sidebar__social-media a i {
-  font-size: 2.2rem;
-  margin: 1rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.5s;
-}
-.sidebar__social-media a i:hover {
-  opacity: 0.7;
-}
-.sidebar__social-media a span {
-  position: absolute;
-  top: 8px;
-  font-size: 2rem;
-  right: 6px;
-  color: #f4f4f4;
-}
-.sidebar__social-media a span:hover {
-  opacity: 0.7;
-}
 .sidebar .navbar-nav {
   margin-top: 5.549999rem;
 }
