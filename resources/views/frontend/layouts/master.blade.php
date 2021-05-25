@@ -10,14 +10,7 @@
 </head>
 <body>
 
-    {{-- Sidebar --}}
-    @include('frontend.partials.sidebar')
-
-    @include('frontend.partials.header')
-
-    @yield('content')
-
-    @include('frontend.partials.footer')
+    <h1>Hello</h1>
 
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
