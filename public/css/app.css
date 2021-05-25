@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://fonts.googleapis.com/css2?family=Cookie&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Reggae+One&display=swap);
 /**
  * Swiper 6.5.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -13553,7 +13553,7 @@ h3 {
   }
 }
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -13571,6 +13571,10 @@ ul {
 
 img {
   width: 100%;
+}
+
+.header .navbar-brand {
+  font-family: "Reggae One", cursive;
 }
 
 @media (min-width: 500px) {

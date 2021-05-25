@@ -1,5 +1,5 @@
 body {
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-ubuntu-sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     background-color: #fff;
@@ -18,3 +18,13 @@ ul {
 img {
     width: 100%;
 }
+
+// Header
+.header {
+    .navbar {
+        &-brand {
+            font-family: $font-family-brnad-cursive;
+        }
+    }
+}
+//End Header
