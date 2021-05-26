@@ -13647,6 +13647,37 @@ img {
 .header__sidebar__menu .dropdown .dropdown-toggle::after {
   display: none;
 }
+.header .navbar-collapse .navbar-nav .wishlist,
+.header .navbar-collapse .navbar-nav .cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 0.75rem;
+}
+.header .navbar-collapse .navbar-nav .wishlist a,
+.header .navbar-collapse .navbar-nav .cart a {
+  font-size: 1.3rem;
+}
+.header .navbar-collapse .navbar-nav .wishlist a span,
+.header .navbar-collapse .navbar-nav .cart a span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: #17a2b8;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f4f4f4;
+}
 .header .navbar-collapse .search-box {
   width: 25rem;
 }

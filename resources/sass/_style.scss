@@ -121,6 +121,40 @@ img {
     }
 
     .navbar-collapse {
+        .navbar-nav {
+            .wishlist,
+            .cart {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.75rem;
+                height: 2.75rem;
+                border-radius: 50%;
+                background-color: white;
+                margin-left: 0.75rem;
+
+                a {
+                    font-size: 1.3rem;
+
+                    span {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 1.4rem;
+                        height: 1.4rem;
+                        border-radius: 50%;
+                        background-color: $primary-color;
+                        font-size: 0.75rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $light-color;
+                    }
+                }
+            }
+        }
+
         .search-box {
             width: 25rem;
 
