@@ -9,6 +9,10 @@ body {
 a {
     text-decoration: none;
     color: $primary-color;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 ul {
@@ -26,5 +30,61 @@ img {
             font-family: $font-family-brnad-cursive;
         }
     }
+
+    &__sidebar {
+        width: 20rem;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -40rem;
+        background-color: $dark-color;
+        transition: left 0.5s;
+        z-index: 100;
+
+        &__top {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid darkslategray;
+
+            .close-btn {
+                font-size: 1.75rem;
+                background: transparent;
+                border-color: transparent;
+                color: $danger-color;
+                transition: all 0.3s linear;
+                cursor: pointer;
+
+                &:hover {
+                    color: $success-color;
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        &__menu {
+            padding: 0;
+
+            &__item {
+                &__link {
+                    display: block;
+                    font-size: 1rem;
+                    text-transform: capitalize;
+                    padding: 0.5rem 1rem;
+                    color: $light-color;
+                    transition: all 0.3s linear;
+
+                    &:hover {
+                        background: $primary-color;
+                        color: $dark-color;
+                        padding-left: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.change .header__sidebar {
+    left: 0;
 }
 //End Header

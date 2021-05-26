@@ -75,6 +75,33 @@
                     </ul>
                 </div>
 
+                <div class="header__sidebar">
+                    <div class="header__sidebar__top">
+                        {{--Navbar Brand --}}
+                        <a class="navbar-brand" href="#"><span style="color: #17a2b8;">Halum</span>shop</a>
+                        <button class="close-btn"><i class="fa fa-times"></i></button>
+                    </div>
+                    <ul class="header__sidebar__menu">
+                        <li class="header__sidebar__menu__item">
+                            <a href="#" class="header__sidebar__menu__item__link">Home</a>
+                        </li>
+                        <li class="header__sidebar__menu__item">
+                            <a href="#" class="header__sidebar__menu__item__link">About Us</a>
+                        </li>
+                        <li class="header__sidebar__menu__item">
+                            <a href="#" class="header__sidebar__menu__item__link">Team</a>
+                        </li>
+                        <li class="header__sidebar__menu__item">
+                            <a href="#" class="header__sidebar__menu__item__link">Pricing</a>
+                        </li>
+                    </ul>
+                    <div class="header__sidebar__media">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+
             </div>
         </nav>
     </header>
