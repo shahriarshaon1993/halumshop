@@ -13647,6 +13647,20 @@ img {
 .header__sidebar__menu .dropdown .dropdown-toggle::after {
   display: none;
 }
+.header .navbar-collapse .search-box {
+  width: 25rem;
+}
+.header .navbar-collapse .search-box .form-inline {
+  position: relative;
+  width: 100%;
+}
+.header .navbar-collapse .search-box .form-inline input {
+  width: 100%;
+}
+.header .navbar-collapse .search-box .form-inline button {
+  position: absolute;
+  right: 9px;
+}
 
 .change .header__sidebar {
   left: 0;

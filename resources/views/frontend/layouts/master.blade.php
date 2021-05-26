@@ -30,31 +30,16 @@
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
+                    <ul class="navbar-nav search-box ml-3">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search">
+                            <button class="btn btn-outline-muted my-2 my-sm-0" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
                     </ul>
 
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" title="Search">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="#" title="Wishlist">
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -67,6 +52,19 @@
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 <span>1</span>
                             </a>
+                        </li>
+
+                        <li class="btn-group ml-4" role="group" aria-label="Button group with nested dropdown">
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Lng
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="#">Bangla</a>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </div>
+                            </div>
                         </li>
 
                         <li class="nav-item ml-3">

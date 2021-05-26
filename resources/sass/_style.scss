@@ -119,6 +119,26 @@ img {
             }
         }
     }
+
+    .navbar-collapse {
+        .search-box {
+            width: 25rem;
+
+            .form-inline {
+                position: relative;
+                width: 100%;
+
+                input {
+                    width: 100%;
+                }
+
+                button {
+                    position: absolute;
+                    right: 9px;
+                }
+            }
+        }
+    }
 }
 
 .change .header__sidebar {
