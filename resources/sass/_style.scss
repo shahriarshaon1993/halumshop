@@ -25,6 +25,12 @@ img {
 
 // Header
 .header {
+    .hamburger__menu {
+        &__link {
+            font-size: 1.5rem;
+        }
+    }
+
     .navbar {
         &-brand {
             font-family: $font-family-brnad-cursive;
@@ -69,14 +75,45 @@ img {
                     display: block;
                     font-size: 1rem;
                     text-transform: capitalize;
-                    padding: 0.5rem 1rem;
+                    padding: 0.4rem 2rem;
                     color: $light-color;
                     transition: all 0.3s linear;
 
                     &:hover {
                         background: $primary-color;
                         color: $dark-color;
-                        padding-left: 1.2rem;
+                        padding-left: 2.2rem;
+                    }
+                }
+            }
+
+            .dropdown {
+                .dropdown-menu {
+                    top: -3px;
+                    left: 19.9rem;
+                    width: 10rem;
+                    border-radius: 0;
+                    background-color: $dark-color;
+
+                    .dropdown-item {
+                        color: $light-color;
+                        transition: all 0.3s linear;
+
+                        &:hover {
+                            background: $primary-color;
+                            color: $dark-color;
+                            padding-left: 1.8rem;
+                        }
+                    }
+                }
+
+                .dropdown-toggle {
+                    i {
+                        margin-left: 5rem;
+                    }
+
+                    &::after {
+                        display: none;
                     }
                 }
             }

@@ -13576,6 +13576,9 @@ img {
   width: 100%;
 }
 
+.header .hamburger__menu__link {
+  font-size: 1.5rem;
+}
 .header .navbar-brand {
   font-family: "Reggae One", cursive;
 }
@@ -13613,14 +13616,36 @@ img {
   display: block;
   font-size: 1rem;
   text-transform: capitalize;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 2rem;
   color: #f4f4f4;
   transition: all 0.3s linear;
 }
 .header__sidebar__menu__item__link:hover {
   background: #17a2b8;
   color: #343a40;
-  padding-left: 1.2rem;
+  padding-left: 2.2rem;
+}
+.header__sidebar__menu .dropdown .dropdown-menu {
+  top: -3px;
+  left: 19.9rem;
+  width: 10rem;
+  border-radius: 0;
+  background-color: #343a40;
+}
+.header__sidebar__menu .dropdown .dropdown-menu .dropdown-item {
+  color: #f4f4f4;
+  transition: all 0.3s linear;
+}
+.header__sidebar__menu .dropdown .dropdown-menu .dropdown-item:hover {
+  background: #17a2b8;
+  color: #343a40;
+  padding-left: 1.8rem;
+}
+.header__sidebar__menu .dropdown .dropdown-toggle i {
+  margin-left: 5rem;
+}
+.header__sidebar__menu .dropdown .dropdown-toggle::after {
+  display: none;
 }
 
 .change .header__sidebar {
