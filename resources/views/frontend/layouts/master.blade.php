@@ -12,7 +12,7 @@
 
     {{-- Header --}}
     <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container">
                 {{-- Hamburger Menu --}}
                 <div class="hamburger__menu mr-3" title="Sidebar">
@@ -86,11 +86,11 @@
                             <a href="#" class="header__sidebar__menu__item__link">Pricing</a>
                         </li>
                     </ul>
-                    <div class="header__sidebar__media">
+                    <!--<div class="header__sidebar__media">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
