@@ -13723,6 +13723,46 @@ img {
   left: 0;
 }
 
+.banner .carousel {
+  margin-bottom: 4rem;
+}
+.banner .carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.banner .carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.banner .carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+.banner .carousel-control-prev {
+  justify-content: start;
+}
+.banner .carousel-control-next {
+  justify-content: end;
+}
+.banner .carousel-control-prev,
+.banner .carousel-control-next {
+  opacity: 1;
+}
+.banner .carousel-control-prev span:first-child,
+.banner .carousel-control-next span:first-child {
+  width: 3rem;
+  height: 2rem;
+  background: #fff;
+  color: #343a40;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 500px) {
   .container,
 .container-sm {
