@@ -133,6 +133,11 @@ img {
                 border-radius: 50%;
                 background-color: white;
                 margin-left: 0.75rem;
+                transition: all 0.3s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
 
                 a {
                     font-size: 1.3rem;
@@ -162,13 +167,44 @@ img {
                 position: relative;
                 width: 100%;
 
-                input {
+                .search-product {
                     width: 100%;
+
+                    &:active,
+                    &:focus {
+                        outline: none !important;
+                        box-shadow: none;
+                    }
                 }
 
                 button {
                     position: absolute;
                     right: 9px;
+
+                    &:active,
+                    &:focus {
+                        outline: none !important;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        .user-btn {
+            button {
+                border-radius: 0 !important;
+                border: none !important;
+                transition: all 0.3s;
+
+                &:active,
+                &:focus {
+                    border: none !important;
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
                 }
             }
         }

@@ -13658,6 +13658,11 @@ img {
   border-radius: 50%;
   background-color: white;
   margin-left: 0.75rem;
+  transition: all 0.3s;
+}
+.header .navbar-collapse .navbar-nav .wishlist:hover,
+.header .navbar-collapse .navbar-nav .cart:hover {
+  transform: translateY(-2px);
 }
 .header .navbar-collapse .navbar-nav .wishlist a,
 .header .navbar-collapse .navbar-nav .cart a {
@@ -13685,12 +13690,33 @@ img {
   position: relative;
   width: 100%;
 }
-.header .navbar-collapse .search-box .form-inline input {
+.header .navbar-collapse .search-box .form-inline .search-product {
   width: 100%;
+}
+.header .navbar-collapse .search-box .form-inline .search-product:active, .header .navbar-collapse .search-box .form-inline .search-product:focus {
+  outline: none !important;
+  box-shadow: none;
 }
 .header .navbar-collapse .search-box .form-inline button {
   position: absolute;
   right: 9px;
+}
+.header .navbar-collapse .search-box .form-inline button:active, .header .navbar-collapse .search-box .form-inline button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+.header .navbar-collapse .user-btn button {
+  border-radius: 0 !important;
+  border: none !important;
+  transition: all 0.3s;
+}
+.header .navbar-collapse .user-btn button:active, .header .navbar-collapse .user-btn button:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.header .navbar-collapse .user-btn button:hover {
+  transform: translateY(-2px);
 }
 
 .change .header__sidebar {

@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav search-box ml-3">
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search products" aria-label="Search">
+                            <input class="form-control mr-sm-2 search-product" type="search" placeholder="Search products" aria-label="Search">
                             <button class="btn btn-outline-muted my-2 my-sm-0" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
@@ -54,21 +54,10 @@
                             </a>
                         </li>
 
-                        <li class="btn-group ml-4" role="group" aria-label="Button group with nested dropdown">
-                            <div class="btn-group" role="group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Lng
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                    <a class="dropdown-item" href="#">Bangla</a>
-                                    <a class="dropdown-item" href="#">English</a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="nav-item ml-3">
-                            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Login</button>
+                        <li class="nav-item ml-3 user-btn">
+                            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Login
+                            </button>
                         </li>
                     </ul>
                 </div>
