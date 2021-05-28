@@ -100,6 +100,7 @@
 
     {{-- Main --}}
     <main role="main">
+        {{-- Banner --}}
         <section class="banner">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -146,6 +147,210 @@
                 </a>
             </div>
         </section>
+        {{--End Banner --}}
+
+        {{-- Products --}}
+        <section class="product spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-between">
+                        <div class="section-title">
+                            <h4>Products</h4>
+                        </div>
+                        <div class="section-button">
+                            <a href="#" class="btn btn-info">View all &#10141;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
+                                </a>
+                                <span class="product-sale-label">sale!</span>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Shirt</a></h3>
+                                <div class="price"><span>$28.00</span>$20.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{--End Products --}}
     </main>
     {{--End Main --}}
 
