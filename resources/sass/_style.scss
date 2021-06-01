@@ -488,7 +488,7 @@ img {
 .category {
     padding-top: 60px;
     padding-bottom: 50px;
-    background-color: azure;
+    background-color: $section-bg;
 
     .section-title {
         margin-top: 7rem;
@@ -502,3 +502,25 @@ img {
         }
     }
 }
+
+// Best Rated
+.best-rated {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+//End Best Rated
+
+// Hot Deal
+.hot-deal {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    background-color: $section-bg;
+}
+// End Hot Deal
+
+// trand
+.trand {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+// end trand

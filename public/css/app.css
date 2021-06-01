@@ -14015,6 +14015,22 @@ img {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
 }
 
+.best-rated {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.hot-deal {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: azure;
+}
+
+.trand {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
 @media (min-width: 500px) {
   .container,
 .container-sm {

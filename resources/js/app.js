@@ -4,10 +4,10 @@ require('./main');
 // import Swiper JS
 import Swiper from 'swiper';
 
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.category-container', {
     slidesPerView: 4,
     centeredSlides: true,
-    spaceBetween: 10,
+    spaceBetween: 30,
     grabCursor: true,
     pagination: {
         el: '.swiper-pagination',
