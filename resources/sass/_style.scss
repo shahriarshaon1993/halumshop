@@ -54,6 +54,25 @@ img {
     }
 }
 
+.asaid {
+    position: relative;
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    img {
+        transition: all 0.5s;
+    }
+
+    &:hover {
+        img {
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+    }
+}
+
 // Header
 .header {
     .hamburger__menu {
@@ -464,3 +483,22 @@ img {
     padding-bottom: 50px;
 }
 // End Products
+
+// Categories
+.category {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    background-color: azure;
+
+    .section-title {
+        margin-top: 7rem;
+    }
+
+    .card {
+        transition: all 0.5s;
+
+        &:hover {
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+    }
+}

@@ -13605,6 +13605,20 @@ img {
   content: "";
 }
 
+.asaid {
+  position: relative;
+}
+.asaid h2 {
+  text-transform: uppercase;
+}
+.asaid img {
+  transition: all 0.5s;
+}
+.asaid:hover img {
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
 .header .hamburger__menu__link {
   font-size: 1.5rem;
 }
@@ -13984,6 +13998,21 @@ img {
 .product {
   padding-top: 60px;
   padding-bottom: 50px;
+}
+
+.category {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: azure;
+}
+.category .section-title {
+  margin-top: 7rem;
+}
+.category .card {
+  transition: all 0.5s;
+}
+.category .card:hover {
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 500px) {

@@ -351,6 +351,90 @@
             </div>
         </section>
         {{--End Products --}}
+        <section class="category spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 order-md-2">
+                        <div class="section-title">
+                            <h4>Categories</h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide col-md-4">
+                                        <div class="card p-3 text-center border-0">
+                                             <div class="card-body">
+                                                <img src="{{ asset('photos/img25.jpg') }}">
+                                                <hr/>
+                                                <h2 class="card-title display-1" style="font-size:3.0vmin;">
+                                                    <a href="#">Saving Account</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide col-md-4">
+                                        <div class="card p-3 text-center border-0">
+                                             <div class="card-body">
+                                                <img src="{{ asset('photos/img25.jpg') }}">
+                                                <hr/>
+                                                <h2 class="card-title display-1" style="font-size:3.0vmin;">
+                                                    <a href="#">Saving Account</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide col-md-4">
+                                        <div class="card p-3 text-center border-0">
+                                             <div class="card-body">
+                                                <img src="{{ asset('photos/img25.jpg') }}">
+                                                <hr/>
+                                                <h2 class="card-title display-1" style="font-size:3.0vmin;">
+                                                    <a href="#">Saving Account</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide col-md-4">
+                                        <div class="card p-3 text-center border-0">
+                                             <div class="card-body">
+                                                <img src="{{ asset('photos/img25.jpg') }}">
+                                                <hr/>
+                                                <h2 class="card-title display-1" style="font-size:3.0vmin;">
+                                                    <a href="#">Saving Account</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide col-md-4">
+                                        <div class="card p-3 text-center border-0">
+                                             <div class="card-body">
+                                                <img src="{{ asset('photos/img25.jpg') }}">
+                                                <hr/>
+                                                <h2 class="card-title display-1" style="font-size:3.0vmin;">
+                                                    <a href="#">Saving Account</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 order-md-1 asaid">
+                        <img src="{{ asset('photos/img-1.jpg') }}" class="featurette-image img-fluid mx-auto" alt="Category Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{-- Categories --}}
+
+        {{-- End Categories --}}
     </main>
     {{--End Main --}}
 
