@@ -768,6 +768,85 @@
             </div>
         </section>
         {{-- End Trand --}}
+
+        {{-- Blog --}}
+        <section class="blog spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-between">
+                        <div class="section-title">
+                            <h4>Blog</h4>
+                        </div>
+                        <div class="section-button">
+                            <a href="#" class="btn btn-info">View all &#10141;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog__single__latest">
+                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(50).jpg" alt="Blog Image">
+                            <div class="blog__single__latest__text p-2">
+                                <div class="blog__single__latest__text__tag">
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-calendar-o"></i>
+                                        May 4,2019
+                                    </div>
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-comment-o"></i>
+                                        8
+                                    </div>
+                                </div>
+                                <a href=""><h4>The Best Street Style From London Fashion Week</h4></a>
+                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog__single__latest">
+                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(20).jpg" alt="Blog Image">
+                            <div class="blog__single__latest__text p-2">
+                                <div class="blog__single__latest__text__tag">
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-calendar-o"></i>
+                                        May 4,2019
+                                    </div>
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-comment-o"></i>
+                                        10
+                                    </div>
+                                </div>
+                                <a href=""><h4>The Best Street Style From London Fashion Week</h4></a>
+                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog__single__latest">
+                            <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(13).jpg" alt="Blog Image">
+                            <div class="blog__single__latest__text p-2">
+                                <div class="blog__single__latest__text__tag">
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-calendar-o"></i>
+                                        May 4,2019
+                                    </div>
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-comment-o"></i>
+                                        5
+                                    </div>
+                                </div>
+                                <a href=""><h4>The Best Street Style From London Fashion Week</h4></a>
+                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{-- End Blog --}}
     </main>
     {{--End Main --}}
 

@@ -13568,6 +13568,14 @@ a:hover {
   text-decoration: none;
 }
 
+p {
+  font-size: 1rem;
+  color: #636363;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 0 0 15px 0;
+}
+
 ul {
   list-style: none;
 }
@@ -14029,6 +14037,38 @@ img {
 .trand {
   padding-top: 60px;
   padding-bottom: 50px;
+}
+
+.blog {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: azure;
+}
+.blog__single__latest {
+  margin-bottom: 25px;
+  transition: all 0.5s;
+}
+.blog__single__latest:hover {
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+.blog__single__latest img {
+  max-width: 100%;
+}
+.blog__single__latest__text {
+  padding-top: 25px;
+}
+.blog__single__latest__text__tag {
+  margin-bottom: 8px;
+}
+.blog__single__latest__text__tag__item {
+  font-size: 1rem;
+  color: #a2a1a1;
+  display: inline-block;
+  margin-right: 15px;
+}
+.blog__single__latest__text a {
+  display: block;
+  color: #343a40;
 }
 
 @media (min-width: 500px) {

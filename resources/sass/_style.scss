@@ -15,6 +15,14 @@ a {
     }
 }
 
+p {
+    font-size: 1rem;
+    color: #636363;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 0 0 15px 0;
+}
+
 ul {
     list-style: none;
 }
@@ -524,3 +532,44 @@ img {
     padding-bottom: 50px;
 }
 // end trand
+
+// Blog
+.blog {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    background-color: $section-bg;
+
+    &__single__latest {
+        margin-bottom: 25px;
+        transition: all 0.5s;
+
+        &:hover {
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        &__text {
+            padding-top: 25px;
+
+            &__tag {
+                margin-bottom: 8px;
+
+                &__item {
+                    font-size: 1rem;
+                    color: #a2a1a1;
+                    display: inline-block;
+                    margin-right: 15px;
+                }
+            }
+
+            a {
+                display: block;
+                color: $dark-color;
+            }
+        }
+    }
+}
+// End Blog
