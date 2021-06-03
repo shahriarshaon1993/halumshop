@@ -30,11 +30,6 @@ class RepositoriesServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            SubCategoryInterface::class,
-            SubCategoryRepository::class,
-        );
-
-        $this->app->bind(
             BrandInterface::class,
             BrandRepository::class,
         );

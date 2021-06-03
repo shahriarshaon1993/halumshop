@@ -42,11 +42,6 @@ Route::prefix('admin')->group(function () {
         'create', 'show'
     ]);
 
-    // Subcategories
-    Route::resource('subcategories', SubcategoryController::class)->except([
-        'create', 'show'
-    ]);
-
     // Brands
     Route::resource('brands', BrandController::class)->except([
         'create', 'show'
