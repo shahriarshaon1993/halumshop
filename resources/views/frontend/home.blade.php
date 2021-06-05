@@ -50,189 +50,49 @@
             </div>
 
             <div class="row">
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($products as $product)
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
+                                </a>
 
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                                @if ($product->discount_price == NULL || $product->hot_new == 1)
+                                    <span class="product-sale-label">new!</span>
+                                @else
+                                    <span class="product-sale-label">
+                                        @php
+                                            $amount = $product->selling_price - $product->discount_price;
+                                            $discount = $amount/$product->selling_price*100;
+                                        @endphp
+                                        {{ intval($discount) }}%
+                                    </span>
+                                @endif
 
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
+                                @if ($product->discount_price == NULL)
+                                    <div class="price">৳ {{ $product->selling_price }}</div>
+                                @else
+                                    <div class="price">
+                                        <span>৳ {{ $product->selling_price }}</span>
+                                        ৳ {{ $product->discount_price }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 mt-4">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -337,97 +197,49 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($best_rated as $product)
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
+                                </a>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                                @if ($product->discount_price == NULL || $product->hot_new == 1)
+                                    <span class="product-sale-label">new!</span>
+                                @else
+                                    <span class="product-sale-label">
+                                        @php
+                                            $amount = $product->selling_price - $product->discount_price;
+                                            $discount = $amount/$product->selling_price*100;
+                                        @endphp
+                                        {{ intval($discount) }}%
+                                    </span>
+                                @endif
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
+                                @if ($product->discount_price == NULL)
+                                    <div class="price">৳ {{ $product->selling_price }}</div>
+                                @else
+                                    <div class="price">
+                                        <span>৳ {{ $product->selling_price }}</span>
+                                        ৳ {{ $product->discount_price }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -447,97 +259,49 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($hot_deal as $product)
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
+                                </a>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                                @if ($product->discount_price == NULL || $product->hot_new == 1)
+                                    <span class="product-sale-label">new!</span>
+                                @else
+                                    <span class="product-sale-label">
+                                        @php
+                                            $amount = $product->selling_price - $product->discount_price;
+                                            $discount = $amount/$product->selling_price*100;
+                                        @endphp
+                                        {{ intval($discount) }}%
+                                    </span>
+                                @endif
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
+                                @if ($product->discount_price == NULL)
+                                    <div class="price">৳ {{ $product->selling_price }}</div>
+                                @else
+                                    <div class="price">
+                                        <span>৳ {{ $product->selling_price }}</span>
+                                        ৳ {{ $product->discount_price }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -557,97 +321,49 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($trands as $product)
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
+                                    <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
+                                </a>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                                @if ($product->discount_price == NULL || $product->hot_new == 1)
+                                    <span class="product-sale-label">new!</span>
+                                @else
+                                    <span class="product-sale-label">
+                                        @php
+                                            $amount = $product->selling_price - $product->discount_price;
+                                            $discount = $amount/$product->selling_price*100;
+                                        @endphp
+                                        {{ intval($discount) }}%
+                                    </span>
+                                @endif
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                </ul>
+                                <div class="product-rating">
+                                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
+                                @if ($product->discount_price == NULL)
+                                    <div class="price">৳ {{ $product->selling_price }}</div>
+                                @else
+                                    <div class="price">
+                                        <span>৳ {{ $product->selling_price }}</span>
+                                        ৳ {{ $product->discount_price }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#" class="image">
-                                <img class="pic-1" src="{{ asset('photos/img25.jpg') }}" alt="product image 1">
-                                <img class="pic-2" src="{{ asset('photos/img26.jpg') }}" alt="product image 2">
-                            </a>
-                            <span class="product-sale-label">sale!</span>
-                            <ul class="social">
-                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                            </ul>
-                            <div class="product-rating">
-                                <a class="add-to-cart" href="#"> ADD TO CART </a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price"><span>$28.00</span>$20.00</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -668,65 +384,27 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog__single__latest">
-                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(50).jpg" alt="Blog Image">
-                        <div class="blog__single__latest__text p-2">
-                            <div class="blog__single__latest__text__tag">
-                                <div class="blog__single__latest__text__tag__item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
+                @foreach ($posts as $post)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog__single__latest">
+                            <img src="{{ $post->image }}" alt="Blog Image">
+                            <div class="blog__single__latest__text p-2">
+                                <div class="blog__single__latest__text__tag">
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-calendar-o"></i>
+                                        {{ $post->created_at->format('F d, Y') }}
+                                    </div>
+                                    <div class="blog__single__latest__text__tag__item">
+                                        <i class="fa fa-comment-o"></i>
+                                        8
+                                    </div>
                                 </div>
-                                <div class="blog__single__latest__text__tag__item">
-                                    <i class="fa fa-comment-o"></i>
-                                    8
-                                </div>
+                                <a href=""><h4>{{ $post->title_en }}</h4></a>
+                                <p>{{ Str::limit($post->description_en, 80) }}</p>
                             </div>
-                            <a href=""><h4>The Best Street Style From London Fashion Week</h4></a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog__single__latest">
-                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(20).jpg" alt="Blog Image">
-                        <div class="blog__single__latest__text p-2">
-                            <div class="blog__single__latest__text__tag">
-                                <div class="blog__single__latest__text__tag__item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="blog__single__latest__text__tag__item">
-                                    <i class="fa fa-comment-o"></i>
-                                    10
-                                </div>
-                            </div>
-                            <a href=""><h4>The Best Street Style From London Fashion Week</h4></a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog__single__latest">
-                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(13).jpg" alt="Blog Image">
-                        <div class="blog__single__latest__text p-2">
-                            <div class="blog__single__latest__text__tag">
-                                <div class="blog__single__latest__text__tag__item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="blog__single__latest__text__tag__item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>
-                            <a href=""><h4>The Best Street Style From London Fashion Week</h4></a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

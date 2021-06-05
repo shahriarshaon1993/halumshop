@@ -58,8 +58,9 @@
                 <div class="footer__newslatter__item">
                     <h5>Join Our Newsletter Now</h5>
                     <p>Get E-mail updates about our latest shop and special offers.</p>
-                    <form action="#" class="footer__newslatter__item__form">
-                        <input type="text" name="" id="" placeholder="Enter Your Mail">
+                    <form method="POST" action="{{ route('newsletter.store') }}" class="footer__newslatter__item__form">
+                        @csrf
+                        {{ Form::text('email', null, ['placeholder' => 'Enter Your Mail']) }}
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>
