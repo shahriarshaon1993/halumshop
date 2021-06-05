@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\NewslaterController;
 use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -72,6 +73,11 @@ Route::prefix('admin')->group(function () {
     Route::post('posts/inactive/{id}', [PostController::class, 'inactive'])->name('posts.inactive.store');
     Route::post('posts/active/{id}', [PostController::class, 'active'])->name('posts.active.store');
     Route::resource('posts', PostController::class);
+
+    // Sliders
+    Route::post('sliders/inactive/{id}', [SliderController::class, 'inactive'])->name('sliders.inactive.store');
+    Route::post('sliders/active/{id}', [SliderController::class, 'active'])->name('sliders.active.store');
+    Route::resource('sliders', SliderController::class);
 });
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');

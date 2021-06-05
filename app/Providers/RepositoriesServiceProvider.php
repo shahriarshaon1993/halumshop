@@ -9,6 +9,7 @@ use App\Interface\PostCategoryInterface;
 use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
 use App\Interface\RepoInterface;
+use App\Interface\SliderInterface;
 use App\Interface\SubCategoryInterface;
 use App\Repositories\BrandRepository;
 use App\Repositories\CategoryRepository;
@@ -17,6 +18,7 @@ use App\Repositories\NewslatterRepository;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
+use App\Repositories\SliderRepository;
 use App\Repositories\SubCategoryRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -57,6 +59,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             PostInterface::class,
             PostRepository::class,
+        );
+
+        $this->app->bind(
+            SliderInterface::class,
+            SliderRepository::class,
         );
     }
 }
