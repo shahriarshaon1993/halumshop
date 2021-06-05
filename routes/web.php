@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubcategoryController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,9 +83,8 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+// Home Controller for home page route
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::fallback(function () {
     return '404 NOT FOUND';

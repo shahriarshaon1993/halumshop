@@ -1,6 +1,40 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
+    {{-- Banner --}}
+    <section class="banner">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @foreach ($sliders as $key => $slider)
+                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"></li>
+                @endforeach
+            </ol>
+            <div class="carousel-inner">
+                @foreach ($sliders as $key => $slider)
+                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                        <img class="first-slide" src="{{ asset($slider->image) }}" alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption text-left">
+                                <h1>{{ $slider->title }}</h1>
+                                <p>{!! $slider->description !!}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    {{--End Banner --}}
+
     {{-- Products --}}
     <section class="product spad">
         <div class="container">

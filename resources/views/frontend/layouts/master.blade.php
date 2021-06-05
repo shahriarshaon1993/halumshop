@@ -17,8 +17,6 @@
     {{-- Main --}}
     <main role="main">
 
-        @include('frontend.partials.slider')
-
         @yield('content')
 
         @include('frontend.partials.footer')
