@@ -6,7 +6,6 @@ use App\Interface\ProductInterface;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Subcategory;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
@@ -19,7 +18,7 @@ class ProductRepository implements ProductInterface
 
     public function getCategories()
     {
-        return Category::select('id', 'name')->orderBy('name', 'ASC')->get();
+        return Category::where('category_id', NULL)->select('id', 'name')->orderBy('name', 'ASC')->get();
     }
 
     public function getBrands()
@@ -29,7 +28,10 @@ class ProductRepository implements ProductInterface
 
     public function getSubCategory($category_id)
     {
-        return Subcategory::select('id', 'name')->where('category_id', $category_id)->get();
+        return Category::with('child_category')
+            ->select('id', 'name')
+            ->where('category_id', $category_id)
+            ->get();
     }
 
     public function store($request)
