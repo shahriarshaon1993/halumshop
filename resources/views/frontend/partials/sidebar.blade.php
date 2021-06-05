@@ -4,8 +4,32 @@
         <a class="navbar-brand" href="#"><span style="color: #17a2b8;">Halum</span>shop</a>
         <button class="close-btn"><i class="fa fa-times"></i></button>
     </div>
+
+    @php
+        $categories = App\Models\Category::with('child_category')->where('category_id', NULL)->get();
+    @endphp
+
     <ul class="header__sidebar__menu">
-        <li class="header__sidebar__menu__item">
+        @foreach ($categories as $category)
+            @if ($category->child_category->count() > 0)
+                <li class="header__sidebar__menu__item dropdown">
+                    <a href="#" class="header__sidebar__menu__item__link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ $category->name }}  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach ($category->child_category as $subcategory)
+                            <a class="dropdown-item" href="#">{{ $subcategory->name }}</a>
+                        @endforeach
+                    </div>
+                </li>
+            @else
+                <li class="header__sidebar__menu__item">
+                    <a href="#" class="header__sidebar__menu__item__link">{{ $category->name }}</a>
+                </li>
+            @endif
+
+        @endforeach
+        {{-- <li class="header__sidebar__menu__item">
             <a href="#" class="header__sidebar__menu__item__link">Home</a>
         </li>
         <li class="header__sidebar__menu__item dropdown">
@@ -20,7 +44,7 @@
         </li>
         <li class="header__sidebar__menu__item">
             <a href="#" class="header__sidebar__menu__item__link">Pricing</a>
-        </li>
+        </li> --}}
     </ul>
     <!--<div class="header__sidebar__media">
         <a href="#"><i class="fa fa-facebook"></i></a>

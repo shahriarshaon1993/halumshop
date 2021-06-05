@@ -13702,9 +13702,6 @@ img {
   color: #343a40;
   padding-left: 1.8rem;
 }
-.header__sidebar__menu .dropdown .dropdown-toggle i {
-  margin-left: 5rem;
-}
 .header__sidebar__menu .dropdown .dropdown-toggle::after {
   display: none;
 }
