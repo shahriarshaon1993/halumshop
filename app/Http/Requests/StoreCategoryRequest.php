@@ -25,7 +25,6 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => "required|min:3|max:60|unique:categories",
-            'banner' => 'mimes:jpg,png,jpeg,gif,svg|max:2048'
         ];
     }
 }

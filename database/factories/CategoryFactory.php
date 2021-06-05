@@ -23,7 +23,6 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->realText(15),
-            'banner' => $this->faker->imageUrl(),
         ];
     }
 }

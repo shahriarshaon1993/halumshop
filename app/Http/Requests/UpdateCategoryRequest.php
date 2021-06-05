@@ -25,8 +25,7 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => "required|min:3|max:60|unique:categories,name,{$this->category->id}",
-            'banner' => 'mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'name' => "required|min:3|max:60|unique:categories,name,{$this->category->id}"
         ];
     }
 }

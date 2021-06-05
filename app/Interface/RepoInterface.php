@@ -9,4 +9,5 @@ interface RepoInterface
     public function edit($id);
     public function update($request, $category);
     public function destroy($id);
+    public function subcategories();
 }

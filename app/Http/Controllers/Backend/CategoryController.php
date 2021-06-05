@@ -23,7 +23,9 @@ class CategoryController extends Controller
     {
         $categories = $this->category->index();
 
-        return view('backend.category.index', compact('categories'));
+        $subcategories = $this->category->subcategories();
+
+        return view('backend.category.index', compact('categories', 'subcategories'));
     }
 
     public function store(StoreCategoryRequest $request)
@@ -41,8 +43,9 @@ class CategoryController extends Controller
     public function edit($slug)
     {
         $category = $this->category->edit($slug);
+        $categories = $this->category->index();
 
-        return view('backend.category.edit', compact('category'));
+        return view('backend.category.edit', compact('category', 'categories'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)

@@ -25,14 +25,20 @@
                             {{ Form::text('name', $category->name, ['class' => 'form-control mb-2']) }}
                         </div>
 
-                        <div class="form-group">
-                            <label class="custom-file" for="banner">
-                                <input type="file" name="banner" id="banner" class="form-control custom-file-input" onchange="readURL(this)">
-                                <span class="custom-file-control custom-file-control-primary"></span>
-                            </label>
-                            <br><br>
-                            <img src="{{ asset($category->banner) }}" alt="Category Banner" id="one" width="120px" height="80px">
-                        </div>
+                        @if ($category->category_id != NUll)
+                            <div class="form-group">
+                                {{ Form::label('category_id', 'Sub Category name', ['class' => 'form-control-label']) }}
+                                <select name="category_id" id="category_id" class="form-control select2">
+                                    @foreach ($categories as $item)
+                                        <option value="{{ $item->id }}"
+                                            @if ($item->id == $category->category_id)
+                                                {{ 'selected' }}
+                                            @endif
+                                        >{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endif
 
                         <div class="form-layout-footer">
                             <button type="submit" class="btn btn-info mg-r-5">Update</button>
@@ -43,21 +49,5 @@
         </div><!-- row -->
 
     </div><!-- card -->
-
-    {{--Ajax Image loader --}}
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#one')
-                        .attr('src', e.target.result)
-                        .width(120)
-                        .height(80);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
 @endsection
 

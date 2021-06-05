@@ -11,22 +11,20 @@ class CategoryRepository implements RepoInterface
 {
     public function index()
     {
-        return  Category::select('id', 'name', 'banner', 'slug')->orderBy('created_at', 'DESC')->paginate(10);
+        return  Category::with('child_category')
+            ->where('category_id', NUll)
+            ->select('id', 'name', 'slug', 'category_id')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
     }
 
     public function store($request)
     {
         $category = new Category();
 
-        $banner = $request->banner;
         $category->name = $request->name;
-
-        if ($banner->isValid()) {
-            $file_name = uniqid('category_banner_', true) . Str::random(10) . '.' . $banner->getClientOriginalExtension();
-            Image::make($banner)->resize(780, 520)->save('media/categories/' . $file_name);
-            $category->banner = 'media/categories/' . $file_name;
-            $category->save();
-        }
+        $category->category_id = $request->category_id;
+        $category->save();
     }
 
     public function edit($id)
@@ -36,25 +34,23 @@ class CategoryRepository implements RepoInterface
 
     public function update($request, $category)
     {
-        $old_banner = $category->banner;
-        $new_banner = $request->banner;
-
         $category->name = $request->name;
-
-        if ($request->banner) {
-            unlink($old_banner);
-            $file_name = uniqid('category_banner_', true) . Str::random(10) . '.' . $new_banner->getClientOriginalExtension();
-            Image::make($new_banner)->resize(780, 520)->save('media/categories/' . $file_name);
-            $category->banner = 'media/categories/' . $file_name;
-        }
-
+        $category->category_id = $request->category_id;
         $category->update();
     }
 
     public function destroy($id)
     {
         $category = Category::find($id);
-        unlink($category->banner);
         $category->delete();
+    }
+
+    public function subcategories()
+    {
+        return Category::with('child_category')
+            ->whereNotNull('category_id')
+            ->select('id', 'name', 'slug', 'category_id')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
     }
 }

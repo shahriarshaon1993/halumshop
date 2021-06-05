@@ -23,7 +23,7 @@
                     <tr>
                         <th class="wd-5p">Id</th>
                         <th class="wd-15p">Category name</th>
-                        <th class="wd-15p">Banner</th>
+                        <th class="wd-15p">Subcategory</th>
                         <th class="wd-20p">Action</th>
                     </tr>
                 </thead>
@@ -32,7 +32,11 @@
                         <tr>
                             <td>{{ $categories->firstitem() + $key }}</td>
                             <td>{{ $category->name }}</td>
-                            <td><img src="{{ asset($category->banner) }}" alt="Category Name" width="80px" height="50px"></td>
+                            <td>
+                                @foreach ($category->child_category as $child)
+                                    {{ $child->name }},
+                                @endforeach
+                            </td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-info">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
@@ -55,6 +59,45 @@
         </div><!-- table-wrapper -->
     </div><!-- card -->
 
+    <div class="card pd-20 pd-sm-40 mt-4">
+        <h6 class="card-body-title">Sub Categories Table </h6>
+
+        <div class="table-wrapper mt-5">
+            <table id="datatable1" class="table display responsive nowrap">
+                <thead>
+                    <tr>
+                        <th class="wd-5p">Id</th>
+                        <th class="wd-15p">Sub Category name</th>
+                        <th class="wd-20p">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($subcategories as $key => $subcategory)
+                        <tr>
+                            <td>{{ $categories->firstitem() + $key }}</td>
+                            <td>{{ $subcategory->name }}</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <a href="{{ route('categories.edit', $subcategory->id) }}" class="btn btn-sm btn-warning">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </a>
+                                <a href="javascript:void(0)" title="Delete" class="btn btn-sm btn-danger delete-category" data-toggle="modal" data-target="#modaldemo1" data-url="{{ url('admin/categories/'.$subcategory->id) }}">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                {{ $subcategories->links() }}
+            </div>
+
+        </div><!-- table-wrapper -->
+    </div><!-- card -->
+
     {{-- Category Insert Modal --}}
     <x-insert>
         <x-slot name="title">
@@ -72,12 +115,13 @@
             </div>
 
             <div class="form-group">
-                <label class="custom-file" for="banner">
-                    <input type="file" name="banner" id="banner" class="custom-file-input" onchange="readURL(this)">
-                    <span class="custom-file-control custom-file-control-primary"></span>
-                </label>
-                <br><br>
-                <img id="one">
+                {{ Form::label('category_id', 'Sub Category name', ['class' => 'form-control-label']) }}
+                <select name="category_id" id="category_id" class="form-control select2">
+                    <option value="">Chose One</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </x-slot>
     </x-insert>
@@ -90,22 +134,6 @@
         </x-slot>
     </x-delete>
     <!--End Delete Modal -->
-
-    {{--Ajax Image loader --}}
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#one')
-                        .attr('src', e.target.result)
-                        .width(120)
-                        .height(80);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
 
     {{-- For Dashboard operations --}}
     <script src="{{ mix('js/dashboard.js') }}"></script>

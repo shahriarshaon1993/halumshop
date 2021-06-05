@@ -83,3 +83,7 @@ Route::get('/', function () {
 Route::fallback(function () {
     return '404 NOT FOUND';
 });
+
+Route::get('test', function () {
+    return App\Models\Category::with('parent_category')->whereNotNull('category_id')->where('id', 6)->get();
+});
