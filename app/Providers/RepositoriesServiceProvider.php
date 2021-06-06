@@ -4,22 +4,22 @@ namespace App\Providers;
 
 use App\Interface\BrandInterface;
 use App\Interface\CouponInterface;
+use App\Interface\HomeInterface;
 use App\Interface\NewslaterIntterface;
 use App\Interface\PostCategoryInterface;
 use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
 use App\Interface\RepoInterface;
 use App\Interface\SliderInterface;
-use App\Interface\SubCategoryInterface;
 use App\Repositories\BrandRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CouponRepository;
+use App\Repositories\HomeRepository;
 use App\Repositories\NewslatterRepository;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\SliderRepository;
-use App\Repositories\SubCategoryRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider
@@ -64,6 +64,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             SliderInterface::class,
             SliderRepository::class,
+        );
+
+        $this->app->bind(
+            HomeInterface::class,
+            HomeRepository::class,
         );
     }
 }
