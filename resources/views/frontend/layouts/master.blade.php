@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+    {{-- Include Toaster-js --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/toaster.min.css') }}">
+    <script src="{{ asset('js/jquery-5.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/toaster.min.js') }}"></script>
+
+    <script>
+        toastr.options = {
+            "closeButton": true,
+        }
+    </script>
+
 </head>
 <body>
 

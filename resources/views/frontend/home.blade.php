@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('backend.partials._message')
+
     {{-- Banner --}}
     <section class="banner">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
