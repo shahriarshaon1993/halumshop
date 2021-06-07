@@ -20,14 +20,16 @@ class HomeController extends Controller
 
         $products = $this->home->products();
 
-        $best_rated = $this->home->bestRated();
+        $bestRated = $this->home->bestRated();
 
-        $hot_deal = $this->home->hotDeal();
+        $hotDeal = $this->home->hotDeal();
 
         $trands = $this->home->trands();
 
         $posts = $this->home->posts();
 
-        return view('frontend.home', compact('sliders', 'products', 'best_rated', 'hot_deal', 'trands', 'posts'));
+        $parentCategories = $this->home->parentCategories();
+
+        return view('frontend.home', compact('sliders', 'products', 'bestRated', 'hotDeal', 'trands', 'posts', 'parentCategories'));
     }
 }

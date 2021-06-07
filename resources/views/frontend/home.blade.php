@@ -108,88 +108,17 @@
                     <div class="section-title">
                         <h4>Categories</h4>
                     </div>
-
                     <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 mb-3">
-                            <a href="#" class="btn btn-category">
-                                <div class="d-flex justify-content-between align-items-center px-1">
-                                    <span>Category</span>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
+                        @foreach ($parentCategories as $parentCategory)
+                            <div class="col-md-4 mb-3">
+                                <a href="#" class="btn btn-category">
+                                    <div class="d-flex justify-content-between align-items-center px-1">
+                                        <span>{{ $parentCategory->name }}</span>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -215,7 +144,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($best_rated as $product)
+                @foreach ($bestRated as $product)
                     <div class="col-md-3 col-sm-6 mt-4">
                         <div class="product-grid">
                             <div class="product-image">
@@ -277,7 +206,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($hot_deal as $product)
+                @foreach ($hotDeal as $product)
                     <div class="col-md-3 col-sm-6 mt-4">
                         <div class="product-grid">
                             <div class="product-image">

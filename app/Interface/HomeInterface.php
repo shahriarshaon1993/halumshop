@@ -10,4 +10,5 @@ interface HomeInterface
     public function hotDeal();
     public function trands();
     public function posts();
+    public function parentCategories();
 }

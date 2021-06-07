@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Interface\HomeInterface;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Slider;
@@ -47,5 +48,10 @@ class HomeRepository implements HomeInterface
     {
         return Post::where('status', 1)
             ->select('title_en', 'title_bn', 'slug', 'description_en', 'description_bn', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(3)->get();
+    }
+
+    public function parentCategories()
+    {
+        return Category::whereNull('category_id')->select('name', 'slug')->limit(9)->get();
     }
 }
