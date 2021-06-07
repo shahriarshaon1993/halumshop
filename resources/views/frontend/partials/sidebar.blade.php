@@ -13,8 +13,9 @@
         @foreach ($categories as $category)
             @if ($category->child_category->count() > 0)
                 <li class="header__sidebar__menu__item dropdown">
-                    <a href="#" class="header__sidebar__menu__item__link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ $category->name }}  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    <a href="#" class="header__sidebar__menu__item__link dropdown-toggle d-flex justify-content-between align-items-center" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>{{ $category->name }}</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($category->child_category as $subcategory)

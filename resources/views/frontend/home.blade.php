@@ -39,7 +39,7 @@
 
     {{-- Products --}}
     <section class="product spad">
-        <div class="container">
+        <div class="container section-shadow">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-between">
                     <div class="section-title">
@@ -102,7 +102,7 @@
 
     {{-- Categories --}}
     <section class="category spad">
-        <div class="container">
+        <div class="container section-shadow">
             <div class="row">
                 <div class="col-md-8 order-md-2">
                     <div class="section-title">
@@ -110,69 +110,85 @@
                     </div>
 
                     <div class="row">
-                        <div class="swiper-container category-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide col-md-4">
-                                    <div class="card p-3 text-center border-0">
-                                            <div class="card-body">
-                                            <img src="{{ asset('photos/img25.jpg') }}">
-                                            <hr/>
-                                            <h2 class="card-title display-1" style="font-size:3.0vmin;">
-                                                <a href="#">Saving Account</a>
-                                            </h2>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </div>
+                            </a>
+                        </div>
 
-                                <div class="swiper-slide col-md-4">
-                                    <div class="card p-3 text-center border-0">
-                                            <div class="card-body">
-                                            <img src="{{ asset('photos/img25.jpg') }}">
-                                            <hr/>
-                                            <h2 class="card-title display-1" style="font-size:3.0vmin;">
-                                                <a href="#">Saving Account</a>
-                                            </h2>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </div>
+                            </a>
+                        </div>
 
-                                <div class="swiper-slide col-md-4">
-                                    <div class="card p-3 text-center border-0">
-                                            <div class="card-body">
-                                            <img src="{{ asset('photos/img25.jpg') }}">
-                                            <hr/>
-                                            <h2 class="card-title display-1" style="font-size:3.0vmin;">
-                                                <a href="#">Saving Account</a>
-                                            </h2>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </div>
+                            </a>
+                        </div>
 
-                                <div class="swiper-slide col-md-4">
-                                    <div class="card p-3 text-center border-0">
-                                            <div class="card-body">
-                                            <img src="{{ asset('photos/img25.jpg') }}">
-                                            <hr/>
-                                            <h2 class="card-title display-1" style="font-size:3.0vmin;">
-                                                <a href="#">Saving Account</a>
-                                            </h2>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </div>
+                            </a>
+                        </div>
 
-                                <div class="swiper-slide col-md-4">
-                                    <div class="card p-3 text-center border-0">
-                                            <div class="card-body">
-                                            <img src="{{ asset('photos/img25.jpg') }}">
-                                            <hr/>
-                                            <h2 class="card-title display-1" style="font-size:3.0vmin;">
-                                                <a href="#">Saving Account</a>
-                                            </h2>
-                                        </div>
-                                    </div>
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <a href="#" class="btn btn-category">
+                                <div class="d-flex justify-content-between align-items-center px-1">
+                                    <span>Category</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -187,7 +203,7 @@
 
     {{-- Best Rated --}}
     <section class="best-rated spad">
-        <div class="container">
+        <div class="container section-shadow">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-between">
                     <div class="section-title">
@@ -249,7 +265,7 @@
 
     {{-- Hot Deal --}}
     <section class="hot-deal spad">
-        <div class="container">
+        <div class="container section-shadow">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-between">
                     <div class="section-title">
@@ -311,7 +327,7 @@
 
     {{-- Trand --}}
     <section class="trand spad">
-        <div class="container">
+        <div class="container section-shadow">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-between">
                     <div class="section-title">
@@ -373,7 +389,7 @@
 
     {{-- Blog --}}
     <section class="blog spad">
-        <div class="container">
+        <div class="container section-shadow">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-between">
                     <div class="section-title">
