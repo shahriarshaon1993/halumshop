@@ -2,9 +2,9 @@
 
 @section('before-head', 'backend/lib/datatables/jquery.dataTables.css')
 
-@section('title', 'newslatter')
+@section('title', 'newslater')
 
-@section('pagename', 'Newslatter')
+@section('pagename', 'Newslater')
 
 @section('content')
 
@@ -26,12 +26,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($newslatters as $key => $newslatter)
+                                @foreach ($newslaters as $key => $newslater)
                                     <tr>
-                                        <td>{{ $newslatters->firstitem() + $key }}</td>
-                                        <td>{{ $newslatter->email }}</td>
+                                        <td>{{ $newslaters->firstitem() + $key }}</td>
+                                        <td>{{ $newslater->email }}</td>
                                         <td>
-                                            <a href="javascript:void(0)" title="Delete" class="btn btn-sm btn-danger delete-category" data-toggle="modal" data-target="#modaldemo1" data-url="{{ url('admin/newslatters/'.$newslatter->id) }}">
+                                            <a href="javascript:void(0)" title="Delete" class="btn btn-sm btn-danger delete-category" data-toggle="modal" data-target="#modaldemo1" data-url="{{ url('admin/newslaters/'.$newslater->id) }}">
                                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
@@ -40,7 +40,7 @@
                             </tbody>
                         </table>
                         <div class="d-flex justify-content-center">
-                            {{ $newslatters->links() }}
+                            {{ $newslaters->links() }}
                         </div>
 
                     </div><!-- table-wrapper -->

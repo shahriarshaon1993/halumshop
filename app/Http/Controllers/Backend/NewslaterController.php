@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class NewslaterController extends Controller
 {
-    protected $newslatter;
+    protected $newslater;
 
-    public function __construct(NewslaterIntterface $newslatter)
+    public function __construct(NewslaterIntterface $newslater)
     {
         $this->middleware('auth:admin');
-        $this->newslatter = $newslatter;
+        $this->newslater = $newslater;
     }
     /**
      * Display a listing of the resource.
@@ -22,19 +22,8 @@ class NewslaterController extends Controller
      */
     public function index()
     {
-        $newslatters = $this->newslatter->index();
-        return view('backend.newslatters.index', compact('newslatters'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $newslaters = $this->newslater->index();
+        return view('backend.newslaters.index', compact('newslaters'));
     }
 
     /**
@@ -45,6 +34,12 @@ class NewslaterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->newslater->destroy($id);
+
+        $notification = array(
+            'message' => 'Mail Deleted!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }

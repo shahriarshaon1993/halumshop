@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Interface\NewslaterIntterface;
 use App\Models\Newslater;
 
-class NewslatterRepository implements NewslaterIntterface
+class NewslaterRepository implements NewslaterIntterface
 {
     public function index()
     {
@@ -15,10 +15,14 @@ class NewslatterRepository implements NewslaterIntterface
     }
     public function store($request)
     {
-        //
+        $newslater = new Newslater();
+
+        $newslater->email = $request->email;
+        $newslater->save();
     }
     public function destroy($id)
     {
-        //
+        $newslater = Newslater::find($id);
+        $newslater->delete();
     }
 }

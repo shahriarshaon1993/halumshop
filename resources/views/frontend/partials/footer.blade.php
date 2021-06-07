@@ -60,7 +60,7 @@
                     <p>Get E-mail updates about our latest shop and special offers.</p>
                     <form method="POST" action="{{ route('newsletter.store') }}" class="footer__newslatter__item__form">
                         @csrf
-                        {{ Form::text('email', null, ['placeholder' => 'Enter Your Mail']) }}
+                        {{ Form::email('email', null, ['placeholder' => 'Enter Your Mail']) }}
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>

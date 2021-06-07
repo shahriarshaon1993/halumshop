@@ -15,7 +15,7 @@ use App\Repositories\BrandRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CouponRepository;
 use App\Repositories\HomeRepository;
-use App\Repositories\NewslatterRepository;
+use App\Repositories\NewslaterRepository;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
@@ -43,7 +43,7 @@ class RepositoriesServiceProvider extends ServiceProvider
 
         $this->app->bind(
             NewslaterIntterface::class,
-            NewslatterRepository::class,
+            NewslaterRepository::class,
         );
 
         $this->app->bind(

@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 <div class="modal-body pd-25">
-                    <h4 class="lh-3 mg-b-20 text-danger">Are you Want to delete?</h4>
+                    <h4 class="lh-3 mg-b-20 text-danger">Are you want to delete?</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-danger pd-x-20">Delete</button>

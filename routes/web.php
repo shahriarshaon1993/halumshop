@@ -12,9 +12,8 @@ use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
-use App\Http\Controllers\Backend\SubcategoryController;
+use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\NewsletterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -88,7 +87,7 @@ Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Newsletter
-Route::post('/newsletter/store', [NewsletterController::class, 'store'])->name('newsletter.store');
+Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->name('newsletter.store');
 
 Route::fallback(function () {
     return '404 NOT FOUND';
