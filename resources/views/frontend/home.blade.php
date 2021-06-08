@@ -51,9 +51,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row slider">
                 @foreach ($products as $product)
-                    <div class="col-md-3 col-sm-6 mt-4">
+                    <div class="col-md-12 mt-4">
                         <div class="product-grid">
                             <div class="product-image">
                                 <a href="#" class="image">
