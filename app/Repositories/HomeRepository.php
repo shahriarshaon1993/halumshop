@@ -27,27 +27,27 @@ class HomeRepository implements HomeInterface
     {
         return Product::where('status', 1)
             ->where('best_rated', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'hot_new', 'image_one', 'image_two')->orderBy('created_at', 'DESC')->limit(4)->get();
+            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'hot_new', 'image_one', 'image_two')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function hotDeal()
     {
         return Product::where('status', 1)
             ->where('hot_deal', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'hot_new', 'image_one', 'image_two')->orderBy('created_at', 'DESC')->limit(4)->get();
+            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'hot_new', 'image_one', 'image_two')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function trands()
     {
         return Product::where('status', 1)
             ->where('trand', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'hot_new', 'image_one', 'image_two')->orderBy('created_at', 'DESC')->limit(4)->get();
+            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'hot_new', 'image_one', 'image_two')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function posts()
     {
         return Post::where('status', 1)
-            ->select('title_en', 'title_bn', 'slug', 'description_en', 'description_bn', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(3)->get();
+            ->select('title_en', 'title_bn', 'slug', 'description_en', 'description_bn', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function parentCategories()

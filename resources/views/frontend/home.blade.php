@@ -51,9 +51,9 @@
                 </div>
             </div>
 
-            <div class="row slider">
+            <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-md-12 mt-4">
+                    <div class="col-md-3 col-sm-6 mt-4">
                         <div class="product-grid">
                             <div class="product-image">
                                 <a href="#" class="image">
@@ -143,9 +143,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row product-slider">
                 @foreach ($bestRated as $product)
-                    <div class="col-md-3 col-sm-6 mt-4">
+                    <div class="col-md-12 mt-4">
                         <div class="product-grid">
                             <div class="product-image">
                                 <a href="#" class="image">
@@ -205,9 +205,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row product-slider">
                 @foreach ($hotDeal as $product)
-                    <div class="col-md-3 col-sm-6 mt-4">
+                    <div class="col-md-12 mt-4">
                         <div class="product-grid">
                             <div class="product-image">
                                 <a href="#" class="image">
@@ -267,9 +267,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row product-slider">
                 @foreach ($trands as $product)
-                    <div class="col-md-3 col-sm-6 mt-4">
+                    <div class="col-md-12 mt-4">
                         <div class="product-grid">
                             <div class="product-image">
                                 <a href="#" class="image">
@@ -330,9 +330,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row product-slider-blog">
                 @foreach ($posts as $post)
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-md-12">
                         <div class="blog__single__latest">
                             <img src="{{ $post->image }}" alt="Blog Image">
                             <div class="blog__single__latest__text p-2">

@@ -324,14 +324,28 @@ img {
         opacity: 1;
 
         span:first-child {
-            width: 3rem;
-            height: 2rem;
+            width: 2.5rem;
+            height: 6rem;
             background: #fff;
             color: $dark-color;
-            font-size: 1.5rem;
+            font-size: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+
+    .carousel-control-next {
+        span:first-child {
+            border-radius: 5px 0 0 5px;
+            box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .carousel-control-prev {
+        span:first-child {
+            border-radius: 0 5px 5px 0;
+            box-shadow: 2px 2px 12px -2px rgba(0, 0, 0, 0.3);
         }
     }
 }
@@ -772,3 +786,47 @@ img {
     }
 }
 // End footer
+
+// Slcik Carsouser Custom Css
+.product-slider-blog,
+.product-slider {
+    .slick-prev,
+    .slick-next {
+        background: #fff;
+        width: 2.2rem;
+        height: 4.5rem;
+        transform: translate(0, -80%);
+
+        &:hover {
+            background: #fff;
+        }
+
+        &::before {
+            font-family: "fontawesome";
+            font-size: 3rem;
+            color: $dark-color;
+        }
+    }
+
+    .slick-next {
+        right: -18px;
+        border-radius: 5px 0 0 5px;
+        box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, 0.3);
+
+        &::before {
+            content: "\f105";
+        }
+    }
+
+    .slick-prev {
+        left: -17px;
+        border-radius: 0 5px 5px 0;
+        box-shadow: 2px 2px 12px -2px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+
+        &::before {
+            content: "\f104";
+        }
+    }
+}
+// End Slcik Carsouser Custom Css
