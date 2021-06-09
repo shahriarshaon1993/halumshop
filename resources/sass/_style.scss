@@ -644,9 +644,20 @@ img {
 // End Blog
 
 // Partner Logo
-.partner-logo {
+.partner {
     background-color: #303030;
-    padding: 38px 0;
+    padding: 2rem 0;
+
+    &__logo {
+        display: block;
+        height: 80px;
+
+        img {
+            height: 80px;
+            width: 100%;
+            background-size: cover;
+        }
+    }
 }
 // End Partner Logo
 
@@ -788,7 +799,7 @@ img {
 // End footer
 
 // Slcik Carsouser Custom Css
-.product-slider-blog,
+.blog-slider,
 .product-slider {
     .slick-prev,
     .slick-next {

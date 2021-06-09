@@ -30,6 +30,8 @@ class HomeController extends Controller
 
         $parentCategories = $this->home->parentCategories();
 
-        return view('frontend.home', compact('sliders', 'products', 'bestRated', 'hotDeal', 'trands', 'posts', 'parentCategories'));
+        $brands = $this->home->brands();
+
+        return view('frontend.home', compact('sliders', 'products', 'bestRated', 'hotDeal', 'trands', 'posts', 'parentCategories', 'brands'));
     }
 }

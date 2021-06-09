@@ -330,7 +330,7 @@
                 </div>
             </div>
 
-            <div class="row product-slider-blog">
+            <div class="row blog-slider">
                 @foreach ($posts as $post)
                     <div class="col-md-12">
                         <div class="blog__single__latest">
@@ -358,9 +358,17 @@
     {{-- End Blog --}}
 
     {{-- Partner Logo --}}
-    <div class="partner-logo">
+    <div class="partner">
         <div class="container">
-
+            <div class="row partner-slider">
+                @foreach ($brands as $brand)
+                    <div class="col-md-12">
+                        <a href="#" class="partner__logo">
+                            <img src="{{ asset($brand->logo) }}" alt="Parner Logo">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
     {{-- End Partner Logo --}}

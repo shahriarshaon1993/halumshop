@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Interface\HomeInterface;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
@@ -52,6 +53,14 @@ class HomeRepository implements HomeInterface
 
     public function parentCategories()
     {
-        return Category::whereNull('category_id')->select('name', 'slug')->limit(9)->get();
+        return Category::whereNull('category_id')
+            ->select('name', 'slug')
+            ->orderBy('created_at', 'DESC')
+            ->limit(9)->get();
+    }
+
+    public function brands()
+    {
+        return Brand::select('slug', 'logo')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 }
