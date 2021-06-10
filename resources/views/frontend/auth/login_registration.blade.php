@@ -20,25 +20,25 @@
 
             <div class="login__container__formBx">
                 <div class="form signinForm">
-                    <form action="{{ route('login') }}" method="POST">
-                        @csrf
+                    {{ Form::open(['route' => 'login']) }}
                         <h3>Sign In</h3>
-                        <input type="email" name="email" placeholder="Your E-mail" value="{{ old('email') }}">
-                        <input type="password" name="password" placeholder="Password">
-                        <input type="submit" value="Login">
+                        {{ Form::email('email', null, ['placeholder' => 'Your E-mail']) }}
+                        {{ Form::password('password', ['placeholder' => 'Password']) }}
+                        {{ Form::submit('Login') }}
                         <a href="#" class="forget">Forgot Password</a>
-                    </form>
+                    {{ Form::close() }}
                 </div>
 
                 <div class="form signupForm">
-                    <form>
+                    {{ Form::open(['route' => 'register']) }}
                         <h3>Sign Up</h3>
-                        <input type="text" placeholder="Username">
-                        <input type="email" placeholder="Email Address">
-                        <input type="password" placeholder="Password">
-                        <input type="password" placeholder="Confirm Password">
-                        <input type="submit" value="Register">
-                    </form>
+                        {{ Form::text('name', null, ['placeholder' => 'Your name']) }}
+                        {{ Form::email('email', null, ['placeholder' => 'Email Address']) }}
+                        {{ Form::text('phone_number', null, ['placeholder' => 'Phone number']) }}
+                        {{ Form::password('password', ['placeholder' => 'Password']) }}
+                        {{ Form::password('password_confirmation', ['placeholder' => 'Confirm Password']) }}
+                        {{ Form::submit('Register') }}
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>

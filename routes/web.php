@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\UserLogoutController;
 use App\Http\Controllers\Frontend\UsersAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -83,8 +84,15 @@ Route::prefix('admin')->group(function () {
 });
 
 // User Logn & Ragistration
-Route::get('/login', [UsersAuthController::class, 'showLognRegistrationForm'])->name('login');
+Route::get('/login', [UsersAuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UsersAuthController::class, 'proccessLogin']);
+Route::get('/register', [UsersAuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [UsersAuthController::class, 'proccessRegister']);
+
+Route::get('/activate/{token}', [UsersAuthController::class, 'activate'])->name('activate');
+
+Route::post('/logout', [UserLogoutController::class, 'logout'])->name('logout');
+
 
 // Home Controller for home page route
 Route::get('/', [HomeController::class, 'index'])->name('home');

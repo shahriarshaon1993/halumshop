@@ -57,11 +57,11 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item ml-3 user-btn">
-                                <a href="#" class="btn btn-outline-info my-2 my-sm-0">
-                                    Logout
-                                </a>
-                            </li>
+                            {{ Form::open(['route' => 'logout']) }}
+                                <li class="nav-item ml-3 user-btn">
+                                    <button type="submit" class="btn btn-outline-info my-2 my-sm-0">Sign out</button>
+                                </li>
+                            {{ Form::close() }}
                         @endauth
 
                     </ul>
