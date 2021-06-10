@@ -84,6 +84,7 @@ Route::prefix('admin')->group(function () {
 
 // User Logn & Ragistration
 Route::get('/login', [UsersAuthController::class, 'showLognRegistrationForm'])->name('login');
+Route::post('/login', [UsersAuthController::class, 'proccessLogin']);
 
 // Home Controller for home page route
 Route::get('/', [HomeController::class, 'index'])->name('home');

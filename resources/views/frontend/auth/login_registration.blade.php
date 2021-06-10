@@ -20,10 +20,11 @@
 
             <div class="login__container__formBx">
                 <div class="form signinForm">
-                    <form>
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <h3>Sign In</h3>
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
+                        <input type="email" name="email" placeholder="Your E-mail" value="{{ old('email') }}">
+                        <input type="password" name="password" placeholder="Password">
                         <input type="submit" value="Login">
                         <a href="#" class="forget">Forgot Password</a>
                     </form>

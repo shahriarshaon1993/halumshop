@@ -42,11 +42,28 @@
                             </a>
                         </li>
 
-                        <li class="nav-item ml-3 user-btn">
-                            <a href="{{ route('login') }}" class="btn btn-outline-info my-2 my-sm-0" type="submit">
-                                <i class="fa fa-user-o" aria-hidden="true"></i> Login / Registration
-                            </a>
-                        </li>
+                        @guest
+                            <li class="nav-item ml-3 user-btn">
+                                <a href="{{ route('login') }}" class="btn btn-outline-info my-2 my-sm-0">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> Login / Registration
+                                </a>
+                            </li>
+                        @endguest
+
+                        @auth
+                            <li class="nav-item ml-3 user-btn">
+                                <a href="#" class="btn btn-outline-info my-2 my-sm-0">
+                                    My Profile
+                                </a>
+                            </li>
+
+                            <li class="nav-item ml-3 user-btn">
+                                <a href="#" class="btn btn-outline-info my-2 my-sm-0">
+                                    Logout
+                                </a>
+                            </li>
+                        @endauth
+
                     </ul>
                 </div>
 
