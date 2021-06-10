@@ -1,5 +1,4 @@
 require('./bootstrap');
-require('./main');
 
 // import Swiper JS
 // import Swiper from 'swiper';
@@ -8,3 +7,6 @@ require('./main');
 require('jquery');
 require('slick-carousel');
 require('./custom-slick');
+
+// Mian Js
+require('./main');
