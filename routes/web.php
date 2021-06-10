@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\UsersAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,7 +82,8 @@ Route::prefix('admin')->group(function () {
     Route::resource('sliders', SliderController::class);
 });
 
-Route::get('/login', [AdminLoginController::class, 'index'])->name('login');
+// User Logn & Ragistration
+Route::get('/login', [UsersAuthController::class, 'showLognRegistrationForm'])->name('login');
 
 // Home Controller for home page route
 Route::get('/', [HomeController::class, 'index'])->name('home');

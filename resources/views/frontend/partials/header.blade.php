@@ -43,9 +43,9 @@
                         </li>
 
                         <li class="nav-item ml-3 user-btn">
-                            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
-                                <i class="fa fa-user-o" aria-hidden="true"></i> Login
-                            </button>
+                            <a href="{{ route('login') }}" class="btn btn-outline-info my-2 my-sm-0" type="submit">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Login / Registration
+                            </a>
                         </li>
                     </ul>
                 </div>
