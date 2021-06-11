@@ -38,9 +38,9 @@
     {{--End Banner --}}
 
     {{-- Products --}}
-    @if ($products->count() > 0))
+    @if ($products->count() > 0)
         <section class="product spad">
-            <div class="container section-shadow">
+            <div class="container-fluid section-shadow">
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-between">
                         <div class="section-title">
@@ -329,7 +329,7 @@
     {{-- Blog --}}
     @if ($posts->count() > 0)
         <section class="blog spad">
-            <div class="container section-shadow">
+            <div class="container-fluid section-shadow">
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-between">
                         <div class="section-title">

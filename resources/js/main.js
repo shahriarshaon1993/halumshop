@@ -1,13 +1,13 @@
-var hamburger__menu = document.querySelector(".hamburger__menu");
-var close_btn = document.querySelector(".close-btn");
-var container = document.querySelector(".container");
+var hamburgerMenu = document.querySelector(".hamburger__menu");
+var closeBtn = document.querySelector(".close-btn");
+var rightSidebar = document.querySelector(".right-sidebar");
 
-hamburger__menu.addEventListener("click", () => {
-    container.classList.add("change");
+hamburgerMenu.addEventListener("click", () => {
+    rightSidebar.classList.add("change");
 });
 
-close_btn.addEventListener("click", () => {
-    container.classList.remove("change");
+closeBtn.addEventListener("click", () => {
+    rightSidebar.classList.remove("change");
 });
 
 

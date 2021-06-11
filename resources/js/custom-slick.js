@@ -36,9 +36,9 @@ $('.product-slider').slick({
 $('.blog-slider').slick({
     infinite: true,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    centerMode: true,
+    // centerMode: true,
     responsive: [
         {
             breakpoint: 1024,

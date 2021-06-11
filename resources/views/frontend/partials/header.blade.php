@@ -1,7 +1,7 @@
     {{-- Header --}}
     <header class="header">
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid right-sidebar">
                 {{-- Hamburger Menu --}}
                 <div class="hamburger__menu mr-3" title="Sidebar">
                     <a href="#" class="hamburger__menu__link">
@@ -10,14 +10,14 @@
                 </div>
 
                 {{--Navbar Brand --}}
-                <a class="navbar-brand" href="#"><span style="color: #17a2b8;">Halum</span>shop</a>
+                <a class="navbar-brand" href="{{ url('/') }}"><span style="color: #17a2b8;">Halum</span>shop</a>
 
                 {{-- Navbar Toggler Button--}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav search-box ml-3">
                         <form class="form-inline">
                             <input class="form-control mr-sm-2 search-product" type="search" placeholder="Search products" aria-label="Search">
@@ -27,7 +27,48 @@
                         </form>
                     </ul>
 
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav second-navbar">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}" title="Home">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Home">
+                                Blog
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Home">
+                                About
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Home">
+                                Contact
+                            </a>
+                        </li>
+
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle cart" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user-secret" aria-hidden="true"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">{{ Auth::user()->name }}</a>
+                                    <a class="dropdown-item" href="#">Change Password</a>
+                                    <div class="dropdown-divider"></div>
+                                    {{ Form::open(['route' => 'logout']) }}
+                                        {{ Form::submit('Sign out') }}
+                                    {{ Form::close() }}
+                                </div>
+                            </li>
+                        @endauth
+
                         <li class="nav-item wishlist">
                             <a class="nav-link" href="#" title="Wishlist">
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -44,25 +85,11 @@
 
                         @guest
                             <li class="nav-item ml-3 user-btn">
-                                <a href="{{ route('login') }}" class="btn btn-outline-info my-2 my-sm-0">
-                                    <i class="fa fa-user-o" aria-hidden="true"></i> Login / Registration
+                                <a href="{{ route('login') }}" class="btn btn-info my-5 my-sm-0">
+                                    Sign in
                                 </a>
                             </li>
                         @endguest
-
-                        @auth
-                            <li class="nav-item ml-3 user-btn">
-                                <a href="#" class="btn btn-outline-info my-2 my-sm-0">
-                                    My Profile
-                                </a>
-                            </li>
-
-                            {{ Form::open(['route' => 'logout']) }}
-                                <li class="nav-item ml-3 user-btn">
-                                    <button type="submit" class="btn btn-outline-info my-2 my-sm-0">Sign out</button>
-                                </li>
-                            {{ Form::close() }}
-                        @endauth
 
                     </ul>
                 </div>
