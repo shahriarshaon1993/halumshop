@@ -12,10 +12,10 @@ use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Frontend\Auth\UserAuthController;
+use App\Http\Controllers\Frontend\Auth\UserLogoutController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\UserLogoutController;
-use App\Http\Controllers\Frontend\UsersAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,12 +84,12 @@ Route::prefix('admin')->group(function () {
 });
 
 // User Logn & Ragistration
-Route::get('/login', [UsersAuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [UsersAuthController::class, 'proccessLogin']);
-Route::get('/register', [UsersAuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [UsersAuthController::class, 'proccessRegister']);
+Route::get('/login', [UserAuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [UserAuthController::class, 'proccessLogin']);
+Route::get('/register', [UserAuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [UserAuthController::class, 'proccessRegister']);
 
-Route::get('/activate/{token}', [UsersAuthController::class, 'activate'])->name('activate');
+Route::get('/activate/{token}', [UserAuthController::class, 'activate'])->name('activate');
 
 Route::post('/logout', [UserLogoutController::class, 'logout'])->name('logout');
 

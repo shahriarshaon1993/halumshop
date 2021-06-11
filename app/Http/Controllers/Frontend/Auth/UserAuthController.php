@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Frontend\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUsersRequest;
@@ -10,7 +10,7 @@ use App\Notifications\UserVerifyNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
-class UsersAuthController extends Controller
+class UserAuthController extends Controller
 {
     public function __construct()
     {
