@@ -37,337 +37,482 @@
     </section>
     {{--End Banner --}}
 
-    {{-- Products --}}
-    @if ($products->count() > 0)
-        <section class="product spad">
-            <div class="container-fluid section-shadow">
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-between">
-                        <div class="section-title">
-                            <h4>Products</h4>
-                        </div>
-                        <div class="section-button">
-                            <a href="#" class="btn btn-info">View all &#10141;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    @foreach ($products as $product)
-                        <div class="col-md-3 col-sm-6 mt-4">
-                            <div class="product-grid">
-                                <div class="product-image">
-                                    <a href="#" class="image">
-                                        <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
-                                        <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
-                                    </a>
-
-                                    @if ($product->discount_price == NULL || $product->hot_new == 1)
-                                        <span class="product-sale-label">new!</span>
-                                    @else
-                                        <span class="product-sale-label">
-                                            @php
-                                                $amount = $product->selling_price - $product->discount_price;
-                                                $discount = $amount/$product->selling_price*100;
-                                            @endphp
-                                            {{ intval($discount) }}%
-                                        </span>
-                                    @endif
-
-                                    <ul class="social">
-                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                                    </ul>
-                                    <div class="product-rating">
-                                        <a class="add-to-cart" href="#"> ADD TO CART </a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
-                                    @if ($product->discount_price == NULL)
-                                        <div class="price">৳ {{ $product->selling_price }}</div>
-                                    @else
-                                        <div class="price">
-                                            <span>৳ {{ $product->selling_price }}</span>
-                                            ৳ {{ $product->discount_price }}
+    {{-- Main Container --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {{-- Hot Deal --}}
+                @if ($hotDeals->count() > 0)
+                    <section class="hotdeal spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Hot Deal
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row sidebar-slider">
+                                    @foreach ($hotDeals as $product)
+                                        <div class="col-12">
+                                            <div class="card ProductCard">
+                                                <a href="#">
+                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                </a>
+                                                <div class="ProductCard__label">
+                                                    @if ($product->discount_price == NULL)
+                                                        <span>Hot</span>
+                                                    @else
+                                                        <span>
+                                                            @php
+                                                                $amount = $product->selling_price - $product->discount_price;
+                                                                $discount = $amount/$product->selling_price*100;
+                                                            @endphp
+                                                            {{ intval($discount) }}%
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                                <div class="card-body productCard__body">
+                                                    <h5 class="card-title productCard__title">
+                                                        <a href="#">{{ $product->product_title }}</a>
+                                                    </h5>
+                                                    <div class="productCard__price">
+                                                        @if ($product->discount_price == NULL)
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                        @else
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                            <span class="price-before-discount">
+                                                                ৳ {{ intval($product->discount_price) }}
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="productCard__btn">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    {{--End Products --}}
+                    </section>
+                @endif
+                {{-- End Hot Deal --}}
 
-    {{-- Categories --}}
-    @if ($parentCategories->count() > 0)
-        <section class="category spad">
-            <div class="container section-shadow">
-                <div class="row">
-                    <div class="col-md-8 order-md-2">
-                        <div class="section-title">
-                            <h4>Categories</h4>
-                        </div>
-                        <div class="row">
-                            @foreach ($parentCategories as $parentCategory)
-                                <div class="col-md-4 mb-3">
-                                    <a href="#" class="btn btn-category">
-                                        <div class="d-flex justify-content-between align-items-center px-1">
-                                            <span>{{ $parentCategory->name }}</span>
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </div>
+                {{-- Categories --}}
+                @if ($parentCategories->count() > 0)
+                    <section class="category spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Categories
+                            </div>
+                            <div class="card-body">
+                                @foreach ($parentCategories as $category)
+                                    <a href="#" class="btn btn-sm btn-secondary category-btn mb-2">
+                                        {{ $category->name }}
                                     </a>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                @endif
+                {{-- End Categories --}}
 
-                    <div class="col-md-4 order-md-1 asaid">
-                        <img src="{{ asset('photos/img-1.jpg') }}" class="featurette-image img-fluid mx-auto" alt="Category Image">
-                    </div>
-                </div>
-            </div>
-        </section>
-    @endif
-    {{-- End Categories --}}
-
-    {{-- Best Rated --}}
-    @if ($bestRated->count() > 0)
-        <section class="best-rated spad">
-            <div class="container section-shadow">
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-between">
-                        <div class="section-title">
-                            <h4>Best rated</h4>
-                        </div>
-                        <div class="section-button">
-                            <a href="#" class="btn btn-info">View all &#10141;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row product-slider">
-                    @foreach ($bestRated as $product)
-                        <div class="col-md-12 mt-4">
-                            <div class="product-grid">
-                                <div class="product-image">
-                                    <a href="#" class="image">
-                                        <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
-                                        <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
-                                    </a>
-
-                                    @if ($product->discount_price == NULL || $product->hot_new == 1)
-                                        <span class="product-sale-label">new!</span>
-                                    @else
-                                        <span class="product-sale-label">
-                                            @php
-                                                $amount = $product->selling_price - $product->discount_price;
-                                                $discount = $amount/$product->selling_price*100;
-                                            @endphp
-                                            {{ intval($discount) }}%
-                                        </span>
-                                    @endif
-
-                                    <ul class="social">
-                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                                    </ul>
-                                    <div class="product-rating">
-                                        <a class="add-to-cart" href="#"> ADD TO CART </a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
-                                    @if ($product->discount_price == NULL)
-                                        <div class="price">৳ {{ $product->selling_price }}</div>
-                                    @else
-                                        <div class="price">
-                                            <span>৳ {{ $product->selling_price }}</span>
-                                            ৳ {{ $product->discount_price }}
+                {{-- Special Offer --}}
+                @if ($hotDeals->count() > 0)
+                    <section class="hotdeal spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Special Offer
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row sidebar-slider">
+                                    @foreach ($specialOffer as $product)
+                                        <div class="col-12">
+                                            <div class="card ProductCard">
+                                                <a href="#">
+                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                </a>
+                                                <div class="ProductCard__label">
+                                                    @if ($product->discount_price == NULL)
+                                                        <span>Hot</span>
+                                                    @else
+                                                        <span>
+                                                            @php
+                                                                $amount = $product->selling_price - $product->discount_price;
+                                                                $discount = $amount/$product->selling_price*100;
+                                                            @endphp
+                                                            {{ intval($discount) }}%
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                                <div class="card-body productCard__body">
+                                                    <h5 class="card-title productCard__title">
+                                                        <a href="#">{{ $product->product_title }}</a>
+                                                    </h5>
+                                                    <div class="productCard__price">
+                                                        @if ($product->discount_price == NULL)
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                        @else
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                            <span class="price-before-discount">
+                                                                ৳ {{ intval($product->discount_price) }}
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="productCard__btn">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </section>
+                @endif
+                {{-- End Special Offer --}}
             </div>
-        </section>
-    @endif
-    {{--End Best Rated --}}
 
-    {{-- Hot Deal --}}
-    @if ($hotDeal->count() > 0)
-        <section class="hot-deal spad">
-            <div class="container section-shadow">
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-between">
-                        <div class="section-title">
-                            <h4>Hot deal</h4>
-                        </div>
-                        <div class="section-button">
-                            <a href="#" class="btn btn-info">View all &#10141;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row product-slider">
-                    @foreach ($hotDeal as $product)
-                        <div class="col-md-12 mt-4">
-                            <div class="product-grid">
-                                <div class="product-image">
-                                    <a href="#" class="image">
-                                        <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
-                                        <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
-                                    </a>
-
-                                    @if ($product->discount_price == NULL || $product->hot_new == 1)
-                                        <span class="product-sale-label">new!</span>
-                                    @else
-                                        <span class="product-sale-label">
-                                            @php
-                                                $amount = $product->selling_price - $product->discount_price;
-                                                $discount = $amount/$product->selling_price*100;
-                                            @endphp
-                                            {{ intval($discount) }}%
-                                        </span>
-                                    @endif
-
-                                    <ul class="social">
-                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                                    </ul>
-                                    <div class="product-rating">
-                                        <a class="add-to-cart" href="#"> ADD TO CART </a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
-                                    @if ($product->discount_price == NULL)
-                                        <div class="price">৳ {{ $product->selling_price }}</div>
-                                    @else
-                                        <div class="price">
-                                            <span>৳ {{ $product->selling_price }}</span>
-                                            ৳ {{ $product->discount_price }}
+            <div class="col-md-8">
+                 {{-- Products --}}
+                 @if ($products->count() > 0)
+                    <section class="product spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Products
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row product-slider">
+                                    @foreach ($products as $product)
+                                        <div class="col-12">
+                                            <div class="card ProductCard">
+                                                <a href="#">
+                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                </a>
+                                                <div class="ProductCard__label">
+                                                    @if ($product->discount_price == NULL)
+                                                        <span>Hot</span>
+                                                    @else
+                                                        <span>
+                                                            @php
+                                                                $amount = $product->selling_price - $product->discount_price;
+                                                                $discount = $amount/$product->selling_price*100;
+                                                            @endphp
+                                                            {{ intval($discount) }}%
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                                <div class="card-body productCard__body">
+                                                    <h5 class="card-title productCard__title">
+                                                        <a href="#">{{ $product->product_title }}</a>
+                                                    </h5>
+                                                    <div class="productCard__price">
+                                                        @if ($product->discount_price == NULL)
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                        @else
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                            <span class="price-before-discount">
+                                                                ৳ {{ intval($product->discount_price) }}
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="productCard__btn">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    {{-- End Hot Deal --}}
+                    </section>
+                 @endif
+                 {{-- End Products --}}
 
-    {{-- Trand --}}
-    @if ($trands->count() > 0)
-        <section class="trand spad">
-            <div class="container section-shadow">
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-between">
-                        <div class="section-title">
-                            <h4>Tranding</h4>
-                        </div>
-                        <div class="section-button">
-                            <a href="#" class="btn btn-info">View all &#10141;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row product-slider">
-                    @foreach ($trands as $product)
-                        <div class="col-md-12 mt-4">
-                            <div class="product-grid">
-                                <div class="product-image">
-                                    <a href="#" class="image">
-                                        <img class="pic-1" src="{{ asset($product->image_one) }}" alt="product image 1">
-                                        <img class="pic-2" src="{{ asset($product->image_two) }}" alt="product image 2">
-                                    </a>
-
-                                    @if ($product->discount_price == NULL || $product->hot_new == 1)
-                                        <span class="product-sale-label">new!</span>
-                                    @else
-                                        <span class="product-sale-label">
-                                            @php
-                                                $amount = $product->selling_price - $product->discount_price;
-                                                $discount = $amount/$product->selling_price*100;
-                                            @endphp
-                                            {{ intval($discount) }}%
-                                        </span>
-                                    @endif
-
-                                    <ul class="social">
-                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
-                                    </ul>
-                                    <div class="product-rating">
-                                        <a class="add-to-cart" href="#"> ADD TO CART </a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="#">{{ $product->product_title }}</a></h3>
-                                    @if ($product->discount_price == NULL)
-                                        <div class="price">৳ {{ $product->selling_price }}</div>
-                                    @else
-                                        <div class="price">
-                                            <span>৳ {{ $product->selling_price }}</span>
-                                            ৳ {{ $product->discount_price }}
+                 {{-- Best Seller --}}
+                 @if ($bestSellers->count() > 0)
+                    <section class="product spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Best Seller
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row product-slider">
+                                    @foreach ($bestSellers as $product)
+                                        <div class="col-12">
+                                            <div class="card ProductCard">
+                                                <a href="#">
+                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                </a>
+                                                <div class="ProductCard__label">
+                                                    @if ($product->discount_price == NULL)
+                                                        <span>Hot</span>
+                                                    @else
+                                                        <span>
+                                                            @php
+                                                                $amount = $product->selling_price - $product->discount_price;
+                                                                $discount = $amount/$product->selling_price*100;
+                                                            @endphp
+                                                            {{ intval($discount) }}%
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                                <div class="card-body productCard__body">
+                                                    <h5 class="card-title productCard__title">
+                                                        <a href="#">{{ $product->product_title }}</a>
+                                                    </h5>
+                                                    <div class="productCard__price">
+                                                        @if ($product->discount_price == NULL)
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                        @else
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                            <span class="price-before-discount">
+                                                                ৳ {{ intval($product->discount_price) }}
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="productCard__btn">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
-    {{-- End Trand --}}
+                    </section>
+                 @endif
+                 {{-- End Best Seller --}}
 
-    {{-- Blog --}}
-    @if ($posts->count() > 0)
-        <section class="blog spad">
-            <div class="container-fluid section-shadow">
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-between">
-                        <div class="section-title">
-                            <h4>Blog</h4>
-                        </div>
-                        <div class="section-button">
-                            <a href="#" class="btn btn-info">View all &#10141;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row blog-slider">
-                    @foreach ($posts as $post)
-                        <div class="col-md-12">
-                            <div class="blog__single__latest">
-                                <img src="{{ $post->image }}" alt="Blog Image">
-                                <div class="blog__single__latest__text p-2">
-                                    <div class="blog__single__latest__text__tag">
-                                        <div class="blog__single__latest__text__tag__item">
-                                            <i class="fa fa-calendar-o"></i>
-                                            {{ $post->created_at->format('F d, Y') }}
+                 {{-- Trand --}}
+                 @if ($trand->count() > 0)
+                    <section class="product spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Trand
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row product-slider">
+                                    @foreach ($trand as $product)
+                                        <div class="col-12">
+                                            <div class="card ProductCard">
+                                                <a href="#">
+                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                </a>
+                                                <div class="ProductCard__label">
+                                                    @if ($product->discount_price == NULL)
+                                                        <span>Hot</span>
+                                                    @else
+                                                        <span>
+                                                            @php
+                                                                $amount = $product->selling_price - $product->discount_price;
+                                                                $discount = $amount/$product->selling_price*100;
+                                                            @endphp
+                                                            {{ intval($discount) }}%
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                                <div class="card-body productCard__body">
+                                                    <h5 class="card-title productCard__title">
+                                                        <a href="#">{{ $product->product_title }}</a>
+                                                    </h5>
+                                                    <div class="productCard__price">
+                                                        @if ($product->discount_price == NULL)
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                        @else
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                            <span class="price-before-discount">
+                                                                ৳ {{ intval($product->discount_price) }}
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="productCard__btn">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="blog__single__latest__text__tag__item">
-                                            <i class="fa fa-comment-o"></i>
-                                            8
-                                        </div>
-                                    </div>
-                                    <a href=""><h4>{{ $post->title_en }}</h4></a>
-                                    <p>{{ Str::limit($post->description_en, 80) }}</p>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </section>
+                 @endif
+                 {{-- End Trand --}}
+
+                 {{-- Blog --}}
+                 @if ($posts->count() > 0)
+                    <section class="blog spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                Blogs
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row blog-slider">
+                                    @foreach ($posts as $post)
+                                        <div class="col-md-12">
+                                            <div class="blog__single__latest">
+                                                <a href="#">
+                                                    <img src="{{ $post->image }}" alt="{{ $post->image }}">
+                                                </a>
+                                                <div class="blog__single__latest__text p-2">
+                                                    <div class="blog__single__latest__text__tag">
+                                                        <div class="blog__single__latest__text__tag__item">
+                                                            <i class="fa fa-calendar-o"></i>
+                                                            {{ $post->created_at->format('F d, Y') }}
+                                                        </div>
+                                                        <div class="blog__single__latest__text__tag__item">
+                                                            <i class="fa fa-comment-o"></i>
+                                                            8
+                                                        </div>
+                                                    </div>
+                                                    <a href=""><h4>{{ $post->title_en }}</h4></a>
+                                                    <p>{{ Str::limit($post->description_en, 80) }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                 @endif
+                 {{-- End Blog --}}
+
+                 {{-- New Arraivals --}}
+                 @if ($newArrival->count() > 0)
+                    <section class="product spad">
+                        <div class="card customCard">
+                            <div class="card-header customCard__header">
+                                new Arrival
+                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row product-slider">
+                                    @foreach ($newArrival as $product)
+                                        <div class="col-12">
+                                            <div class="card ProductCard">
+                                                <a href="#">
+                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                </a>
+                                                <div class="ProductCard__label">
+                                                    @if ($product->discount_price == NULL)
+                                                        <span>Hot</span>
+                                                    @else
+                                                        <span>
+                                                            @php
+                                                                $amount = $product->selling_price - $product->discount_price;
+                                                                $discount = $amount/$product->selling_price*100;
+                                                            @endphp
+                                                            {{ intval($discount) }}%
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                                <div class="card-body productCard__body">
+                                                    <h5 class="card-title productCard__title">
+                                                        <a href="#">{{ $product->product_title }}</a>
+                                                    </h5>
+                                                    <div class="productCard__price">
+                                                        @if ($product->discount_price == NULL)
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                        @else
+                                                            <span class="price">
+                                                                ৳ {{ intval($product->selling_price) }}
+                                                            </span>
+                                                            <span class="price-before-discount">
+                                                                ৳ {{ intval($product->discount_price) }}
+                                                            </span>
+                                                        @endif
+                                                    </div>
+                                                    <div class="productCard__btn">
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                 @endif
+                 {{-- End New Arraivals --}}
             </div>
-        </section>
-    @endif
-    {{-- End Blog --}}
+        </div>
+    </div>
+    {{-- End Container --}}
 
     {{-- Partner Logo --}}
     @if ($brands->count() > 0)

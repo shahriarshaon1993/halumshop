@@ -169,12 +169,12 @@
                 <div class="row mg-b-25">
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="main_slider"
-                                @if ($product->main_slider == 1)
+                            <input type="checkbox" name="new_arrival"
+                                @if ($product->new_arrival == 1)
                                     {{ 'checked' }}
                                 @endif
                             >
-                            <span>Main Slider</span>
+                            <span>New Arrival</span>
                         </label>
                     </div>
 
@@ -191,23 +191,23 @@
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="best_rated"
-                                @if ($product->best_rated == 1)
+                            <input type="checkbox" name="best_seller"
+                                @if ($product->best_seller == 1)
                                     {{ 'checked' }}
                                 @endif
                             >
-                            <span>Best Rated</span>
+                            <span>Best Seller</span>
                         </label>
                     </div>
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="hot_new"
-                                @if ($product->hot_new == 1)
+                            <input type="checkbox" name="special_offer"
+                                @if ($product->special_offer == 1)
                                     {{ 'checked' }}
                                 @endif
                             >
-                            <span>Hot new</span>
+                            <span>Special Offer</span>
                         </label>
                     </div>
 

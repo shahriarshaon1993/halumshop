@@ -32,11 +32,11 @@ class CreateProductsTable extends Migration
 
             $table->decimal('discount_price', 8, 2)->nullable();
             $table->string('video_link')->nullable();
-            $table->tinyInteger('main_slider')->default(0);
             $table->tinyInteger('hot_deal')->default(0);
-            $table->tinyInteger('best_rated')->default(0);
-            $table->tinyInteger('hot_new')->default(0);
+            $table->tinyInteger('best_seller')->default(0);
+            $table->tinyInteger('special_offer')->default(0);
             $table->tinyInteger('trand')->default(0);
+            $table->tinyInteger('new_arrival')->default(0);
 
             $table->string('image_one');
             $table->string('image_two')->nullable();

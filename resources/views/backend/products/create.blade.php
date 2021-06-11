@@ -153,8 +153,8 @@
                 <div class="row mg-b-25">
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="main_slider">
-                            <span>Main Slider</span>
+                            <input type="checkbox" name="new_arrival">
+                            <span>New Arrival</span>
                         </label>
                     </div>
 
@@ -167,15 +167,15 @@
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="best_rated">
-                            <span>Best Rated</span>
+                            <input type="checkbox" name="best_seller">
+                            <span>Best Seller</span>
                         </label>
                     </div>
 
                     <div class="col-lg-4">
                         <label class="ckbox">
-                            <input type="checkbox" name="hot_new">
-                            <span>Hot new</span>
+                            <input type="checkbox" name="special_offer">
+                            <span>Special Offer</span>
                         </label>
                     </div>
 
@@ -185,6 +185,7 @@
                             <span>Trand</span>
                         </label>
                     </div>
+
                 </div>
 
                 <div class="form-layout-footer">

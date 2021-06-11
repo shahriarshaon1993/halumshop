@@ -17,21 +17,16 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = $this->home->sliders();
-
         $products = $this->home->products();
-
-        $bestRated = $this->home->bestRated();
-
-        $hotDeal = $this->home->hotDeal();
-
-        $trands = $this->home->trands();
-
+        $hotDeals = $this->home->hotDeal();
+        $bestSellers = $this->home->bestSeller();
+        $trand = $this->home->trand();
         $posts = $this->home->posts();
-
-        $parentCategories = $this->home->parentCategories();
-
+        $newArrival = $this->home->newArrival();
         $brands = $this->home->brands();
+        $parentCategories = $this->home->parentCategories();
+        $specialOffer = $this->home->specialOffer();
 
-        return view('frontend.home', compact('sliders', 'products', 'bestRated', 'hotDeal', 'trands', 'posts', 'parentCategories', 'brands'));
+        return view('frontend.home', compact('sliders', 'products', 'hotDeals', 'bestSellers', 'trand', 'posts', 'newArrival', 'brands', 'parentCategories', 'specialOffer'));
     }
 }

@@ -55,28 +55,24 @@ class ProductRepository implements ProductInterface
         $product->product_details = $request->product_details;
         $product->video_link = $request->video_link;
 
-        if ($request->main_slider == 'on') {
-            $product->main_slider = 1;
-        }
-
         if ($request->hot_deal == 'on') {
             $product->hot_deal = 1;
         }
 
-        if ($request->best_rated == 'on') {
-            $product->best_rated = 1;
+        if ($request->best_seller == 'on') {
+            $product->best_seller = 1;
         }
 
-        if ($request->hot_new == 'on') {
-            $product->hot_new = 1;
-        }
-
-        if ($request->hot_deal == 'on') {
-            $product->hot_deal = 1;
+        if ($request->special_offer == 'on') {
+            $product->special_offer = 1;
         }
 
         if ($request->trand == 'on') {
             $product->trand = 1;
+        }
+
+        if ($request->new_arrival == 'on') {
+            $product->new_arrival = 1;
         }
 
         if ($image_one) {
@@ -133,34 +129,34 @@ class ProductRepository implements ProductInterface
         $product->product_details = $request->product_details;
         $product->video_link = $request->video_link;
 
-        if ($request->main_slider == 'on') {
-            $product->main_slider = 1;
-        } else {
-            $product->main_slider = 0;
-        }
-
-        if ($request->best_rated == 'on') {
-            $product->best_rated = 1;
-        } else {
-            $product->best_rated = 0;
-        }
-
-        if ($request->hot_new == 'on') {
-            $product->hot_new = 1;
-        } else {
-            $product->hot_new = 0;
-        }
-
         if ($request->hot_deal == 'on') {
             $product->hot_deal = 1;
         } else {
             $product->hot_deal = 0;
         }
 
+        if ($request->best_seller == 'on') {
+            $product->best_seller = 1;
+        } else {
+            $product->best_seller = 0;
+        }
+
+        if ($request->special_offer == 'on') {
+            $product->special_offer = 1;
+        } else {
+            $product->special_offer = 0;
+        }
+
         if ($request->trand == 'on') {
             $product->trand = 1;
         } else {
             $product->trand = 0;
+        }
+
+        if ($request->new_arrival == 'on') {
+            $product->new_arrival = 1;
+        } else {
+            $product->new_arrival = 0;
         }
 
         if ($image_one) {
