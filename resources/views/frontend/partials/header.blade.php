@@ -59,8 +59,10 @@
                                     <i class="fa fa-user-secret" aria-hidden="true"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">{{ Auth::user()->name }}</a>
-                                    <a class="dropdown-item" href="#">Change Password</a>
+                                    <a class="dropdown-item" href="{{ route('profile', Auth::user()->slug) }}">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('password.change') }}">Change Password</a>
                                     <div class="dropdown-divider"></div>
                                     {{ Form::open(['route' => 'logout']) }}
                                         {{ Form::submit('Sign out') }}

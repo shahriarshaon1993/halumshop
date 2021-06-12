@@ -12,8 +12,10 @@ use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Frontend\Auth\ChangePasswordController;
 use App\Http\Controllers\Frontend\Auth\UserAuthController;
 use App\Http\Controllers\Frontend\Auth\UserLogoutController;
+use App\Http\Controllers\Frontend\Auth\UserProfileController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -88,14 +90,16 @@ Route::get('/login', [UserAuthController::class, 'showLoginForm'])->name('login'
 Route::post('/login', [UserAuthController::class, 'proccessLogin']);
 Route::get('/register', [UserAuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [UserAuthController::class, 'proccessRegister']);
-
 Route::get('/activate/{token}', [UserAuthController::class, 'activate'])->name('activate');
-
 Route::post('/logout', [UserLogoutController::class, 'logout'])->name('logout');
-
 
 // Home Controller for home page route
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// User Profile Controller
+Route::get('/profile/{slug}', [UserProfileController::class, 'index'])->name('profile');
+Route::get('/user/change-password', [ChangePasswordController::class, 'index'])->name('password.change');
+Route::post('/user/change-password', [ChangePasswordController::class, 'changePassword']);
 
 // Newsletter
 Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->name('newsletter.store');
