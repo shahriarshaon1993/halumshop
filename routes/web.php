@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\Auth\UserLogoutController;
 use App\Http\Controllers\Frontend\Auth\UserProfileController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -108,8 +109,11 @@ Route::post('/user/change-password', [ChangePasswordController::class, 'changePa
 // Home Controller for home page route
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Newsletter
+// Store Newsletter
 Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->name('newsletter.store');
+
+// Add Wishlist
+Route::post('/add/wishlist', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
 
 Route::fallback(function () {
     return '404 NOT FOUND';

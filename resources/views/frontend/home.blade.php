@@ -93,9 +93,9 @@
                                                             <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
-                                                                <i class="fa fa-heart-o"></i>
-                                                            </a>
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -129,7 +129,7 @@
                 {{-- End Categories --}}
 
                 {{-- Special Offer --}}
-                @if ($hotDeals->count() > 0)
+                @if ($specialOffer->count() > 0)
                     <section class="hotdeal spad">
                         <div class="card customCard">
                             <div class="card-header customCard__header">
@@ -180,9 +180,9 @@
                                                             <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
-                                                                <i class="fa fa-heart-o"></i>
-                                                            </a>
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -250,9 +250,9 @@
                                                             <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
-                                                                <i class="fa fa-heart-o"></i>
-                                                            </a>
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -318,9 +318,9 @@
                                                             <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
-                                                                <i class="fa fa-heart-o"></i>
-                                                            </a>
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -386,9 +386,9 @@
                                                             <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
-                                                                <i class="fa fa-heart-o"></i>
-                                                            </a>
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -494,9 +494,9 @@
                                                             <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
                                                                 <i class="fa fa-shopping-cart"></i>
                                                             </a>
-                                                            <a href="#" class="btn btn-sm btn-success btn-wish" title="Wishlist">
-                                                                <i class="fa fa-heart-o"></i>
-                                                            </a>
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -531,4 +531,54 @@
         </div>
     @endif
     {{-- End Partner Logo --}}
+
+    <script>
+
+        $(document).ready(function() {
+            $('.wishlistSubmit').on('click', function(e){
+                e.preventDefault();
+                var id = $(this).data('id');
+                if(id) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{ route('add.wishlist') }}",
+                        method: 'post',
+                        data: {
+                            id: id,
+                        },
+                        success:function(data) {
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                onOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                }
+                            })
+                            if($.isEmptyObject(data.error)) {
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: data.success
+                                })
+                            }else {
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: data.error
+                                })
+                            }
+                        },
+                    });
+                }else {
+                    alert('Danger...!');
+                }
+            });
+        });
+    </script>
 @endsection

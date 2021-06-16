@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -11,7 +12,7 @@
 
     {{-- Include Toaster-js --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/toaster.min.css') }}">
-    <script src="{{ asset('js/jquery-5.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-5.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/toaster.min.js') }}"></script>
 
     <script>

@@ -21,48 +21,48 @@ class HomeRepository implements HomeInterface
     public function products()
     {
         return Product::where('status', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function hotDeal()
     {
         return Product::where('status', 1)->where('hot_deal', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(3)->get();
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(3)->get();
     }
 
     public function bestSeller()
     {
         return Product::where('status', 1)->where('best_seller', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function trand()
     {
         return Product::where('status', 1)->where('trand', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function posts()
     {
         return Post::where('status', 1)
-            ->select('title_en', 'title_bn', 'slug', 'description_en', 'description_bn', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(10)->get();
+            ->select('id', 'title_en', 'title_bn', 'slug', 'description_en', 'description_bn', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function newArrival()
     {
         return Product::where('status', 1)->where('new_arrival', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function brands()
     {
-        return Brand::select('slug', 'logo')->orderBy('created_at', 'DESC')->limit(10)->get();
+        return Brand::select('id', 'slug', 'logo')->orderBy('created_at', 'DESC')->limit(10)->get();
     }
 
     public function parentCategories()
     {
         return Category::whereNull('category_id')
-            ->select('name', 'slug')
+            ->select('id', 'name', 'slug')
             ->orderBy('created_at', 'DESC')
             ->limit(9)->get();
     }
@@ -70,6 +70,6 @@ class HomeRepository implements HomeInterface
     public function specialOffer()
     {
         return Product::where('status', 1)->where('special_offer', 1)
-            ->select('product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(3)->get();
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->limit(3)->get();
     }
 }

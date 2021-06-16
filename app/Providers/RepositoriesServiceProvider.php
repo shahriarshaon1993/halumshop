@@ -11,6 +11,7 @@ use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
 use App\Interface\RepoInterface;
 use App\Interface\SliderInterface;
+use App\Interface\WishlistInterface;
 use App\Repositories\BrandRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CouponRepository;
@@ -20,6 +21,7 @@ use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\SliderRepository;
+use App\Repositories\WishlistRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider
@@ -69,6 +71,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             HomeInterface::class,
             HomeRepository::class,
+        );
+
+        $this->app->bind(
+            WishlistInterface::class,
+            WishlistRepository::class,
         );
     }
 }

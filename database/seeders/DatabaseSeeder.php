@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\PostCategory::factory(10)->create();
         \App\Models\Post::factory(20)->create();
         \App\Models\Slider::factory(3)->create();
+        \App\Models\Wishlist::factory(10)->create();
     }
 }
