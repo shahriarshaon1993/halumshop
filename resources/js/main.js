@@ -1,3 +1,4 @@
+// Hamburger Menu
 var hamburgerMenu = document.querySelector(".hamburger__menu");
 var closeBtn = document.querySelector(".close-btn");
 var rightSidebar = document.querySelector(".right-sidebar");
@@ -10,17 +11,28 @@ closeBtn.addEventListener("click", () => {
     rightSidebar.classList.remove("change");
 });
 
-const signinBtn = document.querySelector('.signinBtn');
-const signupBtn = document.querySelector('.signupBtn');
-const formBx = document.querySelector('.login__container__formBx');
-const login = document.querySelector('.login');
 
-signupBtn.addEventListener("click", () => {
-    formBx.classList.add('active');
-    login.classList.add('active');
-});
+// Login Registration Form
+function loginRegistrationForm() {
+    const signinBtn = document.querySelector('.signinBtn');
+    const signupBtn = document.querySelector('.signupBtn');
+    const formBx = document.querySelector('.login__container__formBx');
+    const login = document.querySelector('.login');
 
-signinBtn.addEventListener("click", () => {
-    formBx.classList.remove('active');
-    login.classList.remove('active');
-});
+    if(signupBtn) {
+        signupBtn.addEventListener("click", () => {
+            formBx.classList.add('active');
+            login.classList.add('active');
+        });
+    }
+
+    if(signinBtn) {
+        signinBtn.addEventListener("click", () => {
+            formBx.classList.remove('active');
+            login.classList.remove('active');
+        });
+    }
+}
+loginRegistrationForm();
+
+
