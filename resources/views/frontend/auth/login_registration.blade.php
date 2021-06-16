@@ -25,7 +25,7 @@
                         {{ Form::email('email', null, ['placeholder' => 'Your E-mail']) }}
                         {{ Form::password('password', ['placeholder' => 'Password']) }}
                         {{ Form::submit('Login') }}
-                        <a href="#" class="forget">Forgot Password</a>
+                        <a href="{{ route('forget.password.get') }}" class="forget">Forgot Password</a>
                     {{ Form::close() }}
                 </div>
 

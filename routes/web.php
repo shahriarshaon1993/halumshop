@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\Auth\ChangePasswordController;
+use App\Http\Controllers\Frontend\Auth\Password\ForgotPasswordController;
 use App\Http\Controllers\Frontend\Auth\UserAuthController;
 use App\Http\Controllers\Frontend\Auth\UserLogoutController;
 use App\Http\Controllers\Frontend\Auth\UserProfileController;
@@ -93,13 +94,19 @@ Route::post('/register', [UserAuthController::class, 'proccessRegister']);
 Route::get('/activate/{token}', [UserAuthController::class, 'activate'])->name('activate');
 Route::post('/logout', [UserLogoutController::class, 'logout'])->name('logout');
 
-// Home Controller for home page route
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Forget Password
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 // User Profile Controller
 Route::get('/profile/{slug}', [UserProfileController::class, 'index'])->name('profile');
 Route::get('/user/change-password', [ChangePasswordController::class, 'index'])->name('password.change');
 Route::post('/user/change-password', [ChangePasswordController::class, 'changePassword']);
+
+// Home Controller for home page route
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Newsletter
 Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->name('newsletter.store');
