@@ -12,6 +12,7 @@ class WishlistController extends Controller
 
     public function __construct(WishlistInterface $wishlist)
     {
+        $this->middleware('auth');
         $this->wishlist = $wishlist;
     }
 
