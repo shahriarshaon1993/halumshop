@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Interface\BrandInterface;
+use App\Interface\CartInterface;
 use App\Interface\CouponInterface;
 use App\Interface\HomeInterface;
 use App\Interface\NewslaterIntterface;
@@ -13,6 +14,7 @@ use App\Interface\RepoInterface;
 use App\Interface\SliderInterface;
 use App\Interface\WishlistInterface;
 use App\Repositories\BrandRepository;
+use App\Repositories\CartRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CouponRepository;
 use App\Repositories\HomeRepository;
@@ -76,6 +78,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             WishlistInterface::class,
             WishlistRepository::class,
+        );
+
+        $this->app->bind(
+            CartInterface::class,
+            CartRepository::class,
         );
     }
 }

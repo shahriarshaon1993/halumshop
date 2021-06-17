@@ -17,9 +17,11 @@ use App\Http\Controllers\Frontend\Auth\Password\ForgotPasswordController;
 use App\Http\Controllers\Frontend\Auth\UserAuthController;
 use App\Http\Controllers\Frontend\Auth\UserLogoutController;
 use App\Http\Controllers\Frontend\Auth\UserProfileController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\WishlistController;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -115,8 +117,19 @@ Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->na
 // Add Wishlist
 Route::post('/add/wishlist', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
 
+// Add To Cart
+Route::post('/add/cart', [CartController::class, 'addToCart'])->name('add.cart');
+
 Route::fallback(function () {
     return '404 NOT FOUND';
+});
+
+// ---- For Checking Route ----
+
+Route::get('/check/cart', function () {
+    // Cart::destroy();
+    // return response()->json(Cart::content());
+    dd(Cart::content());
 });
 
 Route::get('test', function () {

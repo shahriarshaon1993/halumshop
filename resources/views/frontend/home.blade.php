@@ -81,20 +81,21 @@
                                                             </span>
                                                         @else
                                                             <span class="price">
-                                                                ৳ {{ intval($product->selling_price) }}
+                                                                ৳ {{ intval($product->discount_price) }}
                                                             </span>
                                                             <span class="price-before-discount">
-                                                                ৳ {{ intval($product->discount_price) }}
+                                                                ৳ {{ intval($product->selling_price) }}
                                                             </span>
                                                         @endif
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -168,20 +169,21 @@
                                                             </span>
                                                         @else
                                                             <span class="price">
-                                                                ৳ {{ intval($product->selling_price) }}
+                                                                ৳ {{ intval($product->discount_price) }}
                                                             </span>
                                                             <span class="price-before-discount">
-                                                                ৳ {{ intval($product->discount_price) }}
+                                                                ৳ {{ intval($product->selling_price) }}
                                                             </span>
                                                         @endif
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -238,20 +240,21 @@
                                                             </span>
                                                         @else
                                                             <span class="price">
-                                                                ৳ {{ intval($product->selling_price) }}
+                                                                ৳ {{ intval($product->discount_price) }}
                                                             </span>
                                                             <span class="price-before-discount">
-                                                                ৳ {{ intval($product->discount_price) }}
+                                                                ৳ {{ intval($product->selling_price) }}
                                                             </span>
                                                         @endif
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -306,20 +309,21 @@
                                                             </span>
                                                         @else
                                                             <span class="price">
-                                                                ৳ {{ intval($product->selling_price) }}
+                                                                ৳ {{ intval($product->discount_price) }}
                                                             </span>
                                                             <span class="price-before-discount">
-                                                                ৳ {{ intval($product->discount_price) }}
+                                                                ৳ {{ intval($product->selling_price) }}
                                                             </span>
                                                         @endif
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -374,20 +378,21 @@
                                                             </span>
                                                         @else
                                                             <span class="price">
-                                                                ৳ {{ intval($product->selling_price) }}
+                                                                ৳ {{ intval($product->discount_price) }}
                                                             </span>
                                                             <span class="price-before-discount">
-                                                                ৳ {{ intval($product->discount_price) }}
+                                                                ৳ {{ intval($product->selling_price) }}
                                                             </span>
                                                         @endif
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -482,20 +487,21 @@
                                                             </span>
                                                         @else
                                                             <span class="price">
-                                                                ৳ {{ intval($product->selling_price) }}
+                                                                ৳ {{ intval($product->discount_price) }}
                                                             </span>
                                                             <span class="price-before-discount">
-                                                                ৳ {{ intval($product->discount_price) }}
+                                                                ৳ {{ intval($product->selling_price) }}
                                                             </span>
                                                         @endif
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a href="#" class="btn btn-sm btn-success btn-cart" title="Add to cart">
-                                                                <i class="fa fa-shopping-cart"></i>
-                                                            </a>
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}"><i class="fa fa-heart-o"></i></button>
+                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
+                                                            </form>
+
+                                                            <form action="javascript:void(0)" method="POST">
+                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -533,7 +539,7 @@
     {{-- End Partner Logo --}}
 
     <script>
-
+        // Add To Wishlist
         $(document).ready(function() {
             $('.wishlistSubmit').on('click', function(e){
                 e.preventDefault();
@@ -546,6 +552,54 @@
                     });
                     $.ajax({
                         url: "{{ route('add.wishlist') }}",
+                        method: 'post',
+                        data: {
+                            id: id,
+                        },
+                        success:function(data) {
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                onOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                }
+                            })
+                            if($.isEmptyObject(data.error)) {
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: data.success
+                                })
+                            }else {
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: data.error
+                                })
+                            }
+                        },
+                    });
+                }else {
+                    alert('Danger...!');
+                }
+            });
+        });
+
+        // Add To Cart
+        $(document).ready(function() {
+            $('.cartSubmit').on('click', function(e){
+                e.preventDefault();
+                var id = $(this).data('id');
+                if(id) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{ route('add.cart') }}",
                         method: 'post',
                         data: {
                             id: id,
