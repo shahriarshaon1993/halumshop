@@ -11,7 +11,8 @@ class CartRepository implements CartInterface
     public function addToCart($request)
     {
         $id = $request->id;
-        $product = Product::where('id', $id)->first();
+        $product = Product::select('id', 'product_title', 'discount_price', 'selling_price', 'image_one')
+            ->where('id', $id)->first();
         $data = [];
 
         $data['id'] = $product->id;

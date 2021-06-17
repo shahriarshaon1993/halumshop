@@ -69,21 +69,25 @@
                                     {{ Form::close() }}
                                 </div>
                             </li>
+
+                            @php
+                                $wishlists = DB::table('wishlists')->where('user_id', Auth::id())->get();
+                            @endphp
+
+                            <li class="nav-item wishlist">
+                                <a class="nav-link" href="#" title="Wishlist">
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    <span>{{ count($wishlists) }}</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item cart">
+                                <a class="nav-link" href="#" title="Cartlist">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <span>0</span>
+                                </a>
+                            </li>
                         @endauth
-
-                        <li class="nav-item wishlist">
-                            <a class="nav-link" href="#" title="Wishlist">
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                <span>1</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item cart">
-                            <a class="nav-link" href="#" title="Cartlist">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span>1</span>
-                            </a>
-                        </li>
 
                         @guest
                             <li class="nav-item ml-3 user-btn">
