@@ -14235,6 +14235,112 @@ img {
   background-size: cover;
 }
 
+.product-details {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-family: "Open Sans", sans-serif;
+}
+.product-details .small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+.product-details .small-img-col {
+  flex-basis: 32%;
+  cursor: pointer;
+}
+.product-details h6 a {
+  color: #343a40;
+  transition: 0.3s all;
+}
+.product-details h6 a:hover {
+  color: #28a745;
+}
+.product-details .price-before-discount {
+  text-decoration: line-through;
+  color: #d3d3d3;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 18px;
+}
+.product-details select {
+  width: 130px;
+  height: 35px;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 0;
+}
+.product-details select:focus {
+  outline: none;
+}
+.product-details input {
+  width: 130px;
+  height: 35px;
+  margin-right: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 0;
+  border: 1px solid;
+}
+.product-details input:focus {
+  outline: none;
+}
+.product-details .buy-btn {
+  background: #fb774b;
+  border: 1px solid #fb774b;
+  border-radius: 0;
+  opacity: 1;
+  transition: 0.3s all;
+}
+.product-details .buy-btn:active, .product-details .buy-btn:focus {
+  box-shadow: none;
+}
+
+.viewed {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-family: "Open Sans", sans-serif;
+}
+.viewed .nav-item {
+  border-radius: 0;
+}
+.viewed .tab-pane {
+  background-color: #f1f2f4;
+}
+.viewed .product-comment,
+.viewed .product-video {
+  margin: 0 auto;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+.viewed .product-comment {
+  padding: 25px 20px;
+  width: 660px;
+  background-color: #fff;
+}
+.viewed .product-comment .panel {
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 15px;
+}
+.viewed .product-comment .panel .panel-body .mar-btm h5 {
+  margin-bottom: 1px;
+}
+.viewed .product-comment .panel .panel-body .mar-btm h5 a {
+  color: #28a745;
+}
+.viewed .product-comment .panel .panel-body .mar-btm p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.viewed .product-comment .panel .panel-body p {
+  color: #343a40;
+}
+.viewed .product-video {
+  width: 560px;
+  height: 335px;
+  border: 10px solid #fff;
+}
+
 .footer {
   background-color: #343a40;
   padding-top: 75px;

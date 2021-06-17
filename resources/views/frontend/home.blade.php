@@ -54,7 +54,7 @@
                                     @foreach ($hotDeals as $product)
                                         <div class="col-12">
                                             <div class="card ProductCard">
-                                                <a href="#">
+                                                <a href="{{ route('products.details', $product->slug) }}">
                                                     <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
                                                 </a>
                                                 <div class="ProductCard__label">
@@ -72,7 +72,7 @@
                                                 </div>
                                                 <div class="card-body productCard__body">
                                                     <h5 class="card-title productCard__title">
-                                                        <a href="#">{{ $product->product_title }}</a>
+                                                        <a href="{{ route('products.details', $product->slug) }}">{{ $product->product_title }}</a>
                                                     </h5>
                                                     <div class="productCard__price">
                                                         @if ($product->discount_price == NULL)

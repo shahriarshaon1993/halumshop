@@ -558,6 +558,141 @@ img {
 }
 // End Partner Logo
 
+// Product Details Page
+.product-details {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-family: "Open Sans", sans-serif;
+
+    .small-img-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .small-img-col {
+        flex-basis: 32%;
+        cursor: pointer;
+    }
+
+    h6 {
+        a {
+            color: $dark-color;
+            transition: 0.3s all;
+
+            &:hover {
+                color: $success-color;
+            }
+        }
+    }
+
+    .price-before-discount {
+        text-decoration: line-through;
+        color: #d3d3d3;
+        font-weight: 400;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    select {
+        width: 130px;
+        height: 35px;
+        margin-right: 5px;
+        padding: 5px 10px;
+        border-radius: 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input {
+        width: 130px;
+        height: 35px;
+        margin-right: 5px;
+        padding-left: 10px;
+        font-size: 16px;
+        margin-right: 10px;
+        border-radius: 0;
+        border: 1px solid;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .buy-btn {
+        background: #fb774b;
+        border: 1px solid #fb774b;
+        border-radius: 0;
+        opacity: 1;
+        transition: 0.3s all;
+
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// Recently Viewd
+.viewed {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-family: "Open Sans", sans-serif;
+
+    .nav-item {
+        border-radius: 0;
+    }
+
+    .tab-pane {
+        background-color: #f1f2f4;
+    }
+
+    .product-comment,
+    .product-video {
+        margin: 0 auto;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-comment {
+        padding: 25px 20px;
+        width: 660px;
+        background-color: #fff;
+
+        .panel {
+            border-radius: 0;
+            border: 0;
+            margin-bottom: 15px;
+
+            .panel-body {
+                .mar-btm {
+                    h5 {
+                        margin-bottom: 1px;
+
+                        a {
+                            color: $success-color;
+                        }
+                    }
+                    p {
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
+                }
+
+                p {
+                    color: $dark-color;
+                }
+            }
+        }
+    }
+
+    .product-video {
+        width: 560px;
+        height: 335px;
+        border: 10px solid #fff;
+    }
+}
+
 // footer
 .footer {
     background-color: $dark-color;

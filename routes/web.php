@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\Auth\UserLogoutController;
 use App\Http\Controllers\Frontend\Auth\UserProfileController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
+use App\Http\Controllers\Frontend\FrontProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\WishlistController;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -114,11 +115,18 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Store Newsletter
 Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->name('newsletter.store');
 
-// Add Wishlist
-Route::post('/add/wishlist', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
+// Products Route
+Route::prefix('products')->group(function () {
 
-// Add To Cart
-Route::post('/add/cart', [CartController::class, 'addToCart'])->name('add.cart');
+    // Add Wishlist
+    Route::post('/add/wishlist', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
+
+    // Add To Cart
+    Route::post('/add/cart', [CartController::class, 'addToCart'])->name('add.cart');
+
+    // Products
+    Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
+});
 
 Route::fallback(function () {
     return '404 NOT FOUND';

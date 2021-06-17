@@ -17,6 +17,7 @@ Halum Shop is an open source ecommerce platform management system using Bootstra
 -   Install `npm install slick-carousel`
 -   Install `composer require bumbummen99/shoppingcart`
 -   Install `npm install sweetalert2`
+-   Install `composer require laravel/helpers`
 
 ## Installation Instructions
 
