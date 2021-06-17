@@ -23,15 +23,15 @@ class WishlistRepository implements WishlistInterface
         if (Auth::check()) {
             if ($check) {
 
-                return Response::json(['error' => 'Product Already Has on your wishlist']);
+                return 1;
             } else {
 
                 $wishlist->save();
-                return Response::json(['success' => 'Product Added on wishlist']);
+                return 2;
             }
         } else {
 
-            return Response::json(['error' => 'At first logging your account']);
+            return 0;
         }
     }
 }
