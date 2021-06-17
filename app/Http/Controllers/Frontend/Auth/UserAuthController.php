@@ -27,17 +27,20 @@ class UserAuthController extends Controller
         $credentials = $request->only(['email', 'password']);
 
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->email_verified_at == NULL) {
+
+            if (Auth::user()->email_verified_at == null) {
+
+                Auth::logout();
+
                 $notification = array(
                     'message' => 'Your account is not activated. Please check your mail',
                     'alert-type' => 'error',
                 );
-
-                return Redirect()->back()->with($notification);
+                return Redirect()->route('login')->with($notification);
             }
 
             $notification = array(
-                'message' => 'User logged in.',
+                'message' => 'You logged in.',
                 'alert-type' => 'success',
             );
 
