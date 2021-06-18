@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "laravelcollective/html": "^6.2",
+        "laravelista/comments": "^4.5",
         "predis/predis": "^1.1"
     },
     "require-dev": {

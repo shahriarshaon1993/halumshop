@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Laravelista\Comments\Commentable;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, Commentable;
 
     protected $table = "products";
 

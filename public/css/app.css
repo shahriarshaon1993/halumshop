@@ -14317,23 +14317,22 @@ img {
   width: 660px;
   background-color: #fff;
 }
-.viewed .product-comment .panel {
+.viewed .product-comment .card .form-text {
+  display: none;
+}
+.viewed .product-comment .card button[type=submit] {
   border-radius: 0;
-  border: 0;
-  margin-bottom: 15px;
+  opacity: 1;
+  transition: 0.3s all;
 }
-.viewed .product-comment .panel .panel-body .mar-btm h5 {
-  margin-bottom: 1px;
+.viewed .product-comment .card button[type=submit]:active, .viewed .product-comment .card button[type=submit]:focus {
+  box-shadow: none;
 }
-.viewed .product-comment .panel .panel-body .mar-btm h5 a {
-  color: #28a745;
+.viewed .product-comment .media img {
+  width: 40px;
 }
-.viewed .product-comment .panel .panel-body .mar-btm p {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-.viewed .product-comment .panel .panel-body p {
-  color: #343a40;
+.viewed .product-comment .media .media-body h5 {
+  font-size: 16px;
 }
 .viewed .product-video {
   width: 560px;

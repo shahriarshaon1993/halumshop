@@ -82,25 +82,7 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show p-3 active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="product-comment">
-                                <div class="panel">
-                                    <div class="panel-body">
-                                        <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
-                                        <div class="mar-top clearfix">
-                                            <button class="btn btn-sm btn-primary pull-right mt-3" type="submit"><i class="fa fa-pencil fa-fw"></i> Submit Comment</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-
-                                <div class="panel">
-                                    <div class="panel-body px-3">
-                                        <div class="mar-btm">
-                                            <h5><a href="#">Lisa D.</a></h5>
-                                            <p class="text-muted text-sm">11 min ago</p>
-                                        </div>
-                                        <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud</p>
-                                    </div>
-                                </div>
+                                @comments(['model' => $product])
                             </div>
                         </div>
                         <div class="tab-pane p-3 fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">

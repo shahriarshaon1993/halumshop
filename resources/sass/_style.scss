@@ -659,28 +659,31 @@ img {
         width: 660px;
         background-color: #fff;
 
-        .panel {
-            border-radius: 0;
-            border: 0;
-            margin-bottom: 15px;
+        .card {
+            .form-text {
+                display: none;
+            }
 
-            .panel-body {
-                .mar-btm {
-                    h5 {
-                        margin-bottom: 1px;
+            button[type="submit"] {
+                border-radius: 0;
+                opacity: 1;
+                transition: 0.3s all;
 
-                        a {
-                            color: $success-color;
-                        }
-                    }
-                    p {
-                        font-size: 14px;
-                        margin-bottom: 5px;
-                    }
+                &:active,
+                &:focus {
+                    box-shadow: none;
                 }
+            }
+        }
 
-                p {
-                    color: $dark-color;
+        .media {
+            img {
+                width: 40px;
+            }
+
+            .media-body {
+                h5 {
+                    font-size: 16px;
                 }
             }
         }
