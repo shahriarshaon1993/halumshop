@@ -29,6 +29,7 @@
                         </div>
 
                         <div class="col-lg-6 col-md-12 col-12">
+                        {{ Form::open(['route' => ['products.details', $product->slug]]) }}
                             <h6>
                                 <a href="#">{{ $product->category->name }}</a> |
                                 <a href="#">{{ $product->subcategory->name }}</a>
@@ -44,22 +45,29 @@
                                     </span>
                                 @endif
                             </h2>
-                            <select class="my-3">
-                                <option value="">Select Size</option>
-                                @foreach ($product_size as $size)
-                                    <option value="{{ $size }}">{{ $size }}</option>
-                                @endforeach
-                            </select>
-                            <select class="my-3">
-                                <option value="">Select Color</option>
-                                @foreach ($product_color as $color)
-                                    <option value="{{ $color }}">{{ $color }}</option>
-                                @endforeach
-                            </select>
-                            <input type="number" value="1" min="1" max="10">
-                            <button class="btn btn-success buy-btn">Add To Cart</button>
+                            @if ($product->product_size != null)
+                                <select class="my-3" name="size">
+                                    <option value="">Select Size</option>
+                                    @foreach ($product_size as $size)
+                                        <option value="{{ $size }}">{{ $size }}</option>
+                                    @endforeach
+                                </select>
+                            @endif
+
+                            @if ($product->product_color != null)
+                                <select class="my-3" name="color">
+                                    <option value="">Select Color</option>
+                                    @foreach ($product_color as $color)
+                                        <option value="{{ $color }}">{{ $color }}</option>
+                                    @endforeach
+                                </select>
+                            @endif
+                            <input type="number" value="1" min="1" max="10" name="qty">
+
+                            <button type="submit" class="btn btn-success buy-btn">Add To Cart</button>
                             <h4 class="my-3">Product Details <i class="fa fa-indent" aria-hidden="true"></i></h4>
                             <p>{!! $product->product_details !!}</p>
+                        {{ Form::close() }}
                         </div>
                     </div>
                 </div>

@@ -126,6 +126,7 @@ Route::prefix('products')->group(function () {
 
     // Products
     Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
+    Route::post('/details/{slug}', [FrontProductController::class, 'addProductCart']);
 });
 
 Route::fallback(function () {
