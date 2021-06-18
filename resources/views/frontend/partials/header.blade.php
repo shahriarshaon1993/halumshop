@@ -84,9 +84,10 @@
                             <li class="nav-item cart">
                                 <a class="nav-link" href="#" title="Cartlist">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span>0</span>
+                                    <span>{{ Cart::count() }}</span>
                                 </a>
                             </li>
+                            <h6 class="ml-2">৳ {{ Cart::subtotal() }}</h6>
                         @endauth
 
                         @guest

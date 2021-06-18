@@ -136,9 +136,9 @@ Route::fallback(function () {
 // ---- For Checking Route ----
 
 Route::get('/check/cart', function () {
-    // Cart::destroy();
+    Cart::destroy();
     // return response()->json(Cart::content());
-    dd(Cart::content());
+    // dd(Cart::content());
 });
 
 Route::get('test', function () {

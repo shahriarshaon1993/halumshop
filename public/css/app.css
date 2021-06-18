@@ -14314,7 +14314,7 @@ img {
 }
 .viewed .product-comment {
   padding: 25px 20px;
-  width: 660px;
+  width: 80%;
   background-color: #fff;
 }
 .viewed .product-comment .card .form-text {
@@ -14335,7 +14335,7 @@ img {
   font-size: 16px;
 }
 .viewed .product-video {
-  width: 560px;
+  width: 60%;
   height: 335px;
   border: 10px solid #fff;
 }
