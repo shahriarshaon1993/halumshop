@@ -14340,6 +14340,77 @@ img {
   border: 10px solid #fff;
 }
 
+.product-cart {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  font-family: "Open Sans", sans-serif;
+}
+.product-cart thead tr {
+  background: #28a745;
+}
+.product-cart thead tr th {
+  border: none;
+  color: #f1f2f4;
+}
+.product-cart tbody td {
+  border: none;
+  padding: 28px 10px;
+}
+.product-cart tbody td:first-child {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.product-cart tbody td .item-img img {
+  width: 90px;
+}
+.product-cart tbody td .item-detail h6,
+.product-cart tbody td .item-detail p {
+  font-size: 14px;
+}
+.product-cart tbody td .item-detail h6 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.product-cart tbody td .item-detail span {
+  font-size: 12px;
+  margin: 0;
+}
+.product-cart tbody td .btn-qty {
+  width: 100px;
+}
+.product-cart tbody td .btn-qty button,
+.product-cart tbody td .btn-qty input {
+  border-radius: 0;
+}
+.product-cart tbody td .btn-qty button:active, .product-cart tbody td .btn-qty button:focus,
+.product-cart tbody td .btn-qty input:active,
+.product-cart tbody td .btn-qty input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.product-cart tbody .total-bg {
+  background: #28a745;
+}
+.product-cart tbody .total-bg td {
+  padding: 0.75rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f2f4;
+}
+.product-cart tbody .total-bg:hover {
+  background: #28a745;
+}
+.product-cart .btn-action,
+.product-cart .btn-checkout {
+  border-radius: 0;
+}
+.product-cart .btn-action:active, .product-cart .btn-action:focus,
+.product-cart .btn-checkout:active,
+.product-cart .btn-checkout:focus {
+  box-shadow: none;
+}
+
 .footer {
   background-color: #343a40;
   padding-top: 75px;
@@ -14708,5 +14779,19 @@ img {
 
   .header .navbar-collapse .search-box {
     width: 15rem;
+  }
+}
+@media (max-width: 768px) {
+  .product-cart tbody td .item-img img {
+    display: none;
+  }
+
+  .product-cart .table th,
+.product-cart .table td {
+    font-size: 12px;
+  }
+
+  .product-cart tbody .total-bg td {
+    font-size: 12px;
   }
 }

@@ -42,3 +42,18 @@
         width: 15rem;
     }
 }
+
+@media (max-width: 768px) {
+    .product-cart tbody td .item-img img {
+        display: none;
+    }
+
+    .product-cart .table th,
+    .product-cart .table td {
+        font-size: 12px;
+    }
+
+    .product-cart tbody .total-bg td {
+        font-size: 12px;
+    }
+}

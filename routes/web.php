@@ -123,6 +123,9 @@ Route::prefix('products')->group(function () {
 
     // Add To Cart
     Route::post('/add/cart', [CartController::class, 'addToCart'])->name('add.cart');
+    Route::get('/show/cart', [CartController::class, 'showCart'])->name('show.cart');
+    Route::post('/update/cart/item', [CartController::class, 'updateCartItem'])->name('update.cartitem');
+    Route::delete('/remove/cart/{rowId}', [CartController::class, 'removeCart'])->name('remove.cart');
 
     // Products
     Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
@@ -136,9 +139,9 @@ Route::fallback(function () {
 // ---- For Checking Route ----
 
 Route::get('/check/cart', function () {
-    Cart::destroy();
+    // Cart::destroy();
     // return response()->json(Cart::content());
-    // dd(Cart::content());
+    dd(Cart::content());
 });
 
 Route::get('test', function () {

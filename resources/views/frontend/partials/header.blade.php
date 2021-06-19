@@ -82,7 +82,7 @@
                             </li>
 
                             <li class="nav-item cart">
-                                <a class="nav-link" href="#" title="Cartlist">
+                                <a class="nav-link" href="{{ route('show.cart') }}" title="Cartlist">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     <span>{{ Cart::count() }}</span>
                                 </a>
