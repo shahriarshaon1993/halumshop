@@ -122,7 +122,6 @@ Route::prefix('products')->group(function () {
     Route::post('/add/wishlist', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
 
     // Add To Cart
-    Route::post('/add/cart', [CartController::class, 'addToCart'])->name('add.cart');
     Route::get('/show/cart', [CartController::class, 'showCart'])->name('show.cart');
     Route::post('/update/cart/item', [CartController::class, 'updateCartItem'])->name('update.cartitem');
     Route::delete('/remove/cart/{rowId}', [CartController::class, 'removeCart'])->name('remove.cart');
@@ -130,6 +129,7 @@ Route::prefix('products')->group(function () {
     // Products
     Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
     Route::post('/details/{slug}', [FrontProductController::class, 'addProductCart']);
+    Route::get('/queck/{slug}', [FrontProductController::class, 'productQueckView'])->name('products.queck');
 });
 
 Route::fallback(function () {

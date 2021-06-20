@@ -90,9 +90,7 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <form action="javascript:void(0)" method="POST">
-                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                            </form>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
                                                                 <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
@@ -178,9 +176,7 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <form action="javascript:void(0)" method="POST">
-                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                            </form>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
                                                                 <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
@@ -249,9 +245,7 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <form action="javascript:void(0)" method="POST">
-                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                            </form>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
                                                                 <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
@@ -318,9 +312,7 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <form action="javascript:void(0)" method="POST">
-                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                            </form>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
                                                                 <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
@@ -387,9 +379,7 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <form action="javascript:void(0)" method="POST">
-                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                            </form>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
                                                                 <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
@@ -496,9 +486,7 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <form action="javascript:void(0)" method="POST">
-                                                                <button class="cartSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                            </form>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
                                                                 <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
@@ -519,6 +507,12 @@
         </div>
     </div>
     {{-- End Container --}}
+
+    <!-- Modal -->
+    <x-cart></x-cart>
+
+    {{-- <h1 id="productName"></h1> --}}
+    {{-- <x-cart></x-cart> --}}
 
     {{-- Partner Logo --}}
     @if ($brands->count() > 0)
@@ -587,52 +581,40 @@
             });
         });
 
-        // Add To Cart
-        $(document).ready(function() {
-            $('.cartSubmit').on('click', function(e){
-                e.preventDefault();
-                var id = $(this).data('id');
-                if(id) {
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
+        function productview(slug) {
+            var url = '{{ route("products.queck", ":slug") }}';
+            url = url.replace(':slug', slug);
+            var postUrl = '{{ route("products.details", ":slug") }}';
+            postUrl = postUrl.replace(':slug', slug);
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                success:function(data) {
+                    $('#productImage').attr('src',data.product.image_one);
+                    $('#productCategory').text(data.product.category.name);
+                    $('#productSubcategory').text(data.product.subcategory.name);
+                    $('#productName').text(data.product.product_title);
+                    $('#productBrand').text(data.product.brand.name);
+                    $('#productUrl').attr('action', postUrl);
+
+                    if(data.product.discount_price == null) {
+                        $('#productPrice').text(data.product.selling_price);
+                    }else {
+                        $('#productPrice').text(data.product.discount_price);
+                    }
+
+                    var d = $('select[name="color"]').empty();
+                    $.each(data.product_color,function(key,value){
+                        $('select[name="color"]').append('<option value="'+value+'">'+value+'</option>');
                     });
-                    $.ajax({
-                        url: "{{ route('add.cart') }}",
-                        method: 'post',
-                        data: {
-                            id: id,
-                        },
-                        success:function(data) {
-                            const Toast = Swal.mixin({
-                                toast: true,
-                                position: 'top-end',
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                onOpen: (toast) => {
-                                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                                }
-                            })
-                            if($.isEmptyObject(data.error)) {
-                                Toast.fire({
-                                    icon: 'success',
-                                    title: data.success
-                                })
-                            }else {
-                                Toast.fire({
-                                    icon: 'error',
-                                    title: data.error
-                                })
-                            }
-                        },
+
+                    var d = $('select[name="size"]').empty();
+                    $.each(data.product_size,function(key,value){
+                        $('select[name="size"]').append('<option value="'+value+'">'+value+'</option>');
                     });
-                }else {
-                    alert('Danger...!');
                 }
-            });
-        });
+            })
+        }
     </script>
 @endsection

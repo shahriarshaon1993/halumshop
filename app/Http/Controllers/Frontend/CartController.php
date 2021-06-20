@@ -17,12 +17,6 @@ class CartController extends Controller
         $this->cart = $cart;
     }
 
-    public function addToCart(Request $request)
-    {
-        $this->cart->addToCart($request);
-        return Response::json(['success' => 'Successfully add on your cart']);
-    }
-
     public function showCart()
     {
         $shopcarts = $this->cart->showCart();

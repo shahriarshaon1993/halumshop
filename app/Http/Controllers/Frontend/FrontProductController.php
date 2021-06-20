@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Interface\FrontProductInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class FrontProductController extends Controller
 {
@@ -34,5 +35,19 @@ class FrontProductController extends Controller
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
+    }
+
+    public function productQueckView($slug)
+    {
+        $product = $this->frontProduct->productView($slug);
+
+        $product_color = explode(',', $product->product_color);
+        $product_size = explode(',', $product->product_size);
+
+        return Response::json([
+            'product' => $product,
+            'product_color' => $product_color,
+            'product_size' => $product_size
+        ]);
     }
 }
