@@ -14165,6 +14165,12 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.5;
+  transition: 0.5s all;
+}
+.banner .carousel-control-prev span:first-child:hover,
+.banner .carousel-control-next span:first-child:hover {
+  opacity: 1;
 }
 .banner .carousel-control-next span:first-child {
   border-radius: 5px 0 0 5px;
@@ -14528,7 +14534,9 @@ img {
   background: #fff;
   width: 2rem;
   height: 3.5rem;
+  opacity: 0.6;
   transform: translate(0, -80%);
+  transition: 0.5s all;
 }
 .blog-slider .slick-prev:hover,
 .blog-slider .slick-next:hover,
@@ -14536,6 +14544,7 @@ img {
 .sidebar-slider .slick-next:hover,
 .product-slider .slick-prev:hover,
 .product-slider .slick-next:hover {
+  opacity: 1;
   background: #fff;
 }
 .blog-slider .slick-prev::before,

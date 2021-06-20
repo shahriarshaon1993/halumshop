@@ -461,6 +461,12 @@ img {
             display: flex;
             justify-content: center;
             align-items: center;
+            opacity: 0.5;
+            transition: 0.5s all;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
@@ -935,9 +941,12 @@ img {
         background: #fff;
         width: 2rem;
         height: 3.5rem;
+        opacity: 0.6;
         transform: translate(0, -80%);
+        transition: 0.5s all;
 
         &:hover {
+            opacity: 1;
             background: #fff;
         }
 
