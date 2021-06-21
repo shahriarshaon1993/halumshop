@@ -34,4 +34,14 @@ class WishlistRepository implements WishlistInterface
             return 0;
         }
     }
+
+    public function wishlist()
+    {
+        return Wishlist::with('product')->where('user_id', Auth::id())->paginate(10);
+    }
+
+    public function removeWishlist($id)
+    {
+        return Wishlist::find($id);
+    }
 }

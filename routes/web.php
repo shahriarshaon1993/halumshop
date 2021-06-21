@@ -119,7 +119,9 @@ Route::post('/newsletter/store', [FrontNewslaterController::class, 'store'])->na
 Route::prefix('products')->group(function () {
 
     // Add Wishlist
-    Route::post('/add/wishlist', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
+    Route::get('/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
+    Route::post('/wishlist/add', [WishlistController::class, 'storeWishlist'])->name('add.wishlist');
+    Route::delete('/remove/wishlist/{id}', [WishlistController::class, 'removeWishlist'])->name('remove.wishlist');
 
     // Add To Cart
     Route::get('/show/cart', [CartController::class, 'showCart'])->name('show.cart');

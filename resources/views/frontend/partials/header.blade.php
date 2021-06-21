@@ -75,7 +75,7 @@
                             @endphp
 
                             <li class="nav-item wishlist">
-                                <a class="nav-link" href="#" title="Wishlist">
+                                <a class="nav-link" href="{{ route('wishlist') }}" title="Wishlist">
                                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                                     <span>{{ count($wishlists) }}</span>
                                 </a>

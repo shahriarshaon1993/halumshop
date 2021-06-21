@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Interface\WishlistInterface;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
 class WishlistController extends Controller
@@ -15,7 +14,7 @@ class WishlistController extends Controller
 
     public function __construct(WishlistInterface $wishlist)
     {
-        // $this->middleware('auth');
+        $this->middleware('auth', ['only' => 'wishlist']);
         $this->wishlist = $wishlist;
     }
 
@@ -33,5 +32,24 @@ class WishlistController extends Controller
 
             return Response::json(['error' => 'At first logging your account']);
         }
+    }
+
+    public function wishlist()
+    {
+        $wishlist = $this->wishlist->wishlist();
+
+        return view('frontend.wishlist', compact('wishlist'));
+    }
+
+    public function removeWishlist($id)
+    {
+        $wishlist = $this->wishlist->removeWishlist($id);
+        $wishlist->delete();
+
+        $notification = array(
+            'message' => 'your product successfuly remove from wishlist',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }
