@@ -44,7 +44,7 @@ class UserAuthController extends Controller
                 'alert-type' => 'success',
             );
 
-            return redirect()->route('home')->with($notification);
+            return redirect()->intended();
         }
 
         $notification = array(
