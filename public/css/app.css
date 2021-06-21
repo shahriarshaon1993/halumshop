@@ -14417,6 +14417,10 @@ img {
   box-shadow: none;
 }
 
+.checkout .checkout-list-group {
+  border-radius: 0;
+}
+
 .footer {
   background-color: #343a40;
   padding-top: 75px;

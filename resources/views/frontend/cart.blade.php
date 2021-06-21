@@ -6,53 +6,6 @@
 
     <section class="product-cart spad">
         <div class="container">
-            {{-- <div class="row">
-                <div class="col-lg-7 col-md-12 col-12">
-                    @foreach ($shopcarts as $item)
-                    <div class="card customCard mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-4">
-                                    <img src="{{ asset($item->options->image) }}" alt="$item->options->image" class="img-fluid w-100" id="mainImg">
-                                </div>
-                                <div class="col-lg-7 col-md-7 col-7">
-                                    <div class="item-details pt-2">
-                                        <div class="item-title">
-                                            <h6 class="py-1">{{ $item->name }}</h6>
-                                            @if ($item->options->color)
-                                                <span>Color: {{ $item->options->color }}</span>
-                                            @endif
-
-                                            @if ($item->options->size)
-                                                <span>Size: {{ $item->options->size }}</span>
-                                            @endif
-                                            <p>Price: ৳ {{ $item->price }}</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <form action="{{ route('update.cartitem') }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="productId" value="{{ $item->rowId }}">
-                                                <input type="number" name="qty" value="{{ $item->qty }}" style="width: 50px;" min="1" max="10">
-                                                <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-check-square"></i></button>
-                                            </form>
-
-                                            {{ Form::open(['route' => ['remove.cart', $item->rowId], 'method' => 'DELETE', 'class' => 'mt-4']) }}
-                                                <button type="submit" class="btn btn-sm btn-danger">
-                                                    Remove <i class="fa fa-trash" aria-hidden="true"></i>
-                                                </button>
-                                            {{ Form::close() }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="col-lg-4 col-md-12 col-12">
-                    <h1>Hello</h1>
-                </div>
-            </div> --}}
             <div class="card customCard">
                 <div class="card-header customCard__header">
                     Shopping Cart Product
@@ -119,9 +72,8 @@
                                     </tr>
                             </tbody>
                         </table>
-                        <form action="">
-                            <button type="submit" class="btn btn-success pull-right btn-checkout">Checkout</button>
-                        </form>
+                        <a href="{{ route('checkout') }}" class="btn btn-success pull-right btn-checkout">Checkout</a>
+
                     @else
                         <div class="alert alert-primary" role="alert">
                             Product not here in cart

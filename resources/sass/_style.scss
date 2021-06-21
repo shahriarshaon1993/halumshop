@@ -795,6 +795,14 @@ img {
     }
 }
 
+// Checkout
+.checkout {
+    .checkout-list-group {
+        border-radius: 0;
+    }
+}
+// End Checkout
+
 // footer
 .footer {
     background-color: $dark-color;

@@ -81,12 +81,16 @@
                                 </a>
                             </li>
 
+                        @endauth
+
                             <li class="nav-item cart">
                                 <a class="nav-link" href="{{ route('show.cart') }}" title="Cartlist">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     <span>{{ Cart::count() }}</span>
                                 </a>
                             </li>
+
+                        @auth
                             <h6 class="ml-2">৳ {{ Cart::subtotal() }}</h6>
                         @endauth
 

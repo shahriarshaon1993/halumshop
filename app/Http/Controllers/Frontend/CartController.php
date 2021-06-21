@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Interface\CartInterface;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -15,6 +15,7 @@ class CartController extends Controller
     public function __construct(CartInterface $cart)
     {
         $this->cart = $cart;
+        $this->middleware('auth', ['only' => 'checkout']);
     }
 
     public function showCart()
@@ -43,5 +44,20 @@ class CartController extends Controller
             'alert-type' => 'success'
         );
         return Redirect()->back()->with($notification);
+    }
+
+    public function checkout()
+    {
+        if (Auth::check()) {
+            $cart = Cart::content();
+
+            return view('frontend.checkout', compact('cart'));
+        } else {
+            $notification = array(
+                'message' => 'At first logging your account',
+                'alert-type' => 'error'
+            );
+            return Redirect()->back()->with($notification);
+        }
     }
 }
