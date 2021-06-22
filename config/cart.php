@@ -68,11 +68,11 @@ return [
 
     'format' => [
 
-        'decimals' => 2,
+        'decimals' => null,
 
         'decimal_point' => '.',
 
-        'thousand_separator' => ',',
+        'thousand_separator' => '',
 
     ],
 

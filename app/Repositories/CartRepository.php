@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Product;
 use App\Interface\CartInterface;
+use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartRepository implements CartInterface
@@ -24,5 +25,10 @@ class CartRepository implements CartInterface
     public function removeCart($rowId)
     {
         Cart::remove($rowId);
+    }
+
+    public function showSetting()
+    {
+        return Setting::select('shipping_charge', 'vat')->first();
     }
 }

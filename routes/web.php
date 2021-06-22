@@ -128,6 +128,7 @@ Route::prefix('products')->group(function () {
     Route::post('/update/cart/item', [CartController::class, 'updateCartItem'])->name('update.cartitem');
     Route::delete('/remove/cart/{rowId}', [CartController::class, 'removeCart'])->name('remove.cart');
     Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+    Route::post('/apply/coupon', [CartController::class, 'storeCoupon'])->name('apply.coupon');
 
     // Products
     Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
