@@ -99,7 +99,7 @@ class PostRepository implements PostInterface
     {
         $post = Post::find($id);
 
-        $post->status = 0;
+        $post->status = 1;
         $post->update();
     }
 }

@@ -37,7 +37,7 @@
                         <li><a href="#">About</a></li>
                         <li><a href="#">Checkout</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Blogs</a></li>
+                        <li><a href="{{ route('blog.posts') }}">Blogs</a></li>
                     </ul>
                 </div>
             </div>

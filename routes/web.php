@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\Auth\UserLogoutController;
 use App\Http\Controllers\Frontend\Auth\UserProfileController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\FrontNewslaterController;
+use App\Http\Controllers\Frontend\FrontPostController;
 use App\Http\Controllers\Frontend\FrontProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\WishlistController;
@@ -134,6 +135,15 @@ Route::prefix('products')->group(function () {
     Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
     Route::post('/details/{slug}', [FrontProductController::class, 'addProductCart']);
     Route::get('/queck/{slug}', [FrontProductController::class, 'productQueckView'])->name('products.queck');
+});
+
+// Blogs route
+Route::prefix('blogs')->group(function () {
+
+    Route::get('/posts', [FrontPostController::class, 'postIndex'])->name('blog.posts');
+    Route::get('/lan/english', [FrontPostController::class, 'english'])->name('lng.english');
+    Route::get('/lan/bangla', [FrontPostController::class, 'bangla'])->name('lng.bangla');
+    Route::get('/single/{slug}', [FrontPostController::class, 'singlePost'])->name('blog.single');
 });
 
 Route::fallback(function () {

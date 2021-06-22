@@ -45,7 +45,7 @@ class HomeRepository implements HomeInterface
     public function posts()
     {
         return Post::where('status', 1)
-            ->select('id', 'title_en', 'title_bn', 'slug', 'description_en', 'description_bn', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(10)->get();
+            ->select('title_en', 'slug', 'description_en', 'image', 'created_at')->orderBy('created_at', 'DESC')->limit(6)->get();
     }
 
     public function newArrival()

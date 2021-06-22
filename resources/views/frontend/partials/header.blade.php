@@ -35,7 +35,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#" title="Home">
+                            <a class="nav-link" href="{{ route('blog.posts') }}" title="Blog">
                                 Blog
                             </a>
                         </li>

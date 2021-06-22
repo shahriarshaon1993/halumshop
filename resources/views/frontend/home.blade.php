@@ -403,14 +403,14 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Blogs
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('blog.posts') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row blog-slider">
                                     @foreach ($posts as $post)
                                         <div class="col-md-12">
                                             <div class="blog__single__latest">
-                                                <a href="#">
+                                                <a href="{{ route('blog.single', $post->slug) }}">
                                                     <img src="{{ $post->image }}" alt="{{ $post->image }}">
                                                 </a>
                                                 <div class="blog__single__latest__text p-2">
@@ -419,13 +419,9 @@
                                                             <i class="fa fa-calendar-o"></i>
                                                             {{ $post->created_at->format('F d, Y') }}
                                                         </div>
-                                                        <div class="blog__single__latest__text__tag__item">
-                                                            <i class="fa fa-comment-o"></i>
-                                                            8
-                                                        </div>
                                                     </div>
-                                                    <a href=""><h4>{{ $post->title_en }}</h4></a>
-                                                    <p>{{ Str::limit($post->description_en, 80) }}</p>
+                                                    <a href="{{ route('blog.single', $post->slug) }}"><h4>{{ $post->title_en }}</h4></a>
+                                                    <p>{!! Str::limit($post->description_en, 80) !!}</p>
                                                 </div>
                                             </div>
                                         </div>
