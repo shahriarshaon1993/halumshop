@@ -9,6 +9,7 @@ use App\Interface\FrontPostInterface;
 use App\Interface\FrontProductInterface;
 use App\Interface\HomeInterface;
 use App\Interface\NewslaterIntterface;
+use App\Interface\PaymentInterface;
 use App\Interface\PostCategoryInterface;
 use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
@@ -23,6 +24,7 @@ use App\Repositories\FrontPostRepository;
 use App\Repositories\FrontProductRepository;
 use App\Repositories\HomeRepository;
 use App\Repositories\NewslaterRepository;
+use App\Repositories\PaymentRepository;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
@@ -97,6 +99,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             FrontPostInterface::class,
             FrontPostRepository::class,
+        );
+
+        $this->app->bind(
+            PaymentInterface::class,
+            PaymentRepository::class,
         );
     }
 }
