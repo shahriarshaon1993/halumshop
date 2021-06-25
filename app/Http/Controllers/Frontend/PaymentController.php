@@ -18,6 +18,8 @@ class PaymentController extends Controller
 
     public function payment(PaymentRequest $request)
     {
+        $data = $request;
+
         if ($request->paymentMethod == "cashon") {
 
             $this->payment->payment($request);
@@ -28,8 +30,9 @@ class PaymentController extends Controller
             );
 
             return Redirect()->to('/')->with($notification);
-        } elseif ($request->paymentMethod == "mastercard") {
-            return 'MasterCard';
+        } elseif ($request->paymentMethod == "stripe") {
+
+            return view('frontend.payment.stripe', compact('data'));
         } else {
             $notification = array(
                 'message' => 'Please select the appropriate payment method',
@@ -37,5 +40,18 @@ class PaymentController extends Controller
             );
             return Redirect()->back()->with($notification);
         }
+    }
+
+    public function stripe(PaymentRequest $request)
+    {
+        // Stripe payment
+        $this->payment->stripe($request);
+
+        $notification = array(
+            'message' => 'Order process successfully done',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->to('/')->with($notification);
     }
 }

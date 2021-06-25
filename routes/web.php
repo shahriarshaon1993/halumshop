@@ -139,6 +139,7 @@ Route::prefix('products')->group(function () {
 
     // Payment system
     Route::post('/payment/proccess', [PaymentController::class, 'payment'])->name('payment.proccess');
+    Route::post('/payment/stripe', [PaymentController::class, 'stripe'])->name('payment.stripe');
 });
 
 // Blogs route

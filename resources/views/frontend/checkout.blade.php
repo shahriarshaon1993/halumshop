@@ -86,63 +86,64 @@
                         </div>
                         <div class="col-md-8 order-md-1">
                             <h4 class="mb-3">Billing address</h4>
-                            <form action="{{ route('payment.proccess') }}" method="POST" class="needs-validation" novalidate>
-                                @csrf
+                            {{ Form::open(['route' => 'payment.proccess', 'class' => 'needs-validation']) }}
                                 <div class="mb-3">
-                                    <label for="name">Name</label>
+                                    {{ Form::label('name', 'Name') }}
                                     <div class="input-group">
-                                        <input type="text" name="name" class="form-control" id="name" placeholder="Full Name" required>
+                                        {{ Form::text('name',null,['class' => 'form-control', 'id' => 'name', 'placeholder' => 'Full Name']) }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com">
+                                    {{ Form::label('email', 'Email') }}
+                                    {{ Form::email('email',null,['class' => 'form-control', 'id' => 'email', 'placeholder' => 'you@example.com']) }}
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="phone">Phone</span></label>
-                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="Your phone number">
+                                    {{ Form::label('phone', 'Phone') }}
+                                    {{ Form::text('phone',null,['class' => 'form-control', 'id' => 'phone', 'placeholder' => 'Your phone number']) }}
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="address">Address</label>
-                                    <input type="text" name="address" class="form-control" id="address" placeholder="Your Address" required>
+                                    {{ Form::label('address', 'Address') }}
+                                    {{ Form::text('address',null,['class' => 'form-control', 'id' => 'address', 'placeholder' => 'Your Address']) }}
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="state">City</label>
-                                        <select name="city" class="custom-select d-block w-100" id="state" required>
-                                            <option value="">Choose...</option>
-                                            <option value="dhaka">Dhaka</option>
-                                        </select>
+                                        {{ Form::label('city', 'City') }}
+                                        {{ Form::select('city', [
+                                            'dhaka' => 'Dhaka'
+                                        ],null,
+                                        [
+                                            'class' => 'custom-select d-block w-100',
+                                            'id' => 'city'
+                                        ]
+                                        ) }}
                                     </div>
                                     <div class="col-md-5 mb-3">
-                                        <label for="zip">Post Code</label>
-                                        <input type="text" name="post_code" class="form-control" id="zip" placeholder="" required>
-                                        <div class="invalid-feedback">
-                                            Your post code
-                                        </div>
+                                        {{ Form::label('post_code', 'Post Code') }}
+                                        {{ Form::text('post_code',null,['class' => 'form-control', 'id' => 'post_code', 'placeholder' => 'Your post code']) }}
                                     </div>
                                 </div>
 
                                 <hr class="mb-4">
                                 <h4 class="mb-3">Payment</h4>
 
-                                <div class="d-block my-3">
+                                <div class="my-3">
                                     <div class="custom-control custom-radio">
-                                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" value="mastercard" checked required>
-                                        <label class="custom-control-label" for="credit">Mastercard</label>
+                                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" value="stripe" checked required>
+                                        {{ Form::label('credit', 'Mastercard',['class' => 'custom-control-label']) }}
+                                        {{-- <label class="custom-control-label" for="credit">Mastercard</label> --}}
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="cashon" required>
-                                        <label class="custom-control-label" for="debit">Cash On</label>
+                                        {{ Form::label('debit', 'Cash On',['class' => 'custom-control-label']) }}
                                     </div>
                                 </div>
                                 <hr class="mb-4">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
-                            </form>
+                                {{  Form::submit('Continue to checkout',['class' => 'btn btn-primary btn-lg btn-block']) }}
+                            {{ Form::close() }}
                         </div>
                     </div>
                 </div>
