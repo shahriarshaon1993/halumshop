@@ -56,7 +56,42 @@ class FrontProductController extends Controller
     public function category($slug)
     {
         $categories = $this->frontProduct->category($slug);
-
         return view('frontend.categories-products', compact('categories'));
+    }
+
+    public function products()
+    {
+        $products = $this->frontProduct->products();
+        return view('frontend.products', compact('products'));
+    }
+
+    public function hotDeal()
+    {
+        $products = $this->frontProduct->hotDeal();
+        return view('frontend.products', compact('products'));
+    }
+
+    public function bestSeller()
+    {
+        $products = $this->frontProduct->bestSeller();
+        return view('frontend.products', compact('products'));
+    }
+
+    public function specialOffer()
+    {
+        $products = $this->frontProduct->specialOffer();
+        return view('frontend.products', compact('products'));
+    }
+
+    public function trand()
+    {
+        $products = $this->frontProduct->trand();
+        return view('frontend.products', compact('products'));
+    }
+
+    public function newArrival()
+    {
+        $products = $this->frontProduct->newArrival();
+        return view('frontend.products', compact('products'));
     }
 }

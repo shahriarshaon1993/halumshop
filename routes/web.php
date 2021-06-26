@@ -137,6 +137,12 @@ Route::prefix('products')->group(function () {
     Route::post('/details/{slug}', [FrontProductController::class, 'addProductCart']);
     Route::get('/queck/{slug}', [FrontProductController::class, 'productQueckView'])->name('products.queck');
     Route::get('/categories/{slug}', [FrontProductController::class, 'category'])->name('products.categories');
+    Route::get('/products-all', [FrontProductController::class, 'products'])->name('products');
+    Route::get('/hotdeals', [FrontProductController::class, 'hotDeal'])->name('products.hotdeal');
+    Route::get('/bestseller', [FrontProductController::class, 'bestSeller'])->name('products.bestseller');
+    Route::get('/specialoffer', [FrontProductController::class, 'specialOffer'])->name('products.specialoffer');
+    Route::get('/trand', [FrontProductController::class, 'trand'])->name('products.trand');
+    Route::get('/newarrival', [FrontProductController::class, 'newArrival'])->name('products.newarrival');
 
     // Payment system
     Route::post('/payment/proccess', [PaymentController::class, 'payment'])->name('payment.proccess');

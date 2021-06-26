@@ -42,4 +42,40 @@ class FrontProductRepository implements FrontProductInterface
     {
         return Category::with('product')->where('slug', $slug)->first();
     }
+
+    public function products()
+    {
+        return Product::where('status', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->paginate(12);
+    }
+
+    public function hotDeal()
+    {
+        return Product::where('status', 1)->where('hot_deal', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->paginate(12);
+    }
+
+    public function bestSeller()
+    {
+        return Product::where('status', 1)->where('best_seller', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->paginate(12);
+    }
+
+    public function specialOffer()
+    {
+        return Product::where('status', 1)->where('special_offer', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->paginate(12);
+    }
+
+    public function trand()
+    {
+        return Product::where('status', 1)->where('trand', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->paginate(12);
+    }
+
+    public function newArrival()
+    {
+        return Product::where('status', 1)->where('new_arrival', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one')->orderBy('created_at', 'DESC')->paginate(12);
+    }
 }

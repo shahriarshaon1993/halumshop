@@ -47,7 +47,7 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Hot Deal
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products.hotdeal') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row sidebar-slider">
@@ -133,7 +133,7 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Special Offer
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products.specialoffer') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row sidebar-slider">
@@ -202,7 +202,7 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Products
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row product-slider">
@@ -269,7 +269,7 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Best Seller
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products.bestseller') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row product-slider">
@@ -336,7 +336,7 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Trand
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products.trand') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row product-slider">
@@ -439,7 +439,7 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 new Arrival
-                                <a href="#" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products.newarrival') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row product-slider">
