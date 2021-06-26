@@ -25,7 +25,7 @@ class FrontProductController extends Controller
         $product_color = explode(',', $product->product_color);
         $product_size = explode(',', $product->product_size);
 
-        return view('frontend.product', compact('product', 'product_color', 'product_size'));
+        return view('frontend.single-product', compact('product', 'product_color', 'product_size'));
     }
 
     public function addProductCart(Request $request, $slug)
@@ -55,7 +55,7 @@ class FrontProductController extends Controller
 
     public function category($slug)
     {
-        $categories = Category::with('product')->where('slug', $slug)->first();
+        $categories = $this->frontProduct->category($slug);
 
         return view('frontend.products', compact('categories'));
     }

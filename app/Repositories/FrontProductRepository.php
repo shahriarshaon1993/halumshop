@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Interface\FrontProductInterface;
+use App\Models\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
 
@@ -35,5 +36,10 @@ class FrontProductRepository implements FrontProductInterface
         $data['options']['color'] = $request->color;
         $data['options']['size'] = $request->size;
         Cart::add($data);
+    }
+
+    public function category($slug)
+    {
+        return Category::with('product')->where('slug', $slug)->first();
     }
 }
