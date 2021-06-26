@@ -31,8 +31,12 @@
                         <div class="col-lg-6 col-md-12 col-12">
                         {{ Form::open(['route' => ['products.details', $product->slug]]) }}
                             <h6>
-                                <a href="#">{{ $product->category->name }}</a> |
-                                <a href="#">{{ $product->subcategory->name }}</a>
+                                <a href="{{ route('products.categories', $product->category->slug) }}">
+                                    {{ $product->category->name }}
+                                </a> |
+                                <a href="{{ route('products.categories', $product->subcategory->slug) }}">
+                                    {{ $product->subcategory->name }}
+                                </a>
                             </h6>
                             <h3 class="py-4">{{ $product->product_title }}</h3>
                             <h2>

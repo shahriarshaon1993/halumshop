@@ -136,6 +136,7 @@ Route::prefix('products')->group(function () {
     Route::get('/details/{slug}', [FrontProductController::class, 'productView'])->name('products.details');
     Route::post('/details/{slug}', [FrontProductController::class, 'addProductCart']);
     Route::get('/queck/{slug}', [FrontProductController::class, 'productQueckView'])->name('products.queck');
+    Route::get('/categories/{slug}', [FrontProductController::class, 'category'])->name('products.categories');
 
     // Payment system
     Route::post('/payment/proccess', [PaymentController::class, 'payment'])->name('payment.proccess');

@@ -117,7 +117,7 @@
                             </div>
                             <div class="card-body">
                                 @foreach ($parentCategories as $category)
-                                    <a href="#" class="btn btn-sm btn-secondary category-btn mb-2">
+                                    <a href="{{ route('products.categories', $category->slug) }}" class="btn btn-sm btn-secondary category-btn mb-2">
                                         {{ $category->name }}
                                     </a>
                                 @endforeach
@@ -506,9 +506,6 @@
 
     <!-- Modal -->
     <x-cart></x-cart>
-
-    {{-- <h1 id="productName"></h1> --}}
-    {{-- <x-cart></x-cart> --}}
 
     {{-- Partner Logo --}}
     @if ($brands->count() > 0)
