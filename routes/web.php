@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NewslaterController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
@@ -90,6 +91,10 @@ Route::prefix('admin')->group(function () {
     Route::post('sliders/inactive/{id}', [SliderController::class, 'inactive'])->name('sliders.inactive.store');
     Route::post('sliders/active/{id}', [SliderController::class, 'active'])->name('sliders.active.store');
     Route::resource('sliders', SliderController::class);
+
+    // Admin order route
+    Route::get('/orders/pandding', [OrderController::class, 'orderPandding'])->name('orders.pandding');
+    Route::get('/order/view/{id}', [OrderController::class, 'viewOrder'])->name('order.view');
 });
 
 // User Logn & Ragistration

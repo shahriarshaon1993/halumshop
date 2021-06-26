@@ -50,6 +50,16 @@
             </ul>
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
+                    <i class="fa fa-suitcase tx-20"></i>
+                    <span class="menu-item-label">Orders</span>
+                    <i class="menu-item-arrow fa fa-angle-down"></i>
+                </div><!-- menu-item -->
+            </a><!-- sl-menu-link -->
+            <ul class="sl-menu-sub nav flex-column">
+                <li class="nav-item"><a href="{{ route('orders.pandding') }}" class="nav-link">New Orders</a></li>
+            </ul>
+            <a href="#" class="sl-menu-link">
+                <div class="sl-menu-item">
                     <i class="fa fa-book tx-20"></i>
                     <span class="menu-item-label">Posts</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
