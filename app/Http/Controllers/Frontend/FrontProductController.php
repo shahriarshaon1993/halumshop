@@ -57,6 +57,6 @@ class FrontProductController extends Controller
     {
         $categories = $this->frontProduct->category($slug);
 
-        return view('frontend.products', compact('categories'));
+        return view('frontend.categories-products', compact('categories'));
     }
 }
