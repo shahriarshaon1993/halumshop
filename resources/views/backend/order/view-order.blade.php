@@ -150,8 +150,13 @@
                         </div><!-- table-wrapper -->
 
                         @if ($order->status == 0)
-                            <a href="{{ url('admin/payment/accept/'.$order->id) }}" class="btn btn-info mb-2">Payment Accept</a>
-                            <a href="{{ url('admin/payment/cancel/'.$order->id) }}" class="btn btn-danger">Order Cancel</a>
+                            {{ Form::open(['route' => ['order.accept', $order->id],'method' => 'PUT']) }}
+                                {{ Form::submit('Payment Accept', ['class' => 'btn btn-info mb-2 btn-block']) }}
+                            {{ Form::close() }}
+
+                            {{ Form::open(['route' => ['order.cancel', $order->id],'method' => 'PUT']) }}
+                                {{ Form::submit('Order Cancel', ['class' => 'btn btn-danger btn-block']) }}
+                            {{ Form::close() }}
 
                         @elseif($order->status == 1)
                             <a href="{{ url('admin/delevery/process/'.$order->id) }}" class="btn btn-info mb-2">Process Delevery</a>

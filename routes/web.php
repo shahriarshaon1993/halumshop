@@ -95,6 +95,8 @@ Route::prefix('admin')->group(function () {
     // Admin order route
     Route::get('/orders/pandding', [OrderController::class, 'orderPandding'])->name('orders.pandding');
     Route::get('/order/view/{id}', [OrderController::class, 'viewOrder'])->name('order.view');
+    Route::put('/order/accept/{id}', [OrderController::class, 'orderAccept'])->name('order.accept');
+    Route::put('/order/cancel/{id}', [OrderController::class, 'orderCancel'])->name('order.cancel');
 });
 
 // User Logn & Ragistration
