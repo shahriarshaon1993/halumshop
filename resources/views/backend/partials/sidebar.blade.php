@@ -56,7 +56,21 @@
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="{{ route('orders.pandding') }}" class="nav-link">New Orders</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('orders.pandding') }}" class="nav-link">Pandding Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('accept.payment') }}" class="nav-link">Payment Accept</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('proccess.delivery') }}" class="nav-link">Proccess Delivery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('order.deleverd') }}" class="nav-link">Deleverd Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('order.cancel.list') }}" class="nav-link">Cancel Orders</a>
+                </li>
             </ul>
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">

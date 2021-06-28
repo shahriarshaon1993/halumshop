@@ -93,7 +93,7 @@
                                             <span class="badge badge-info">Payment Accept</span>
 
                                         @elseif($order->status == 2)
-                                            <span class="badge badge-warning">Progress</span>
+                                            <span class="badge badge-warning">Proccess to delivery</span>
 
                                         @elseif($order->status == 3)
                                             <span class="badge badge-success">Delevered</span>
@@ -151,7 +151,7 @@
 
                         @if ($order->status == 0)
                             {{ Form::open(['route' => ['order.accept', $order->id],'method' => 'PUT']) }}
-                                {{ Form::submit('Payment Accept', ['class' => 'btn btn-info mb-2 btn-block']) }}
+                                {{ Form::submit('Order Accept', ['class' => 'btn btn-info mb-2 btn-block']) }}
                             {{ Form::close() }}
 
                             {{ Form::open(['route' => ['order.cancel', $order->id],'method' => 'PUT']) }}
@@ -159,10 +159,14 @@
                             {{ Form::close() }}
 
                         @elseif($order->status == 1)
-                            <a href="{{ url('admin/delevery/process/'.$order->id) }}" class="btn btn-info mb-2">Process Delevery</a>
+                            {{ Form::open(['route' => ['proccess.payment', $order->id],'method' => 'PUT']) }}
+                                {{ Form::submit('Payment Accept', ['class' => 'btn btn-info mb-2 btn-block']) }}
+                            {{ Form::close() }}
 
                         @elseif($order->status == 2)
-                            <a href="{{ url('admin/delevery/done/'.$order->id) }}" class="btn btn-success mb-2">Delevery Done</a>
+                            {{ Form::open(['route' => ['delivery.done', $order->id],'method' => 'PUT']) }}
+                                {{ Form::submit('Delevery Done', ['class' => 'btn btn-success mb-2 btn-block']) }}
+                            {{ Form::close() }}
 
                         @elseif($order->status == 4)
                             <strong class="text-center">This order are not valid</strong>

@@ -97,6 +97,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/order/view/{id}', [OrderController::class, 'viewOrder'])->name('order.view');
     Route::put('/order/accept/{id}', [OrderController::class, 'orderAccept'])->name('order.accept');
     Route::put('/order/cancel/{id}', [OrderController::class, 'orderCancel'])->name('order.cancel');
+    Route::get('/orders/accept/payment', [OrderController::class, 'acceptPayment'])->name('accept.payment');
+    Route::put('/orders/proccess/payment/{id}', [OrderController::class, 'proccessPayment'])->name('proccess.payment');
+    Route::get('/orders/proccess/delivery', [OrderController::class, 'proccessDelivery'])->name('proccess.delivery');
+    Route::put('/orders/delivery/done/{id}', [OrderController::class, 'deliveryDone'])->name('delivery.done');
+    Route::get('/orders/deleverd/list', [OrderController::class, 'deleverd'])->name('order.deleverd');
+    Route::get('/orders/cancel/list', [OrderController::class, 'cancelList'])->name('order.cancel.list');
 });
 
 // User Logn & Ragistration

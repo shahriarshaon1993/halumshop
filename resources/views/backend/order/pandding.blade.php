@@ -42,7 +42,7 @@
                                 @elseif($order->status == 1)
                                     <span class="badge badge-info">Payment Accept</span>
                                 @elseif($order->status == 2)
-                                    <s class="badge badge-warning">Progress</s
+                                    <span class="badge badge-warning">Proccess to delivery</span>
                                 @elseif($order->status == 3)
                                     <span class="badge badge-success">Delevered</span>
                                 @else

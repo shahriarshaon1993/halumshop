@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Interface\OrderInterface;
 use App\Models\Order;
+use App\Models\OrderDetails;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -35,9 +37,58 @@ class OrderController extends Controller
 
     public function orderAccept(Request $request, $id)
     {
-        $order = Order::find($id);
-        $order->status = 1;
-        $order->update();
+        $this->order->orderAccept($request, $id);
+
+        $notification = array(
+            'message' => 'Order Accepted',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('orders.pandding')->with($notification);
+    }
+
+    public function acceptPayment()
+    {
+        $orders = $this->order->acceptPayment();
+        return view('backend.order.pandding', compact('orders'));
+    }
+
+    public function proccessPayment($id)
+    {
+        $this->order->proccessPayment($id);
+
+        $notification = array(
+            'message' => 'Order Payment Proccess Done',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('accept.payment')->with($notification);
+    }
+
+    public function proccessDelivery()
+    {
+        $orders = $this->order->proccessDelivery();
+        return view('backend.order.pandding', compact('orders'));
+    }
+
+    public function deliveryDone($id)
+    {
+        $this->order->deliveryDone($id);
+
+        $notification = array(
+            'message' => 'Product Delevery Done',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('proccess.delivery')->with($notification);
+    }
+
+    public function deleverd()
+    {
+        $orders = $this->order->deleverd();
+        return view('backend.order.pandding', compact('orders'));
+    }
+
+    public function orderCancel(Request $request, $id)
+    {
+        $this->order->orderCancel($request, $id);
 
         $notification = array(
             'message' => 'Order Accept',
@@ -46,16 +97,9 @@ class OrderController extends Controller
         return Redirect()->route('orders.pandding')->with($notification);
     }
 
-    public function orderCancel(Request $request, $id)
+    public function cancelList()
     {
-        $order = Order::find($id);
-        $order->status = 4;
-        $order->update();
-
-        $notification = array(
-            'message' => 'Order Accept',
-            'alert-type' => 'success'
-        );
-        return Redirect()->route('orders.pandding')->with($notification);
+        $orders = $this->order->cancelList();
+        return view('backend.order.pandding', compact('orders'));
     }
 }
