@@ -110,6 +110,12 @@
                 height: 150,
                 tooltip: false
             })
+
+            // Summernote three editor
+            $('#summernote-three').summernote({
+                height: 150,
+                tooltip: false
+            })
         });
     </script>
 

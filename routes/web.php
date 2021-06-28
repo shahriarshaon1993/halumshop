@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SeoController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\Auth\ChangePasswordController;
 use App\Http\Controllers\Frontend\Auth\Password\ForgotPasswordController;
@@ -103,6 +104,11 @@ Route::prefix('admin')->group(function () {
     Route::put('/orders/delivery/done/{id}', [OrderController::class, 'deliveryDone'])->name('delivery.done');
     Route::get('/orders/deleverd/list', [OrderController::class, 'deleverd'])->name('order.deleverd');
     Route::get('/orders/cancel/list', [OrderController::class, 'cancelList'])->name('order.cancel.list');
+
+    // SEO Setting
+    Route::resource('seos', SeoController::class)->only([
+        'index', 'update'
+    ]);
 });
 
 // User Logn & Ragistration

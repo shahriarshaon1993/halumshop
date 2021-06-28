@@ -84,6 +84,13 @@
                 <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">All Posts</a></li>
                 <li class="nav-item"><a href="{{ route('posts.create') }}" class="nav-link">Add Posts</a></li>
             </ul>
+            <a href="{{ route('seos.index') }}" class="sl-menu-link">
+                <div class="sl-menu-item">
+                    <i class="fa fa-book tx-20"></i>
+                    <span class="menu-item-label">SEO Setting</span>
+                    <i class="menu-item-arrow fa fa-angle-down"></i>
+                </div><!-- menu-item -->
+            </a><!-- sl-menu-link -->
         </div><!-- sl-sideleft-menu -->
 
         <br>
