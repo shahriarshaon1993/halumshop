@@ -24,7 +24,7 @@ class PaymentRepository implements PaymentInterface
         $order->vat = $charge->vat;
         $order->total = $total;
         $order->payment_type = $request->paymentMethod;
-        $order->status_code = mt_rand(100000, 999999);
+        $order->status_code = mt_rand(1000000, 9999999);
 
         if (Session::has('coupon')) {
             $order->subtotal = Session::get('coupon')['balance'];
@@ -98,7 +98,7 @@ class PaymentRepository implements PaymentInterface
         $order->vat = $db_charge->vat;
         $order->total = $total;
         $order->payment_type = $request->paymentMethod;
-        $order->status_code = mt_rand(100000, 999999);
+        $order->status_code = mt_rand(1000000, 9999999);
 
         if (Session::has('coupon')) {
             $order->subtotal = Session::get('coupon')['balance'];
