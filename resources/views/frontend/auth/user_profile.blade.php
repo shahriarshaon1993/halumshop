@@ -8,32 +8,7 @@
     <div class="main-body">
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" style="width: 50%">
-
-                            <div class="mt-3">
-                                <h4>{{ Auth::user()->name }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-3">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a href="{{ route('profile', Auth::user()->slug) }}" class="d-block text-dark">My Profile</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a href="{{ route('password.change') }}" class="d-block text-dark">Change Password</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a href="#" class="d-block text-dark">Demo 2</a>
-                        </li>
-                    </ul>
-                </div>
+                @include('frontend.partials.profile-sidebar')
             </div>
             <div class="col-md-8">
                 <div class="card mb-3">

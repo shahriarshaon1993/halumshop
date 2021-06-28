@@ -121,6 +121,7 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 // User Profile Controller
 Route::get('/profile/{slug}', [UserProfileController::class, 'index'])->name('profile');
+Route::get('/profile/{slug}/orders', [UserProfileController::class, 'profileOrder'])->name('profile.order');
 Route::get('/user/change-password', [ChangePasswordController::class, 'index'])->name('password.change');
 Route::post('/user/change-password', [ChangePasswordController::class, 'changePassword']);
 

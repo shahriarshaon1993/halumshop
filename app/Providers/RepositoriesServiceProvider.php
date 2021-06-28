@@ -16,6 +16,7 @@ use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
 use App\Interface\RepoInterface;
 use App\Interface\SliderInterface;
+use App\Interface\UserProfileInterface;
 use App\Interface\WishlistInterface;
 use App\Repositories\BrandRepository;
 use App\Repositories\CartRepository;
@@ -31,6 +32,7 @@ use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\SliderRepository;
+use App\Repositories\UserProfileRepository;
 use App\Repositories\WishlistRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -111,6 +113,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             OrderInterface::class,
             OrderRepository::class,
+        );
+
+        $this->app->bind(
+            UserProfileInterface::class,
+            UserProfileRepository::class,
         );
     }
 }
