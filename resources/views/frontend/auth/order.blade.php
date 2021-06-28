@@ -14,6 +14,9 @@
                 <div class="card customCard mb-3">
                     <div class="card-header customCard__header">
                         Your Order Lists
+                        <a href="javascript:void(0)" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modaldemo2">
+                            Track Order
+                        </a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -61,5 +64,24 @@
         </div>
     </div>
 </div>
+
+    {{-- Category Insert Modal --}}
+    <x-insert>
+        <x-slot name="title">
+            Search Product
+        </x-slot>
+
+        <x-slot name="form">
+            {{ Form::open(['route' => 'order.tracking']) }}
+        </x-slot>
+
+        <x-slot name="body">
+            <div class="form-group">
+                {{ Form::label('order_id', 'Order Id', ['class' => 'form-control-label']) }}
+                {{ Form::text('order_id', null, ['class' => 'form-control','id' => 'order_id', 'placeholder' => 'Enter Order ID']) }}
+            </div>
+        </x-slot>
+    </x-insert>
+    {{-- End Category Insert Modal --}}
 
 @endsection
