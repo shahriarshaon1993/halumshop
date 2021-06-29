@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Interface\UserProfileInterface;
 use App\Models\Order;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserProfileRepository implements UserProfileInterface
 {
@@ -18,6 +19,9 @@ class UserProfileRepository implements UserProfileInterface
 
     public function track($request)
     {
-        return Order::select('status')->where('status_code', $request->order_id)->first();
+        return Order::select('status')
+            ->where('status_code', $request->order_id)
+            ->where('user_id', Auth::id())
+            ->first();
     }
 }
