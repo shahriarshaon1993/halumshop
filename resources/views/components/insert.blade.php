@@ -9,7 +9,7 @@
                 </button>
             </div>
             {{ $form }}
-                <div class="modal-body pd-25">
+                <div class="modal-body" style="width: 500px">
                     {{ $body }}
                 </div>
                 <div class="modal-footer">
