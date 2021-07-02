@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\Auth\AdminLoginController;
 use App\Http\Controllers\Backend\Auth\AdminLogoutController;
 use App\Http\Controllers\Backend\Auth\AdminProfileController;
@@ -108,6 +109,11 @@ Route::prefix('admin')->group(function () {
     // SEO Setting
     Route::resource('seos', SeoController::class)->only([
         'index', 'update'
+    ]);
+
+    // Admin Roles And Permission
+    Route::resource('admins', AdminController::class)->except([
+        'create'
     ]);
 });
 
