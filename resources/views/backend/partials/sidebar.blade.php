@@ -14,6 +14,9 @@
                     <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
                     <span class="menu-item-label">Dashboard</span>
                 </div><!-- menu-item -->
+            </a>
+
+            @can('categories section')
             <a href="{{ route('categories.index') }}" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag" viewBox="0 0 16 16">
@@ -24,6 +27,9 @@
                     <span class="menu-item-label">Categories</span>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
+            @endcan
+
+            @can('tools sections')
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
 
@@ -41,6 +47,9 @@
                 <li class="nav-item"><a href="{{ route('coupons.index') }}" class="nav-link">Coupons</a></li>
                 <li class="nav-item"><a href="{{ route('newslaters.index') }}" class="nav-link">Newslatter</a></li>
             </ul>
+            @endcan
+
+            @can('products section')
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
 
@@ -56,6 +65,9 @@
                 <li class="nav-item"><a href="{{ route('products.index') }}" class="nav-link">All Products</a></li>
                 <li class="nav-item"><a href="{{ route('products.create') }}" class="nav-link">Add Product</a></li>
             </ul>
+            @endcan
+
+            @can('orders section')
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
 
@@ -68,22 +80,39 @@
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item">
-                    <a href="{{ route('orders.pandding') }}" class="nav-link">Pandding Orders</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('accept.payment') }}" class="nav-link">Payment Accept</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('proccess.delivery') }}" class="nav-link">Proccess Delivery</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('order.deleverd') }}" class="nav-link">Deleverd Orders</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('order.cancel.list') }}" class="nav-link">Cancel Orders</a>
-                </li>
+                @can('pandding order')
+                    <li class="nav-item">
+                        <a href="{{ route('orders.pandding') }}" class="nav-link">Pandding Orders</a>
+                    </li>
+                @endcan
+
+                @can('payment accept')
+                    <li class="nav-item">
+                        <a href="{{ route('accept.payment') }}" class="nav-link">Payment Accept</a>
+                    </li>
+                @endcan
+
+                @can('proccess delivery')
+                    <li class="nav-item">
+                        <a href="{{ route('proccess.delivery') }}" class="nav-link">Proccess Delivery</a>
+                    </li>
+                @endcan
+
+                @can('deleverd orders')
+                    <li class="nav-item">
+                        <a href="{{ route('order.deleverd') }}" class="nav-link">Deleverd Orders</a>
+                    </li>
+                @endcan
+
+                @can('cancel orders')
+                    <li class="nav-item">
+                        <a href="{{ route('order.cancel.list') }}" class="nav-link">Cancel Orders</a>
+                    </li>
+                @endcan
             </ul>
+            @endcan
+
+            @can('posts section')
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
 
@@ -100,6 +129,9 @@
                 <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">All Posts</a></li>
                 <li class="nav-item"><a href="{{ route('posts.create') }}" class="nav-link">Add Posts</a></li>
             </ul>
+            @endcan
+
+            @role('super-admin')
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
 
@@ -117,7 +149,20 @@
                         All Admins
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('role.index') }}" class="nav-link">
+                        Admin Roles
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('permission.index') }}" class="nav-link">
+                        Admin Permissions
+                    </a>
+                </li>
             </ul>
+            @endrole
+
+            @can('seo section')
             <a href="{{ route('seos.index') }}" class="sl-menu-link">
                 <div class="sl-menu-item">
 
@@ -128,6 +173,7 @@
                     <span class="menu-item-label">SEO Setting</span>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
+            @endcan
         </div><!-- sl-sideleft-menu -->
 
         <br>

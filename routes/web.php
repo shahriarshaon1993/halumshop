@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\RolePermissionController;
 use App\Http\Controllers\Backend\SeoController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\Auth\ChangePasswordController;
@@ -47,74 +48,123 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
     Route::post('/login', [AdminLoginController::class, 'proccessLogin']);
     Route::post('/logout', [AdminLogoutController::class, 'proccessLogout'])->name('admin.logout');
-
     Route::get('/change/password', [AdminProfileController::class, 'index'])->name('change.password');
     Route::post('/change/password', [AdminProfileController::class, 'changePassword']);
-
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Categories
-    Route::resource('categories', CategoryController::class)->except([
-        'create', 'show'
-    ]);
+    // categories section
+    Route::group(['middleware' => ['permission:categories section']], function () {
+        // Categories
+        Route::resource('categories', CategoryController::class)->except([
+            'create', 'show'
+        ]);
+    });
 
-    // Brands
-    Route::resource('brands', BrandController::class)->except([
-        'create', 'show'
-    ]);
+    // products section
+    Route::group(['middleware' => ['permission:products section']], function () {
+        // Products
+        Route::post('products/inactive/{id}', [ProductController::class, 'inactive'])->name('inactive.store');
+        Route::post('products/active/{id}', [ProductController::class, 'active'])->name('active.store');
+        Route::get('get/subcategory/{category_id}', [ProductController::class, 'getSubCategory']);
+        Route::resource('products', ProductController::class);
+    });
 
-    // Coupons
-    Route::resource('coupons', CouponController::class)->only([
-        'index', 'store', 'destroy'
-    ]);
+    // posts section
+    Route::group(['middleware' => ['permission:posts section']], function () {
+        // Post Categories
+        Route::resource('post-categories', PostCategoryController::class)->except([
+            'create', 'show'
+        ]);
 
-    // Newslaters
-    Route::resource('newslaters', NewslaterController::class)->only([
-        'index', 'store', 'destroy'
-    ]);
+        // Posts
+        Route::post('posts/inactive/{id}', [PostController::class, 'inactive'])->name('posts.inactive.store');
+        Route::post('posts/active/{id}', [PostController::class, 'active'])->name('posts.active.store');
+        Route::resource('posts', PostController::class);
+    });
 
-    // Products
-    Route::post('products/inactive/{id}', [ProductController::class, 'inactive'])->name('inactive.store');
-    Route::post('products/active/{id}', [ProductController::class, 'active'])->name('active.store');
-    Route::get('get/subcategory/{category_id}', [ProductController::class, 'getSubCategory']);
-    Route::resource('products', ProductController::class);
+    // tools sections
+    Route::group(['middleware' => ['permission:tools sections']], function () {
+        // Sliders
+        Route::post('sliders/inactive/{id}', [SliderController::class, 'inactive'])->name('sliders.inactive.store');
+        Route::post('sliders/active/{id}', [SliderController::class, 'active'])->name('sliders.active.store');
+        Route::resource('sliders', SliderController::class);
 
-    // Post Categories
-    Route::resource('post-categories', PostCategoryController::class)->except([
-        'create', 'show'
-    ]);
+        // Newslaters
+        Route::resource('newslaters', NewslaterController::class)->only([
+            'index', 'store', 'destroy'
+        ]);
 
-    // Posts
-    Route::post('posts/inactive/{id}', [PostController::class, 'inactive'])->name('posts.inactive.store');
-    Route::post('posts/active/{id}', [PostController::class, 'active'])->name('posts.active.store');
-    Route::resource('posts', PostController::class);
+        // Coupons
+        Route::resource('coupons', CouponController::class)->only([
+            'index', 'store', 'destroy'
+        ]);
 
-    // Sliders
-    Route::post('sliders/inactive/{id}', [SliderController::class, 'inactive'])->name('sliders.inactive.store');
-    Route::post('sliders/active/{id}', [SliderController::class, 'active'])->name('sliders.active.store');
-    Route::resource('sliders', SliderController::class);
+        // Brands
+        Route::resource('brands', BrandController::class)->except([
+            'create', 'show'
+        ]);
+    });
 
-    // Admin order route
-    Route::get('/orders/pandding', [OrderController::class, 'orderPandding'])->name('orders.pandding');
-    Route::get('/order/view/{id}', [OrderController::class, 'viewOrder'])->name('order.view');
-    Route::put('/order/accept/{id}', [OrderController::class, 'orderAccept'])->name('order.accept');
-    Route::put('/order/cancel/{id}', [OrderController::class, 'orderCancel'])->name('order.cancel');
-    Route::get('/orders/accept/payment', [OrderController::class, 'acceptPayment'])->name('accept.payment');
-    Route::put('/orders/proccess/payment/{id}', [OrderController::class, 'proccessPayment'])->name('proccess.payment');
-    Route::get('/orders/proccess/delivery', [OrderController::class, 'proccessDelivery'])->name('proccess.delivery');
-    Route::put('/orders/delivery/done/{id}', [OrderController::class, 'deliveryDone'])->name('delivery.done');
-    Route::get('/orders/deleverd/list', [OrderController::class, 'deleverd'])->name('order.deleverd');
-    Route::get('/orders/cancel/list', [OrderController::class, 'cancelList'])->name('order.cancel.list');
+    // orders section
+    Route::group(['middleware' => ['permission:orders section']], function () {
 
-    // SEO Setting
-    Route::resource('seos', SeoController::class)->only([
-        'index', 'update'
-    ]);
+        // Admin order route
+        Route::group(['middleware' => ['permission:pandding order']], function () {
+            Route::get('/orders/pandding', [OrderController::class, 'orderPandding'])->name('orders.pandding');
 
-    // Admin Roles And Permission
-    Route::resource('admins', AdminController::class)->except([
-        'create'
-    ]);
+            Route::put('/order/accept/{id}', [OrderController::class, 'orderAccept'])->name('order.accept');
+            Route::put('/order/cancel/{id}', [OrderController::class, 'orderCancel'])->name('order.cancel');
+        });
+
+        Route::group(['middleware' => ['permission:payment accept']], function () {
+            Route::get('/orders/accept/payment', [OrderController::class, 'acceptPayment'])->name('accept.payment');
+            Route::put('/orders/proccess/payment/{id}', [OrderController::class, 'proccessPayment'])->name('proccess.payment');
+        });
+
+        Route::group(['middleware' => ['permission:proccess delivery']], function () {
+            Route::get('/orders/proccess/delivery', [OrderController::class, 'proccessDelivery'])->name('proccess.delivery');
+            Route::put('/orders/delivery/done/{id}', [OrderController::class, 'deliveryDone'])->name('delivery.done');
+        });
+
+        Route::group(['middleware' => ['permission:proccess delivery|payment accept|pandding order']], function () {
+            Route::get('/order/view/{id}', [OrderController::class, 'viewOrder'])->name('order.view');
+        });
+
+        Route::group(['middleware' => ['permission:deleverd orders|cancel orders']], function () {
+            Route::get('/orders/deleverd/list', [OrderController::class, 'deleverd'])->name('order.deleverd');
+            Route::get('/orders/cancel/list', [OrderController::class, 'cancelList'])->name('order.cancel.list');
+        });
+    });
+
+    // super-admin
+    Route::group(['middleware' => ['role:super-admin']], function () {
+
+        Route::resource('admins', AdminController::class)->except([
+            'create'
+        ])->middleware('role:super-admin');
+
+        // Role and Permission
+        Route::get('/roles', [RolePermissionController::class, 'roleIndex'])->name('role.index');
+        Route::post('/roles', [RolePermissionController::class, 'createRole'])->name('role.store');
+        Route::delete('/roles/{id}', [RolePermissionController::class, 'deleteRole']);
+
+        Route::get('/permission', [RolePermissionController::class, 'permissionIndex'])->name('permission.index');
+        Route::post('/permission', [RolePermissionController::class, 'createPermission'])->name('permission.store');
+        Route::delete('/permission/{id}', [RolePermissionController::class, 'deletePermission']);
+
+        Route::get('/roletopermission/{id}', [RolePermissionController::class, 'roleToPermission'])->name('role.permission');
+        Route::post('/givepermissionto', [RolePermissionController::class, 'givePermissionTo'])->name('role.givepermissionto');
+        Route::get('revoke/permission/{roleId}/{permissionId}', [RolePermissionController::class, 'revokePermissionTo'])->name('role.revoke.permission');
+        Route::get('/remove/role/{roleId}/{adminId}', [RolePermissionController::class, 'removeRole'])->name('remove.role');
+    });
+
+    // seo section
+    Route::group(['middleware' => ['permission:seo section']], function () {
+        // SEO Setting
+        Route::resource('seos', SeoController::class)->only([
+            'index', 'update'
+        ]);
+    });
 });
 
 // User Logn & Ragistration

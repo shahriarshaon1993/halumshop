@@ -27,6 +27,16 @@
                         </div>
 
                         <div class="form-group">
+                            {{ Form::label('role_name', 'Select Role', ['class' => 'form-control-label']) }}
+                            <select name="role_name" id="role_name" class="form-control select2">
+                                <option value="">-- Select Role --</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             {{ Form::label('password', 'Password', ['class' => 'form-control-label']) }}
                             {{ Form::password('password', ['class' => 'form-control','id' => 'password', 'placeholder' => 'Password']) }}
                         </div>

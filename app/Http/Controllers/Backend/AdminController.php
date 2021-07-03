@@ -7,9 +7,16 @@ use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\Admin;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +24,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admins = Admin::select('id', 'name', 'email')->paginate(10);
+        $admins = Admin::with('roles')->select('id', 'name', 'email')->paginate(10);
         return view('backend.admin.index', compact('admins'));
     }
 
@@ -63,7 +70,9 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admin = Admin::find($id);
-        return view('backend.admin.edit', compact('admin'));
+        $roles = Role::get();
+
+        return view('backend.admin.edit', compact('admin', 'roles'));
     }
 
     /**
@@ -75,7 +84,6 @@ class AdminController extends Controller
      */
     public function update(UpdateAdminRequest $request, Admin $admin)
     {
-        // dd($request->password);
         $admin->name = $request->name;
         $admin->email = Str::lower(trim($request->email));
         if ($request->password) {
@@ -83,12 +91,17 @@ class AdminController extends Controller
         }
         $admin->update();
 
+        if ($request->role_name) {
+            $admin->assignRole($request->role_name);
+        }
+
+
         $notification = array(
             'message' => 'Admin Update Successfully',
             'alert-type' => 'success',
         );
 
-        return Redirect()->back()->with($notification);
+        return Redirect()->route('admins.index')->with($notification);
     }
 
     /**

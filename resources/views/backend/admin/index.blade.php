@@ -23,7 +23,8 @@
                     <tr>
                         <th class="wd-5p">Id</th>
                         <th class="wd-15p">Name</th>
-                        <th class="wd-15p">Email</th>
+                        <th class="wd-15p">E-mail</th>
+                        <th class="wd-15p">Role</th>
                         <th class="wd-20p">Action</th>
                     </tr>
                 </thead>
@@ -33,6 +34,16 @@
                             <td>{{ $admins->firstitem() + $key }}</td>
                             <td>{{ $admin->name }}</td>
                             <td>{{ $admin->email }}</td>
+                            <td>
+                                @foreach ($admin->roles as $role)
+                                    <span class="badge badge-info m-1" style="font-size: 0.75rem">
+                                        {{ $role->name }}
+                                        <a href="{{ route('remove.role', [$role->id,$admin->id]) }}" class="badge badge-danger" title="Click to remove role">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </span>
+                                @endforeach
+                            </td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-info">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
