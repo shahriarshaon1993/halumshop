@@ -112,6 +112,31 @@
             </ul>
             @endcan
 
+            @can('return product')
+            <a href="#" class="sl-menu-link">
+                <div class="sl-menu-item">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+
+                    <span class="menu-item-label">Return Products</span>
+                    <i class="menu-item-arrow fa fa-angle-down"></i>
+                </div><!-- menu-item -->
+            </a><!-- sl-menu-link -->
+            <ul class="sl-menu-sub nav flex-column">
+                <li class="nav-item">
+                    <a href="{{ route('admin.return.request') }}" class="nav-link">Return Request</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('return.accept.all') }}" class="nav-link">Return all products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('return.cancel.all') }}" class="nav-link">Request Cancel</a>
+                </li>
+            </ul>
+            @endcan
+
             @can('posts section')
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">

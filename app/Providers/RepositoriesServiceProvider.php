@@ -15,6 +15,7 @@ use App\Interface\PostCategoryInterface;
 use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
 use App\Interface\RepoInterface;
+use App\Interface\ReturnRequestInterface;
 use App\Interface\SeoInterface;
 use App\Interface\SiteSettingInterface;
 use App\Interface\SliderInterface;
@@ -33,6 +34,7 @@ use App\Repositories\PaymentRepository;
 use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
+use App\Repositories\ReturnRequestRepository;
 use App\Repositories\SeoRepository;
 use App\Repositories\SiteSettingRepository;
 use App\Repositories\SliderRepository;
@@ -132,6 +134,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             SiteSettingInterface::class,
             SiteSettingRepository::class,
+        );
+
+        $this->app->bind(
+            ReturnRequestInterface::class,
+            ReturnRequestRepository::class,
         );
     }
 }

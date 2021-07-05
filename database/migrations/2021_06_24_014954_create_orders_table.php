@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             $table->string('shipping')->nullable();
             $table->integer('vat')->nullable();
             $table->double('total')->nullable();
+            $table->tinyInteger('return_status')->default(0);
             $table->tinyInteger('status')->default(0);
             $table->string('status_code')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

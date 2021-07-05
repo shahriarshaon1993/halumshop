@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Auth;
 use App\Http\Controllers\Controller;
 use App\Interface\UserProfileInterface;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -50,5 +51,22 @@ class UserProfileController extends Controller
             );
             return Redirect()->back()->with($notification);
         }
+    }
+
+    public function returnProduct($slug)
+    {
+        $orders = $this->profile->returnProduct($slug);
+        return view('frontend.auth.return_order', compact('orders'));
+    }
+
+    public function returnRequest($id)
+    {
+        $this->profile->returnRequest($id);
+
+        $notification = array(
+            'message' => 'Your product return request is pandding, Thank you!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }

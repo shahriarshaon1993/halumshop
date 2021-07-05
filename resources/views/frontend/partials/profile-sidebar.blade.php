@@ -22,5 +22,9 @@
         <li class="list-group-item">
             <a href="{{ route('profile.order', Auth::user()->slug) }}" class="d-block text-dark">Your Order Lists</a>
         </li>
+
+        <li class="list-group-item">
+            <a href="{{ route('return.product', Auth::user()->slug) }}" class="d-block text-dark">Return Products</a>
+        </li>
     </ul>
 </div>

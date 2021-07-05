@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PostCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ReturnRequestController;
 use App\Http\Controllers\Backend\RolePermissionController;
 use App\Http\Controllers\Backend\SeoController;
 use App\Http\Controllers\Backend\SiteSettingController;
@@ -137,6 +138,16 @@ Route::prefix('admin')->group(function () {
         });
     });
 
+    // Return Product Request
+    Route::group(['middleware' => ['permission:return product']], function () {
+        Route::get('/return/request', [ReturnRequestController::class, 'returnRequest'])->name('admin.return.request');
+        Route::get('/return/request/view/{id}', [ReturnRequestController::class, 'returnRequestView'])->name('return.request.view');
+        Route::get('/return/accept/all', [ReturnRequestController::class, 'returnAcceptAll'])->name('return.accept.all');
+        Route::put('/return/request/accept/{id}', [ReturnRequestController::class, 'returnRequestAccept'])->name('return.request.accept');
+        Route::put('/return/request/cancel/{id}', [ReturnRequestController::class, 'returnRequestCancel'])->name('return.request.cancel');
+        Route::get('/return/cancel/all', [ReturnRequestController::class, 'returnCancelAll'])->name('return.cancel.all');
+    });
+
     // super-admin
     Route::group(['middleware' => ['role:super-admin']], function () {
 
@@ -232,6 +243,10 @@ Route::prefix('products')->group(function () {
 
     // Order Tracking
     Route::post('/order/tracking', [UserProfileController::class, 'track'])->name('order.tracking');
+
+    // Return Product
+    Route::get('/return/order/{slug}', [UserProfileController::class, 'returnProduct'])->name('return.product');
+    Route::get('/return/request/{id}', [UserProfileController::class, 'returnRequest'])->name('return.request');
 });
 
 // Blogs route
