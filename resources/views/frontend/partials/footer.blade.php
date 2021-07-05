@@ -6,24 +6,26 @@
                 <div class="footer__left">
                     <div class="footer__left__logo">
                         {{--Navbar Brand --}}
-                        <a class="navbar-brand" href="#"><span style="color: #17a2b8;">Halum</span>shop</a>
+                        <a class="navbar-brand" href="#"><span style="color: #17a2b8;">
+                            {{ siteSetting("company_name") }}
+                        </a>
                     </div>
                     <ul>
-                        <li>Address: 60-49 Road 11378 New York</li>
-                        <li>Phone: +65 11.188.888</li>
-                        <li>Email: examle@gmail.com</li>
+                        <li>Address: {{ siteSetting("company_address") }}</li>
+                        <li>Phone: {{ siteSetting("phone") }}</li>
+                        <li>Email: {{ siteSetting("email") }}</li>
                     </ul>
                     <div class="footer__left__social">
-                        <a href="#">
+                        <a href="{{ siteSetting("facebook") }}">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="#">
+                        <a href="{{ siteSetting("instagram") }}">
                             <i class="fa fa-instagram"></i>
                         </a>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
+                        <a href="{{ siteSetting("youtube") }}">
+                            <i class="fa fa-youtube"></i>
                         </a>
-                        <a href="#">
+                        <a href="{{ siteSetting("pinterest") }}">
                             <i class="fa fa-pinterest"></i>
                         </a>
                     </div>

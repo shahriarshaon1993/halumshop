@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\RolePermissionController;
 use App\Http\Controllers\Backend\SeoController;
+use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\Auth\ChangePasswordController;
 use App\Http\Controllers\Frontend\Auth\Password\ForgotPasswordController;
@@ -159,9 +160,14 @@ Route::prefix('admin')->group(function () {
     });
 
     // seo section
-    Route::group(['middleware' => ['permission:seo section']], function () {
+    Route::group(['middleware' => ['permission:settings sections']], function () {
         // SEO Setting
         Route::resource('seos', SeoController::class)->only([
+            'index', 'update'
+        ]);
+
+        // Site Settings
+        Route::resource('site-settings', SiteSettingController::class)->only([
             'index', 'update'
         ]);
     });

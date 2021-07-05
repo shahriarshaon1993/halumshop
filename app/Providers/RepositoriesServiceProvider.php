@@ -16,6 +16,7 @@ use App\Interface\PostInterface;
 use App\Interface\ProductInterface;
 use App\Interface\RepoInterface;
 use App\Interface\SeoInterface;
+use App\Interface\SiteSettingInterface;
 use App\Interface\SliderInterface;
 use App\Interface\UserProfileInterface;
 use App\Interface\WishlistInterface;
@@ -33,6 +34,7 @@ use App\Repositories\PostCategoryRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\SeoRepository;
+use App\Repositories\SiteSettingRepository;
 use App\Repositories\SliderRepository;
 use App\Repositories\UserProfileRepository;
 use App\Repositories\WishlistRepository;
@@ -125,6 +127,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             SeoInterface::class,
             SeoRepository::class,
+        );
+
+        $this->app->bind(
+            SiteSettingInterface::class,
+            SiteSettingRepository::class,
         );
     }
 }

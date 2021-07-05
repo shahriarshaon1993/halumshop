@@ -19,7 +19,7 @@ class SeoController extends Controller
     public function index()
     {
         $seo = $this->seosetting->index();
-        return view('backend.seo.index', compact('seo'));
+        return view('backend.settings.seo', compact('seo'));
     }
 
     public function update(Request $request, $id)

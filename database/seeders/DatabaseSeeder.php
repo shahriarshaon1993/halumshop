@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Wishlist::factory(10)->create();
         \App\Models\Setting::factory(1)->create();
         \App\Models\Seo::factory(1)->create();
+        \App\Models\SiteSetting::factory(1)->create();
     }
 }
