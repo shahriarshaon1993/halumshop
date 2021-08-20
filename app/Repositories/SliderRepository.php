@@ -31,7 +31,7 @@ class SliderRepository implements SliderInterface
 
         if ($image->isValid()) {
             $file_name = uniqid('slider_', true) . Str::random(10) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(780, 520)->save('media/sliders/' . $file_name);
+            Image::make($image)->resize(1920, 1280)->save('media/sliders/' . $file_name);
             $slider->image = 'media/sliders/' . $file_name;
         }
 
