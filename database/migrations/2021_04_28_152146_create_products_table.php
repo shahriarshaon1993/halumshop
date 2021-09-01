@@ -26,8 +26,8 @@ class CreateProductsTable extends Migration
 
             $table->longText('product_details');
 
-            $table->string('product_color');
-            $table->string('product_size');
+            $table->string('product_color')->nullable();
+            $table->string('product_size')->nullable();
             $table->decimal('selling_price', 8, 2);
 
             $table->decimal('discount_price', 8, 2)->nullable();

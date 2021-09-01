@@ -59,6 +59,12 @@ class FrontProductController extends Controller
         return view('frontend.categories-products', compact('categories'));
     }
 
+    public function subcategory($slug)
+    {
+        $subcategories = Category::with('product_subcategory')->where('slug', $slug)->first();
+        return view('frontend.subcategories-products', compact('subcategories'));
+    }
+
     public function products()
     {
         $products = $this->frontProduct->products();

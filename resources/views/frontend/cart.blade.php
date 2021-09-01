@@ -27,7 +27,7 @@
                                     <tr>
                                         <td>
                                             <div class="item-img">
-                                                <img src="{{ asset($item->options->image) }}" alt="{{ $item->options->image }}">
+                                                <img src="{{ asset($item->options->image) }}" alt="{{ $item->name }}">
                                             </div>
                                             <div class="item-detail">
                                                 <h6>{{ $item->name }}</h6>

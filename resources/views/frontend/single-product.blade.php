@@ -13,18 +13,26 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-5 col-md-12 col-12">
-                            <img src="{{ asset($product->image_one) }}" alt="{{ $product->image_one }}" class="img-fluid w-100 pb-1" id="mainImg">
+                            <img src="{{ asset($product->image_one) }}" alt="{{ $product->product_title }}" class="img-fluid w-100 pb-1" id="mainImg">
 
                             <div class="small-img-group">
-                                <div class="small-img-col">
-                                    <img src="{{ asset($product->image_one) }}" alt="{{ $product->image_one }}" width="100%" class="small-img">
-                                </div>
-                                <div class="small-img-col">
-                                    <img src="{{ asset($product->image_two) }}" alt="{{ $product->image_one }}" width="100%" class="small-img">
-                                </div>
-                                <div class="small-img-col">
-                                    <img src="{{ asset($product->image_three) }}" alt="{{ $product->image_one }}" width="100%" class="small-img">
-                                </div>
+                                @if ($product->image_one)
+                                    <div class="small-img-col">
+                                        <img src="{{ asset($product->image_one) }}" alt="{{ $product->product_title }}" width="100%" class="small-img">
+                                    </div>
+                                @endif
+
+                                @if ($product->image_two)
+                                    <div class="small-img-col">
+                                        <img src="{{ asset($product->image_two) }}" alt="{{ $product->product_title }}" width="100%" class="small-img">
+                                    </div>
+                                @endif
+
+                                @if ($product->image_three)
+                                    <div class="small-img-col">
+                                        <img src="{{ asset($product->image_three) }}" alt="{{ $product->product_title }}" width="100%" class="small-img">
+                                    </div>
+                                @endif
                             </div>
                         </div>
 
@@ -34,7 +42,7 @@
                                 <a href="{{ route('products.categories', $product->category->slug) }}">
                                     {{ $product->category->name }}
                                 </a> |
-                                <a href="{{ route('products.categories', $product->subcategory->slug) }}">
+                                <a href="{{ route('products.subcategories', $product->subcategory->slug) }}">
                                     {{ $product->subcategory->name }}
                                 </a>
                             </h6>

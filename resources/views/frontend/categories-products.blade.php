@@ -17,12 +17,42 @@
                                 <div class="col-md-4 col-xl-3">
                                     <div class="card ProductCard">
                                         <a href="{{ route('products.details', $product->slug) }}">
-                                            <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                            <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ $product->product_title }}">
                                         </a>
-                                        <div class="ProductCard__label">
-                                            @if ($product->discount_price == NULL)
-                                                <span>Hot</span>
-                                            @else
+                                        @if ($product->discount_price == NULL)
+
+                                            @if ($product->hot_deal == 1)
+                                                <div class="ProductCard__label bg-warning">
+                                                    <span>Hot</span>
+                                                </div>
+                                            @endif
+
+                                            @if ($product->best_seller == 1)
+                                                <div class="ProductCard__label bg-info">
+                                                    <span>Top</span>
+                                                </div>
+                                            @endif
+
+                                            @if ($product->special_offer == 1)
+                                                <div class="ProductCard__label bg-success">
+                                                    <span>Special</span>
+                                                </div>
+                                            @endif
+
+                                            @if ($product->trand == 1)
+                                                <div class="ProductCard__label bg-secondary">
+                                                    <span>Trend</span>
+                                                </div>
+                                            @endif
+
+                                            @if ($product->new_arrival == 1)
+                                                <div class="ProductCard__label bg-primary">
+                                                    <span>New</span>
+                                                </div>
+                                            @endif
+
+                                        @else
+                                            <div class="ProductCard__label bg-success">
                                                 <span>
                                                     @php
                                                         $amount = $product->selling_price - $product->discount_price;
@@ -30,8 +60,8 @@
                                                     @endphp
                                                     {{ intval($discount) }}%
                                                 </span>
-                                            @endif
-                                        </div>
+                                            </div>
+                                        @endif
                                         <div class="card-body productCard__body">
                                             <h5 class="card-title productCard__title">
                                                 <a href="{{ route('products.details', $product->slug) }}">{{ $product->product_title }}</a>
@@ -139,7 +169,7 @@
                 type: "GET",
                 dataType: "json",
                 success:function(data) {
-                    $('#productImage').attr('src',data.product.image_one);
+                    $('#productImage').attr('src', window.location.origin + '/' + data.product.image_one);
                     $('#productCategory').text(data.product.category.name);
                     $('#productSubcategory').text(data.product.subcategory.name);
                     $('#productName').text(data.product.product_title);

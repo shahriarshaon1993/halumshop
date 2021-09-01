@@ -11,16 +11,13 @@ class CreateSettingsTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->integer('vat')->nullable();
             $table->integer('shipping_charge')->nullable();
-            $table->string('shopname')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('address')->nullable();
             $table->string('logo')->nullable();
             $table->timestamps();
         });

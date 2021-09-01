@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ReturnRequestController;
 use App\Http\Controllers\Backend\RolePermissionController;
 use App\Http\Controllers\Backend\SeoController;
+use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\SiteSettingController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\Auth\ChangePasswordController;
@@ -172,6 +173,12 @@ Route::prefix('admin')->group(function () {
 
     // seo section
     Route::group(['middleware' => ['permission:settings sections']], function () {
+
+        // Setting
+        Route::resource('settings', SettingController::class)->only([
+            'index', 'update'
+        ]);
+
         // SEO Setting
         Route::resource('seos', SeoController::class)->only([
             'index', 'update'
@@ -230,6 +237,7 @@ Route::prefix('products')->group(function () {
     Route::post('/details/{slug}', [FrontProductController::class, 'addProductCart']);
     Route::get('/queck/{slug}', [FrontProductController::class, 'productQueckView'])->name('products.queck');
     Route::get('/categories/{slug}', [FrontProductController::class, 'category'])->name('products.categories');
+    Route::get('/subcategories/{slug}', [FrontProductController::class, 'subcategory'])->name('products.subcategories');
     Route::get('/products-all', [FrontProductController::class, 'products'])->name('products');
     Route::get('/hotdeals', [FrontProductController::class, 'hotDeal'])->name('products.hotdeal');
     Route::get('/bestseller', [FrontProductController::class, 'bestSeller'])->name('products.bestseller');

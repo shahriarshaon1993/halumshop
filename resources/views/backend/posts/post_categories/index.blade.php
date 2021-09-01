@@ -68,12 +68,12 @@
         <x-slot name="body">
             <div class="form-group">
                 {{ Form::label('name_en', 'Post Category name eng.', ['class' => 'form-control-label']) }}
-                {{ Form::text('name_en', null, ['class' => 'form-control','id' => 'name_en', 'placeholder' => 'Post Category name en']) }}
+                {{ Form::text('name_en', null, ['class' => 'form-control','id' => 'name_en', 'placeholder' => 'Post Category name english']) }}
             </div>
 
             <div class="form-group">
                 {{ Form::label('name_bn', 'Post Category name bng.', ['class' => 'form-control-label']) }}
-                {{ Form::text('name_bn', null, ['class' => 'form-control','id' => 'name_bn', 'placeholder' => 'Post Category name en']) }}
+                {{ Form::text('name_bn', null, ['class' => 'form-control','id' => 'name_bn', 'placeholder' => 'Post Category name bangla']) }}
             </div>
 
         </x-slot>

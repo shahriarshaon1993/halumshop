@@ -16,16 +16,16 @@
                         <li>Email: {{ siteSetting("email") }}</li>
                     </ul>
                     <div class="footer__left__social">
-                        <a href="{{ siteSetting("facebook") }}">
+                        <a target="_blank" href="{{ siteSetting("facebook") }}">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="{{ siteSetting("instagram") }}">
+                        <a target="_blank" href="{{ siteSetting("instagram") }}">
                             <i class="fa fa-instagram"></i>
                         </a>
-                        <a href="{{ siteSetting("youtube") }}">
+                        <a target="_blank" href="{{ siteSetting("youtube") }}">
                             <i class="fa fa-youtube"></i>
                         </a>
-                        <a href="{{ siteSetting("pinterest") }}">
+                        <a target="_blank" href="{{ siteSetting("pinterest") }}">
                             <i class="fa fa-pinterest"></i>
                         </a>
                     </div>

@@ -77,19 +77,19 @@ class ProductRepository implements ProductInterface
 
         if ($image_one) {
             $image_one_name = uniqid('product_', true) . Str::random(10) . '.' . $image_one->getClientOriginalExtension();
-            Image::make($image_one)->resize(780, 520)->save('media/products/' . $image_one_name);
+            Image::make($image_one)->save('media/products/' . $image_one_name);
             $product->image_one = 'media/products/' . $image_one_name;
         }
 
         if ($image_two) {
             $image_two_name = uniqid('product_', true) . Str::random(10) . '.' . $image_two->getClientOriginalExtension();
-            Image::make($image_two)->resize(780, 520)->save('media/products/' . $image_two_name);
+            Image::make($image_two)->save('media/products/' . $image_two_name);
             $product->image_two = 'media/products/' . $image_two_name;
         }
 
         if ($image_three) {
             $image_three_name = uniqid('product_', true) . Str::random(10) . '.' . $image_three->getClientOriginalExtension();
-            Image::make($image_three)->resize(780, 520)->save('media/products/' . $image_three_name);
+            Image::make($image_three)->save('media/products/' . $image_three_name);
             $product->image_three = 'media/products/' . $image_three_name;
         }
 
@@ -162,21 +162,21 @@ class ProductRepository implements ProductInterface
         if ($image_one) {
             unlink($old_image_one);
             $image_one_name = uniqid('product_', true) . Str::random(10) . '.' . $image_one->getClientOriginalExtension();
-            Image::make($image_one)->resize(780, 520)->save('media/products/' . $image_one_name);
+            Image::make($image_one)->save('media/products/' . $image_one_name);
             $product->image_one = 'media/products/' . $image_one_name;
         }
 
         if ($image_two) {
             unlink($old_image_two);
             $image_two_name = uniqid('product_', true) . Str::random(10) . '.' . $image_two->getClientOriginalExtension();
-            Image::make($image_two)->resize(780, 520)->save('media/products/' . $image_two_name);
+            Image::make($image_two)->save('media/products/' . $image_two_name);
             $product->image_two = 'media/products/' . $image_two_name;
         }
 
         if ($image_three) {
             unlink($old_image_three);
             $image_three_name = uniqid('product_', true) . Str::random(10) . '.' . $image_three->getClientOriginalExtension();
-            Image::make($image_three)->resize(780, 520)->save('media/products/' . $image_three_name);
+            Image::make($image_three)->save('media/products/' . $image_three_name);
             $product->image_three = 'media/products/' . $image_three_name;
         }
 

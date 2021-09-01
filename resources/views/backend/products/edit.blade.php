@@ -135,7 +135,9 @@
                                 <span class="custom-file-control custom-file-control-primary"></span>
                             </label>
                             <br><br>
-                            <img src="{{ asset($product->image_one) }}" id="one" width="120px" height="80">
+                            @if ($product->image_one)
+                                <img src="{{ asset($product->image_one) }}" id="one" width="120px" height="80">
+                            @endif
                         </div>
                     </div>
 
@@ -147,7 +149,9 @@
                                 <span class="custom-file-control custom-file-control-primary"></span>
                             </label>
                             <br><br>
+                            @if ($product->image_two)
                             <img src="{{ asset($product->image_two) }}" id="two" width="120px" height="80">
+                            @endif
                         </div>
                     </div>
 
@@ -159,7 +163,9 @@
                                 <span class="custom-file-control custom-file-control-primary"></span>
                             </label>
                             <br><br>
+                            @if ($product->image_three)
                             <img src="{{ asset($product->image_three) }}" id="three" width="120px" height="80">
+                            @endif
                         </div>
                     </div>
                 </div>

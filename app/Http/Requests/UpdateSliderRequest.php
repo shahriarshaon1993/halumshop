@@ -24,8 +24,6 @@ class UpdateSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required|min:10|max:128|unique:sliders,title,{$this->slider->id}",
-            "description" => "min:30",
             "image" => "mimes:jpg,png,jpeg,gif,svg|max:2048",
         ];
     }

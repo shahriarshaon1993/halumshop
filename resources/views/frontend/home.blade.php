@@ -10,7 +10,8 @@
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     @foreach ($sliders as $key => $slider)
-                        <li data-target="#myCarousel" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"></li>
+                        <li data-target="#myCarousel" data-slide-to="{{ $key }}"
+                            class="{{ $key == 0 ? 'active' : '' }}"></li>
                     @endforeach
                 </ol>
                 <div class="carousel-inner">
@@ -58,9 +59,11 @@
                                         <div class="col-12">
                                             <div class="card ProductCard">
                                                 <a href="{{ route('products.details', $product->slug) }}">
-                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                    <img src="{{ asset($product->image_one) }}"
+                                                         class="card-img-top productCard__img"
+                                                         alt="{{ $product->product_title }}">
                                                 </a>
-                                                <div class="ProductCard__label">
+                                                <div class="ProductCard__label bg-warning">
                                                     @if ($product->discount_price == NULL)
                                                         <span>Hot</span>
                                                     @else
@@ -93,10 +96,17 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish"
+                                                                    id="{{ $product->slug }}" data-toggle="modal"
+                                                                    data-target="#cartmodal" title="Add Cart"
+                                                                    onclick="productview(this.id)"><i
+                                                                    class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
+                                                                <button
+                                                                    class="wishlistSubmit btn btn-sm btn-success btn-wish"
+                                                                    data-id="{{ $product->id }}" title="Add Wishlist"><i
+                                                                        class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -120,7 +130,8 @@
                             </div>
                             <div class="card-body">
                                 @foreach ($parentCategories as $category)
-                                    <a href="{{ route('products.categories', $category->slug) }}" class="btn btn-sm btn-secondary category-btn mb-2">
+                                    <a href="{{ route('products.categories', $category->slug) }}"
+                                       class="btn btn-sm btn-secondary category-btn mb-2">
                                         {{ $category->name }}
                                     </a>
                                 @endforeach
@@ -136,7 +147,8 @@
                         <div class="card customCard">
                             <div class="card-header customCard__header">
                                 Special Offer
-                                <a href="{{ route('products.specialoffer') }}" class="btn btn-sm btn-success">View All</a>
+                                <a href="{{ route('products.specialoffer') }}" class="btn btn-sm btn-success">View
+                                    All</a>
                             </div>
                             <div class="card-body">
                                 <div class="row sidebar-slider">
@@ -144,11 +156,13 @@
                                         <div class="col-12">
                                             <div class="card ProductCard">
                                                 <a href="{{ route('products.details', $product->slug) }}">
-                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                    <img src="{{ asset($product->image_one) }}"
+                                                         class="card-img-top productCard__img"
+                                                         alt="{{ $product->product_title }}">
                                                 </a>
-                                                <div class="ProductCard__label">
+                                                <div class="ProductCard__label bg-success">
                                                     @if ($product->discount_price == NULL)
-                                                        <span>Hot</span>
+                                                        <span></span>
                                                     @else
                                                         <span>
                                                             @php
@@ -179,10 +193,17 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish"
+                                                                    id="{{ $product->slug }}" data-toggle="modal"
+                                                                    data-target="#cartmodal" title="Add Cart"
+                                                                    onclick="productview(this.id)"><i
+                                                                    class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
+                                                                <button
+                                                                    class="wishlistSubmit btn btn-sm btn-success btn-wish"
+                                                                    data-id="{{ $product->id }}" title="Add Wishlist"><i
+                                                                        class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -199,8 +220,8 @@
             </div>
 
             <div class="col-md-8">
-                 {{-- Products --}}
-                 @if ($products->count() > 0)
+                {{-- Products --}}
+                @if ($products->count() > 0)
                     <section class="product spad">
                         <div class="card customCard">
                             <div class="card-header customCard__header">
@@ -213,12 +234,44 @@
                                         <div class="col-12">
                                             <div class="card ProductCard">
                                                 <a href="{{ route('products.details', $product->slug) }}">
-                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                    <img src="{{ asset($product->image_one) }}"
+                                                         class="card-img-top productCard__img"
+                                                         alt="{{ $product->product_title }}">
                                                 </a>
-                                                <div class="ProductCard__label">
-                                                    @if ($product->discount_price == NULL)
-                                                        <span>Hot</span>
-                                                    @else
+                                                @if ($product->discount_price == NULL)
+
+                                                    @if ($product->hot_deal == 1)
+                                                        <div class="ProductCard__label bg-warning">
+                                                            <span>Hot</span>
+                                                        </div>
+                                                    @endif
+
+                                                    @if ($product->best_seller == 1)
+                                                        <div class="ProductCard__label bg-info">
+                                                            <span>Top</span>
+                                                        </div>
+                                                    @endif
+
+                                                    @if ($product->special_offer == 1)
+                                                        <div class="ProductCard__label bg-success">
+                                                            <span>Special</span>
+                                                        </div>
+                                                    @endif
+
+                                                    @if ($product->trand == 1)
+                                                        <div class="ProductCard__label bg-secondary">
+                                                            <span>Trend</span>
+                                                        </div>
+                                                    @endif
+
+                                                    @if ($product->new_arrival == 1)
+                                                        <div class="ProductCard__label bg-primary">
+                                                            <span>New</span>
+                                                        </div>
+                                                    @endif
+
+                                                @else
+                                                    <div class="ProductCard__label bg-success">
                                                         <span>
                                                             @php
                                                                 $amount = $product->selling_price - $product->discount_price;
@@ -226,8 +279,9 @@
                                                             @endphp
                                                             {{ intval($discount) }}%
                                                         </span>
-                                                    @endif
-                                                </div>
+                                                    </div>
+                                                @endif
+
                                                 <div class="card-body productCard__body">
                                                     <h5 class="card-title productCard__title">
                                                         <a href="{{ route('products.details', $product->slug) }}">{{ $product->product_title }}</a>
@@ -248,10 +302,17 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish"
+                                                                    id="{{ $product->slug }}" data-toggle="modal"
+                                                                    data-target="#cartmodal" title="Add Cart"
+                                                                    onclick="productview(this.id)"><i
+                                                                    class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
+                                                                <button
+                                                                    class="wishlistSubmit btn btn-sm btn-success btn-wish"
+                                                                    data-id="{{ $product->id }}" title="Add Wishlist"><i
+                                                                        class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -263,11 +324,11 @@
                             </div>
                         </div>
                     </section>
-                 @endif
-                 {{-- End Products --}}
+                @endif
+                {{-- End Products --}}
 
-                 {{-- Best Seller --}}
-                 @if ($bestSellers->count() > 0)
+                {{-- Best Seller --}}
+                @if ($bestSellers->count() > 0)
                     <section class="product spad">
                         <div class="card customCard">
                             <div class="card-header customCard__header">
@@ -280,11 +341,13 @@
                                         <div class="col-12">
                                             <div class="card ProductCard">
                                                 <a href="{{ route('products.details', $product->slug) }}">
-                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                    <img src="{{ asset($product->image_one) }}"
+                                                         class="card-img-top productCard__img"
+                                                         alt="{{ $product->product_title }}">
                                                 </a>
-                                                <div class="ProductCard__label">
+                                                <div class="ProductCard__label bg-info">
                                                     @if ($product->discount_price == NULL)
-                                                        <span>Hot</span>
+                                                        <span>Top</span>
                                                     @else
                                                         <span>
                                                             @php
@@ -315,10 +378,17 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish"
+                                                                    id="{{ $product->slug }}" data-toggle="modal"
+                                                                    data-target="#cartmodal" title="Add Cart"
+                                                                    onclick="productview(this.id)"><i
+                                                                    class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
+                                                                <button
+                                                                    class="wishlistSubmit btn btn-sm btn-success btn-wish"
+                                                                    data-id="{{ $product->id }}" title="Add Wishlist"><i
+                                                                        class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -330,15 +400,15 @@
                             </div>
                         </div>
                     </section>
-                 @endif
-                 {{-- End Best Seller --}}
+                @endif
+                {{-- End Best Seller --}}
 
-                 {{-- Trand --}}
-                 @if ($trand->count() > 0)
+                {{-- Trand --}}
+                @if ($trand->count() > 0)
                     <section class="product spad">
                         <div class="card customCard">
                             <div class="card-header customCard__header">
-                                Trand
+                                Trend
                                 <a href="{{ route('products.trand') }}" class="btn btn-sm btn-success">View All</a>
                             </div>
                             <div class="card-body">
@@ -347,11 +417,13 @@
                                         <div class="col-12">
                                             <div class="card ProductCard">
                                                 <a href="{{ route('products.details', $product->slug) }}">
-                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                    <img src="{{ asset($product->image_one) }}"
+                                                         class="card-img-top productCard__img"
+                                                         alt="{{ $product->product_title }}">
                                                 </a>
-                                                <div class="ProductCard__label">
+                                                <div class="ProductCard__label bg-secondary">
                                                     @if ($product->discount_price == NULL)
-                                                        <span>Hot</span>
+                                                        <span>Trend</span>
                                                     @else
                                                         <span>
                                                             @php
@@ -382,10 +454,17 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish"
+                                                                    id="{{ $product->slug }}" data-toggle="modal"
+                                                                    data-target="#cartmodal" title="Add Cart"
+                                                                    onclick="productview(this.id)"><i
+                                                                    class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
+                                                                <button
+                                                                    class="wishlistSubmit btn btn-sm btn-success btn-wish"
+                                                                    data-id="{{ $product->id }}" title="Add Wishlist"><i
+                                                                        class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -397,11 +476,11 @@
                             </div>
                         </div>
                     </section>
-                 @endif
-                 {{-- End Trand --}}
+                @endif
+                {{-- End Trand --}}
 
-                 {{-- Blog --}}
-                 @if ($posts->count() > 0)
+                {{-- Blog --}}
+                @if ($posts->count() > 0)
                     <section class="blog spad">
                         <div class="card customCard">
                             <div class="card-header customCard__header">
@@ -414,7 +493,8 @@
                                         <div class="col-md-12">
                                             <div class="blog__single__latest">
                                                 <a href="{{ route('blog.single', $post->slug) }}">
-                                                    <img src="{{ $post->image }}" alt="{{ $post->image }}">
+                                                    <img src="{{ asset($post->image) }}"
+                                                         alt="{{ $post->title_en }}">
                                                 </a>
                                                 <div class="blog__single__latest__text p-2">
                                                     <div class="blog__single__latest__text__tag">
@@ -423,7 +503,8 @@
                                                             {{ $post->created_at->format('F d, Y') }}
                                                         </div>
                                                     </div>
-                                                    <a href="{{ route('blog.single', $post->slug) }}"><h4>{{ $post->title_en }}</h4></a>
+                                                    <a href="{{ route('blog.single', $post->slug) }}">
+                                                        <h4>{{ $post->title_en }}</h4></a>
                                                     <p>{!! Str::limit($post->description_en, 80) !!}</p>
                                                 </div>
                                             </div>
@@ -433,11 +514,11 @@
                             </div>
                         </div>
                     </section>
-                 @endif
-                 {{-- End Blog --}}
+                @endif
+                {{-- End Blog --}}
 
-                 {{-- New Arraivals --}}
-                 @if ($newArrival->count() > 0)
+                {{-- New Arraivals --}}
+                @if ($newArrival->count() > 0)
                     <section class="product spad">
                         <div class="card customCard">
                             <div class="card-header customCard__header">
@@ -450,11 +531,13 @@
                                         <div class="col-12">
                                             <div class="card ProductCard">
                                                 <a href="{{ route('products.details', $product->slug) }}">
-                                                    <img src="{{ asset($product->image_one) }}" class="card-img-top productCard__img" alt="{{ asset($product->image_one) }}">
+                                                    <img src="{{ asset($product->image_one) }}"
+                                                         class="card-img-top productCard__img"
+                                                         alt="{{ $product->product_title }}">
                                                 </a>
-                                                <div class="ProductCard__label">
+                                                <div class="ProductCard__label bg-primary">
                                                     @if ($product->discount_price == NULL)
-                                                        <span>Hot</span>
+                                                        <span>New</span>
                                                     @else
                                                         <span>
                                                             @php
@@ -485,10 +568,17 @@
                                                     </div>
                                                     <div class="productCard__btn">
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish" id="{{ $product->slug }}" data-toggle="modal" data-target="#cartmodal" title="Add Cart" onclick="productview(this.id)"><i class="fa fa-shopping-cart"></i></button>
+                                                            <button class="cartSubmit btn btn-sm btn-success btn-wish"
+                                                                    id="{{ $product->slug }}" data-toggle="modal"
+                                                                    data-target="#cartmodal" title="Add Cart"
+                                                                    onclick="productview(this.id)"><i
+                                                                    class="fa fa-shopping-cart"></i></button>
 
                                                             <form action="javascript:void(0)" method="POST">
-                                                                <button class="wishlistSubmit btn btn-sm btn-success btn-wish" data-id="{{ $product->id }}" title="Add Wishlist"><i class="fa fa-heart-o"></i></button>
+                                                                <button
+                                                                    class="wishlistSubmit btn btn-sm btn-success btn-wish"
+                                                                    data-id="{{ $product->id }}" title="Add Wishlist"><i
+                                                                        class="fa fa-heart-o"></i></button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -500,8 +590,8 @@
                             </div>
                         </div>
                     </section>
-                 @endif
-                 {{-- End New Arraivals --}}
+                @endif
+                {{-- End New Arraivals --}}
             </div>
         </div>
     </div>
@@ -530,11 +620,11 @@
 
     <script>
         // Add To Wishlist
-        $(document).ready(function() {
-            $('.wishlistSubmit').on('click', function(e){
+        $(document).ready(function () {
+            $('.wishlistSubmit').on('click', function (e) {
                 e.preventDefault();
                 var id = $(this).data('id');
-                if(id) {
+                if (id) {
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -546,7 +636,7 @@
                         data: {
                             id: id,
                         },
-                        success:function(data) {
+                        success: function (data) {
                             const Toast = Swal.mixin({
                                 toast: true,
                                 position: 'top-end',
@@ -558,12 +648,12 @@
                                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                                 }
                             })
-                            if($.isEmptyObject(data.error)) {
+                            if ($.isEmptyObject(data.error)) {
                                 Toast.fire({
                                     icon: 'success',
                                     title: data.success
                                 })
-                            }else {
+                            } else {
                                 Toast.fire({
                                     icon: 'error',
                                     title: data.error
@@ -571,7 +661,7 @@
                             }
                         },
                     });
-                }else {
+                } else {
                     alert('Danger...!');
                 }
             });
@@ -586,28 +676,28 @@
                 url: url,
                 type: "GET",
                 dataType: "json",
-                success:function(data) {
-                    $('#productImage').attr('src',data.product.image_one);
+                success: function (data) {
+                    $('#productImage').attr('src', data.product.image_one);
                     $('#productCategory').text(data.product.category.name);
                     $('#productSubcategory').text(data.product.subcategory.name);
                     $('#productName').text(data.product.product_title);
                     $('#productBrand').text(data.product.brand.name);
                     $('#productUrl').attr('action', postUrl);
 
-                    if(data.product.discount_price == null) {
+                    if (data.product.discount_price == null) {
                         $('#productPrice').text(data.product.selling_price);
-                    }else {
+                    } else {
                         $('#productPrice').text(data.product.discount_price);
                     }
 
                     var d = $('select[name="color"]').empty();
-                    $.each(data.product_color,function(key,value){
-                        $('select[name="color"]').append('<option value="'+value+'">'+value+'</option>');
+                    $.each(data.product_color, function (key, value) {
+                        $('select[name="color"]').append('<option value="' + value + '">' + value + '</option>');
                     });
 
                     var d = $('select[name="size"]').empty();
-                    $.each(data.product_size,function(key,value){
-                        $('select[name="size"]').append('<option value="'+value+'">'+value+'</option>');
+                    $.each(data.product_size, function (key, value) {
+                        $('select[name="size"]').append('<option value="' + value + '">' + value + '</option>');
                     });
                 }
             })

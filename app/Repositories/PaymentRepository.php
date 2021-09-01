@@ -16,7 +16,12 @@ class PaymentRepository implements PaymentInterface
     public function payment($request)
     {
         $charge = Setting::select('shipping_charge', 'vat')->first();
-        $total = Cart::Subtotal() + $charge->shipping_charge + $charge->vat;
+
+        if(Session::has('coupon')) {
+            $total = $charge->shipping_charge + $charge->vat + Session::get('coupon')['balance'];
+        } else {
+            $total = Cart::Subtotal() + $charge->shipping_charge + $charge->vat;
+        }
 
         $order = new Order();
         $order->user_id = Auth::id();
@@ -24,7 +29,7 @@ class PaymentRepository implements PaymentInterface
         $order->vat = $charge->vat;
         $order->total = $total;
         $order->payment_type = $request->paymentMethod;
-        $order->status_code = mt_rand(1000000, 9999999);
+        $order->status_code = mt_rand(10000000, 99999999);
 
         if (Session::has('coupon')) {
             $order->subtotal = Session::get('coupon')['balance'];
@@ -60,7 +65,7 @@ class PaymentRepository implements PaymentInterface
             $order_details->size = $row->options->size;
             $order_details->quantity = $row->qty;
             $order_details->singleprice = $row->price;
-            $order_details->totalprice = $row->qty * $row->price;
+            $order_details->totalprice = ($row->qty * $row->price) + $charge->shipping_charge + $charge->vat;
             $order_details->save();
         }
 
@@ -134,7 +139,7 @@ class PaymentRepository implements PaymentInterface
             $order_details->size = $row->options->size;
             $order_details->quantity = $row->qty;
             $order_details->singleprice = $row->price;
-            $order_details->totalprice = $row->qty * $row->price;
+            $order_details->totalprice = ($row->qty * $row->price) + $db_charge->shipping_charge + $db_charge->vat;
             $order_details->save();
         }
 
