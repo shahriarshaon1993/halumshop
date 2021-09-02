@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-5 col-md-12 col-12">
-                        <img src="" alt="" id="productImage">
+                        <img src="" alt="" id="productImage" style="width: 260px; object-fit: contain;">
                     </div>
                     <div class="col-lg-6 col-md-12 col-12">
                         {{ Form::open(['id' => 'productUrl']) }}
