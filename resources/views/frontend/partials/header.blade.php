@@ -19,8 +19,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav search-box ml-3">
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2 search-product" type="search" placeholder="Search products" aria-label="Search">
+                        <form class="form-inline" action="{{ route('search') }}" method="POST">
+                            @csrf
+                            <input name="product_title" class="form-control mr-sm-2 search-product" type="search" placeholder="Search products" aria-label="Search">
                             <button class="btn btn-outline-muted my-2 my-sm-0" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>

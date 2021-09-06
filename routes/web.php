@@ -255,6 +255,10 @@ Route::prefix('products')->group(function () {
     // Return Product
     Route::get('/return/order/{slug}', [UserProfileController::class, 'returnProduct'])->name('return.product');
     Route::get('/return/request/{id}', [UserProfileController::class, 'returnRequest'])->name('return.request');
+
+    // Product Search 
+    Route::post('search', [FrontProductController::class, 'search'])->name('search');
+    Route::get('autocomplete', [FrontProductController::class, 'autoComplete'])->name('autocomplete');
 });
 
 // Blogs route

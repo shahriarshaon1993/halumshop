@@ -13,4 +13,5 @@ interface FrontProductInterface
     public function specialOffer();
     public function trand();
     public function newArrival();
+    public function search($request);
 }

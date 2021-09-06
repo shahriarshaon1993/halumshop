@@ -100,4 +100,21 @@ class FrontProductController extends Controller
         $products = $this->frontProduct->newArrival();
         return view('frontend.products', compact('products'));
     }
+
+    public function search(Request $request)
+    {
+        $title = $request->product_title;
+        $products = $this->frontProduct->search($request);
+
+        return view('frontend.search', compact('products', 'title'));
+    }
+
+    public function autoComplete(Request $request)
+    {
+        $res = Product::select('product_title')
+            ->where("product_title", "LIKE", "%{$request->term}%")
+            ->get();
+
+        return response()->json($res);
+    }
 }

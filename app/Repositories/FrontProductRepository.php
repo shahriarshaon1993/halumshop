@@ -91,4 +91,13 @@ class FrontProductRepository implements FrontProductInterface
             ->orderBy('created_at', 'DESC')
             ->paginate(12);
     }
+
+    public function search($request)
+    {
+        return Product::where('status', 1)
+            ->select('id', 'product_title', 'slug', 'selling_price', 'discount_price', 'image_one', 'hot_deal')
+            ->where("product_title", "LIKE", "%{$request->product_title}%")
+            ->orderBy('created_at', 'DESC')
+            ->get();
+    }
 }
