@@ -41,18 +41,6 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" title="Home">
-                                About
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" title="Home">
-                                Contact
-                            </a>
-                        </li>
-
                         @auth
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle cart" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
