@@ -3,18 +3,39 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Interface\DashboardInterface;
 
 class DashboardController extends Controller
 {
-    public function __construct()
+    public $dashboard;
+
+    public function __construct(DashboardInterface $dashboard)
     {
         $this->middleware('auth:admin');
+        $this->dashboard = $dashboard;
     }
 
     public function index()
     {
-        return view('backend.dashboard');
+        $totalSales = $this->dashboard->totalSales();
+
+        $todaysSales = $this->dashboard->todaysSales();
+
+        $currentWeekSales = $this->dashboard->currentWeekSales();
+
+        $currentMonthSales = $this->dashboard->currentMonthSales();
+
+        $currentYearSales = $this->dashboard->currentYearSales();
+
+        return view(
+            'backend.dashboard',
+            compact(
+                'totalSales',
+                'todaysSales',
+                'currentWeekSales',
+                'currentMonthSales',
+                'currentYearSales'
+            )
+        );
     }
 }

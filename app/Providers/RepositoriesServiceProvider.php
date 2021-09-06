@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Interface\BrandInterface;
 use App\Interface\CartInterface;
 use App\Interface\CouponInterface;
+use App\Interface\DashboardInterface;
 use App\Interface\FrontPostInterface;
 use App\Interface\FrontProductInterface;
 use App\Interface\HomeInterface;
@@ -25,6 +26,7 @@ use App\Repositories\BrandRepository;
 use App\Repositories\CartRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CouponRepository;
+use App\Repositories\DashboardRepository;
 use App\Repositories\FrontPostRepository;
 use App\Repositories\FrontProductRepository;
 use App\Repositories\HomeRepository;
@@ -139,6 +141,11 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind(
             ReturnRequestInterface::class,
             ReturnRequestRepository::class,
+        );
+
+        $this->app->bind(
+            DashboardInterface::class,
+            DashboardRepository::class,
         );
     }
 }
