@@ -270,7 +270,7 @@ Route::prefix('blogs')->group(function () {
 });
 
 Route::fallback(function () {
-    return '404 NOT FOUND';
+    return view('frontend.404');
 });
 
 // ---- For Checking Route ----
