@@ -108,13 +108,4 @@ class FrontProductController extends Controller
 
         return view('frontend.search', compact('products', 'title'));
     }
-
-    public function autoComplete(Request $request)
-    {
-        $res = Product::select('product_title')
-            ->where("product_title", "LIKE", "%{$request->term}%")
-            ->get();
-
-        return response()->json($res);
-    }
 }

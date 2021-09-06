@@ -258,7 +258,6 @@ Route::prefix('products')->group(function () {
 
     // Product Search 
     Route::post('search', [FrontProductController::class, 'search'])->name('search');
-    Route::get('autocomplete', [FrontProductController::class, 'autoComplete'])->name('autocomplete');
 });
 
 // Blogs route
