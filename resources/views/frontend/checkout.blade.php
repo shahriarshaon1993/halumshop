@@ -137,6 +137,10 @@
                                         {{-- <label class="custom-control-label" for="credit">Mastercard</label> --}}
                                     </div>
                                     <div class="custom-control custom-radio">
+                                        <input id="BdPayment" name="paymentMethod" type="radio" class="custom-control-input" value="bdpayment" required>
+                                        {{ Form::label('BdPayment', 'BD Payment',['class' => 'custom-control-label']) }}
+                                    </div>
+                                    <div class="custom-control custom-radio">
                                         <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="cashon" required>
                                         {{ Form::label('debit', 'Cash On',['class' => 'custom-control-label']) }}
                                     </div>

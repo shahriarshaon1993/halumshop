@@ -30,6 +30,7 @@ use App\Http\Controllers\Frontend\FrontPostController;
 use App\Http\Controllers\Frontend\FrontProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\SslCommerzPaymentController;
 use App\Http\Controllers\Frontend\WishlistController;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
@@ -268,6 +269,15 @@ Route::prefix('blogs')->group(function () {
     Route::get('/lan/bangla', [FrontPostController::class, 'bangla'])->name('lng.bangla');
     Route::get('/single/{slug}', [FrontPostController::class, 'singlePost'])->name('blog.single');
 });
+
+// SSLCOMMERZ Start
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
 
 Route::fallback(function () {
     return view('frontend.404');

@@ -12,7 +12,7 @@ class OrderRepository implements OrderInterface
 {
     public function orderPandding()
     {
-        return Order::where('status', 0)->paginate(10);
+        return Order::where('status_op', 0)->paginate(10);
     }
 
     public function order($id)
@@ -22,7 +22,7 @@ class OrderRepository implements OrderInterface
 
     public function shipping($id)
     {
-        return Shipping::with('order')->where('id', $id)->first();
+        return Shipping::with('order')->where('order_id', $id)->first();
     }
 
     public function details($id)
@@ -33,25 +33,25 @@ class OrderRepository implements OrderInterface
     public function orderAccept($request, $id)
     {
         $order = Order::find($id);
-        $order->status = 1;
+        $order->status_op = 1;
         $order->update();
     }
 
     public function acceptPayment()
     {
-        return Order::where('status', 1)->paginate(10);
+        return Order::where('status_op', 1)->paginate(10);
     }
 
     public function proccessPayment($id)
     {
         $order = Order::find($id);
-        $order->status = 2;
+        $order->status_op = 2;
         $order->update();
     }
 
     public function proccessDelivery()
     {
-        return Order::where('status', 2)->paginate(10);
+        return Order::where('status_op', 2)->paginate(10);
     }
 
     public function deliveryDone($id)
@@ -65,24 +65,24 @@ class OrderRepository implements OrderInterface
         }
 
         $order = Order::find($id);
-        $order->status = 3;
+        $order->status_op = 3;
         $order->update();
     }
 
     public function deleverd()
     {
-        return Order::where('status', 3)->paginate(10);
+        return Order::where('status_op', 3)->paginate(10);
     }
 
     public function orderCancel($request, $id)
     {
         $order = Order::find($id);
-        $order->status = 4;
+        $order->status_op = 4;
         $order->update();
     }
 
     public function cancelList()
     {
-        return Order::where('status', 4)->paginate(10);
+        return Order::where('status_op', 4)->paginate(10);
     }
 }

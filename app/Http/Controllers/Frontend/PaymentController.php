@@ -33,6 +33,9 @@ class PaymentController extends Controller
         } elseif ($request->paymentMethod == "stripe") {
 
             return view('frontend.payment.stripe', compact('data'));
+        } elseif ($request->paymentMethod == "bdpayment") {
+
+            return view('frontend.exampleHosted', compact('data'));
         } else {
             $notification = array(
                 'message' => 'Please select the appropriate payment method',

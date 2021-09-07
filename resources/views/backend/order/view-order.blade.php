@@ -36,12 +36,20 @@
 
                                 <tr>
                                     <th>Payment Id:</th>
-                                    <th>{{ $order->payment_id }}</th>
+                                    <th>
+                                        @if ($order->blnc_transection)
+                                            {{ $order->blnc_transection }}
+                                        @endif
+
+                                        @if ($order->transaction_id)
+                                            {{ $order->transaction_id }}
+                                        @endif
+                                    </th>
                                 </tr>
 
                                 <tr>
                                     <th>Total:</th>
-                                    <th>{{ $order->total }}</th>
+                                    <th>{{ $order->amount }}</th>
                                 </tr>
 
                                 <tr>
@@ -86,16 +94,16 @@
                                 <tr>
                                     <th>Status</th>
                                     <th>
-                                        @if ($order->status == 0)
+                                        @if ($order->status_op == 0)
                                             <span class="badge badge-warning">Pending</span>
 
-                                        @elseif($order->status == 1)
+                                        @elseif($order->status_op == 1)
                                             <span class="badge badge-info">Payment Accept</span>
 
-                                        @elseif($order->status == 2)
+                                        @elseif($order->status_op == 2)
                                             <span class="badge badge-warning">Proccess to delivery</span>
 
-                                        @elseif($order->status == 3)
+                                        @elseif($order->status_op == 3)
                                             <span class="badge badge-success">Delevered</span>
 
                                         @else
@@ -149,7 +157,7 @@
                             </table>
                         </div><!-- table-wrapper -->
 
-                        @if ($order->status == 0)
+                        @if ($order->status_op == 0)
                             {{ Form::open(['route' => ['order.accept', $order->id],'method' => 'PUT']) }}
                                 {{ Form::submit('Order Accept', ['class' => 'btn btn-info mb-2 btn-block']) }}
                             {{ Form::close() }}
@@ -158,17 +166,17 @@
                                 {{ Form::submit('Order Cancel', ['class' => 'btn btn-danger btn-block']) }}
                             {{ Form::close() }}
 
-                        @elseif($order->status == 1)
+                        @elseif($order->status_op == 1)
                             {{ Form::open(['route' => ['proccess.payment', $order->id],'method' => 'PUT']) }}
                                 {{ Form::submit('Payment Accept', ['class' => 'btn btn-info mb-2 btn-block']) }}
                             {{ Form::close() }}
 
-                        @elseif($order->status == 2)
+                        @elseif($order->status_op == 2)
                             {{ Form::open(['route' => ['delivery.done', $order->id],'method' => 'PUT']) }}
                                 {{ Form::submit('Delevery Done', ['class' => 'btn btn-success mb-2 btn-block']) }}
                             {{ Form::close() }}
 
-                        @elseif($order->status == 4)
+                        @elseif($order->status_op == 4)
                             <strong class="text-center">This order are not valid</strong>
 
                         @else

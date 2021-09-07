@@ -17,7 +17,7 @@ class PaymentRepository implements PaymentInterface
     {
         $charge = Setting::select('shipping_charge', 'vat')->first();
 
-        if(Session::has('coupon')) {
+        if (Session::has('coupon')) {
             $total = $charge->shipping_charge + $charge->vat + Session::get('coupon')['balance'];
         } else {
             $total = Cart::Subtotal() + $charge->shipping_charge + $charge->vat;
@@ -27,7 +27,8 @@ class PaymentRepository implements PaymentInterface
         $order->user_id = Auth::id();
         $order->shipping = $charge->shipping_charge;
         $order->vat = $charge->vat;
-        $order->total = $total;
+        $order->amount = $total;
+        $order->currency = "BDT";
         $order->payment_type = $request->paymentMethod;
         $order->status_code = mt_rand(10000000, 99999999);
 
@@ -101,7 +102,8 @@ class PaymentRepository implements PaymentInterface
         $order->stripe_order_id = $charge->metadata->order_id;
         $order->shipping = $db_charge->shipping_charge;
         $order->vat = $db_charge->vat;
-        $order->total = $total;
+        $order->amount = $total;
+        $order->currency = "BDT";
         $order->payment_type = $request->paymentMethod;
         $order->status_code = mt_rand(1000000, 9999999);
 
