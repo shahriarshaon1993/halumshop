@@ -30,7 +30,7 @@ class PaymentRepository implements PaymentInterface
         $order->amount = $total;
         $order->currency = "BDT";
         $order->payment_type = $request->paymentMethod;
-        $order->status_code = mt_rand(10000000, 99999999);
+        $order->status_code = uniqid();
 
         if (Session::has('coupon')) {
             $order->subtotal = Session::get('coupon')['balance'];
@@ -105,7 +105,7 @@ class PaymentRepository implements PaymentInterface
         $order->amount = $total;
         $order->currency = "BDT";
         $order->payment_type = $request->paymentMethod;
-        $order->status_code = mt_rand(1000000, 9999999);
+        $order->status_code = uniqid();
 
         if (Session::has('coupon')) {
             $order->subtotal = Session::get('coupon')['balance'];

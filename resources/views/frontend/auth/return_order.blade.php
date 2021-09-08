@@ -33,16 +33,16 @@
                                             <td>{{ $order->status_code }}</td>
                                             <td>{{ $order->payment_type }}</td>
                                             <td>
-                                                @if ($order->status == 0)
+                                                @if ($order->status_op == 0)
                                                     <span class="badge badge-warning">Pending</span>
 
-                                                @elseif($order->status == 1)
+                                                @elseif($order->status_op == 1)
                                                     <span class="badge badge-info">Payment Accept</span>
 
-                                                @elseif($order->status == 2)
+                                                @elseif($order->status_op == 2)
                                                     <span class="badge badge-warning">Proccess to delivery</span>
 
-                                                @elseif($order->status == 3)
+                                                @elseif($order->status_op == 3)
                                                     <span class="badge badge-success">Delevered</span>
 
                                                 @else

@@ -76,6 +76,7 @@ class SslCommerzPaymentController extends Controller
                     'status' => 'Pending',
                     'transaction_id' => $post_data['tran_id'],
                     'subtotal' => Session::get('coupon')['balance'],
+                    'status_code' => uniqid(),
                     'created_at' => now(),
                     'updated_at' => now()
                 ]);
@@ -92,6 +93,7 @@ class SslCommerzPaymentController extends Controller
                     'status' => 'Pending',
                     'transaction_id' => $post_data['tran_id'],
                     'subtotal' => Cart::Subtotal(),
+                    'status_code' => uniqid(),
                     'created_at' => now(),
                     'updated_at' => now()
                 ]);

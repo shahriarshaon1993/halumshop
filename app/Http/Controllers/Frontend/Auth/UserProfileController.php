@@ -33,7 +33,7 @@ class UserProfileController extends Controller
     public function track(Request $request)
     {
         $validator = Validator::make(request()->all(), [
-            'order_id' => 'required|numeric',
+            'order_id' => 'required',
         ]);
 
         if ($validator->fails()) {

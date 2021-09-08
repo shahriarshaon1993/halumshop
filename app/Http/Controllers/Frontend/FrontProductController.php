@@ -7,6 +7,7 @@ use App\Interface\FrontProductInterface;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 
 class FrontProductController extends Controller
@@ -36,6 +37,11 @@ class FrontProductController extends Controller
             'message' => 'Product Successfuly Added',
             'alert-type' => 'success'
         );
+
+        if ($request->header('referer') == $request->header('origin') . "/products/search") {
+            return Redirect()->route('show.cart')->with($notification);
+        }
+
         return Redirect()->back()->with($notification);
     }
 

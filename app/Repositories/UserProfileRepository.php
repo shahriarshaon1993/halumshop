@@ -12,14 +12,14 @@ class UserProfileRepository implements UserProfileInterface
     public function profileOrder($slug)
     {
         $user = User::where('slug', $slug)->first();
-        return Order::select('status_code', 'payment_type', 'status', 'created_at')
+        return Order::select('status_code', 'payment_type', 'status_op', 'created_at')
             ->where('user_id', $user->id)
             ->orderBy('id', 'DESC')->paginate(10);
     }
 
     public function track($request)
     {
-        return Order::select('status')
+        return Order::select('status_op')
             ->where('status_code', $request->order_id)
             ->where('user_id', Auth::id())
             ->first();
@@ -28,9 +28,9 @@ class UserProfileRepository implements UserProfileInterface
     public function returnProduct($slug)
     {
         $user = User::where('slug', $slug)->first();
-        return Order::select('status_code', 'payment_type', 'return_status', 'status', 'created_at')
+        return Order::select('status_code', 'payment_type', 'return_status', 'status_op', 'created_at')
             ->where('user_id', $user->id)
-            ->where('status', 3)
+            ->where('status_op', 3)
             ->orderBy('id', 'DESC')
             ->paginate(10);
     }
