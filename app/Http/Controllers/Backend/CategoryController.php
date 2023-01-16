@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use App\Interface\RepoInterface;
 use App\Models\Category;
-
+use App\Repositories\CategoryRepository;
 
 class CategoryController extends Controller
 {
     protected $category;
 
-    public function __construct(RepoInterface $category)
+    public function __construct(CategoryRepository $category)
     {
         $this->middleware('auth:admin');
         $this->category = $category;

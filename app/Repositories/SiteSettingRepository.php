@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Interface\SiteSettingInterface;
 use App\Models\SiteSetting;
 
-class SiteSettingRepository implements SiteSettingInterface
+class SiteSettingRepository
 {
     public function index()
     {

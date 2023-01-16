@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Interface\NewslaterIntterface;
 use App\Models\Newslater;
 
-class NewslaterRepository implements NewslaterIntterface
+class NewslaterRepository
 {
     public function index()
     {

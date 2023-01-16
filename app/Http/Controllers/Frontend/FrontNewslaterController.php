@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewslaterRequest;
-use App\Interface\NewslaterIntterface;
+use App\Repositories\NewslaterRepository;
 
 class FrontNewslaterController extends Controller
 {
     protected $news;
 
-    public function __construct(NewslaterIntterface $news)
+    public function __construct(NewslaterRepository $news)
     {
         $this->news = $news;
     }

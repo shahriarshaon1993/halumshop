@@ -2,12 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Interface\WishlistInterface;
 use App\Models\Wishlist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
-class WishlistRepository implements WishlistInterface
+class WishlistRepository
 {
     public function storeWishlist($request)
     {

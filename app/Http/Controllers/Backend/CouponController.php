@@ -4,16 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCouponRequest;
-use App\Http\Requests\UpdateCouponRequest;
-use App\Interface\CouponInterface;
-use App\Models\Coupon;
-use Illuminate\Support\Facades\Request;
+use App\Repositories\CouponRepository;
 
 class CouponController extends Controller
 {
     protected $coupon;
 
-    public function __construct(CouponInterface $coupon)
+    public function __construct(CouponRepository $coupon)
     {
         $this->middleware('auth:admin');
         $this->coupon = $coupon;

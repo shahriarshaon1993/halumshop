@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Interface\SeoInterface;
 use App\Models\Seo;
 
-class SeoRepository implements SeoInterface
+class SeoRepository
 {
     public function index()
     {

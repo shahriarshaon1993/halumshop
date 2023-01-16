@@ -2,11 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Interface\FrontPostInterface;
 use App\Models\Post;
 use Illuminate\Support\Facades\Session;
 
-class FrontPostRepository implements FrontPostInterface
+class FrontPostRepository
 {
     public function postIndex()
     {

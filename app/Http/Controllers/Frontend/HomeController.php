@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\HomeInterface;
+use App\Repositories\HomeRepository;
 
 class HomeController extends Controller
 {
-    protected $homr;
+    protected $home;
 
-    public function __construct(HomeInterface $home)
+    public function __construct(HomeRepository $home)
     {
         $this->home = $home;
     }

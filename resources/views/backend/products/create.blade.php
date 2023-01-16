@@ -27,7 +27,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             {{ Form::label('product_code', 'Product Code',['class' => 'form-control-label']) }}
-                            {{ Form::text('product_code', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Code']) }}
+                            {{ Form::number('product_code', null, ['class' => 'form-control mb-2', 'placeholder' => 'Enter Code']) }}
                         </div>
                     </div>
 

@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\OrderInterface;
-use App\Interface\ReturnRequestInterface;
+use App\Repositories\OrderRepository;
+use App\Repositories\ReturnRequestRepository;
 
 class ReturnRequestController extends Controller
 {
     public $order;
     public $returnProduct;
 
-    public function __construct(OrderInterface $order, ReturnRequestInterface $returnProduct)
+    public function __construct(OrderRepository $order, ReturnRequestRepository $returnProduct)
     {
         $this->middleware('auth:admin');
         $this->returnProduct = $returnProduct;

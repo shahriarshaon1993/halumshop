@@ -2,12 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Interface\BrandInterface;
 use App\Models\Brand;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
-class BrandRepository implements BrandInterface
+class BrandRepository
 {
     public function index()
     {

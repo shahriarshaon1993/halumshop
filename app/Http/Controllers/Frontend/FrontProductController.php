@@ -3,18 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\FrontProductInterface;
 use App\Models\Category;
-use App\Models\Product;
+use App\Repositories\FrontProductRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 
 class FrontProductController extends Controller
 {
     protected $frontProduct;
 
-    public function __construct(FrontProductInterface $frontProduct)
+    public function __construct(FrontProductRepository $frontProduct)
     {
         $this->frontProduct = $frontProduct;
     }

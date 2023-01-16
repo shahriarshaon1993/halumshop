@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSliderRequest;
 use App\Http\Requests\UpdateSliderRequest;
-use App\Interface\SliderInterface;
 use App\Models\Slider;
+use App\Repositories\SliderRepository;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
     protected $slide;
 
-    public function __construct(SliderInterface $slide)
+    public function __construct(SliderRepository $slide)
     {
         $this->middleware('auth:admin');
         $this->slide = $slide;

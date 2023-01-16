@@ -2,14 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Interface\PostInterface;
 use App\Models\Post;
 use App\Models\PostCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
-class PostRepository implements PostInterface
+class PostRepository
 {
     public function index()
     {

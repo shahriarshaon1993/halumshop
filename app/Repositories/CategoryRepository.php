@@ -3,11 +3,10 @@
 namespace App\Repositories;
 
 use App\Models\Category;
-use App\Interface\RepoInterface;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
-class CategoryRepository implements RepoInterface
+class CategoryRepository
 {
     public function index()
     {

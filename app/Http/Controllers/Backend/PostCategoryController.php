@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostCategoryRequest;
 use App\Http\Requests\UpdatePostCategoryRequest;
-use App\Interface\PostCategoryInterface;
 use App\Models\PostCategory;
-use Illuminate\Support\Facades\Request;
+use App\Repositories\PostCategoryRepository;
 
 class PostCategoryController extends Controller
 {
     protected $postCategory;
 
-    public function __construct(PostCategoryInterface $postCategory)
+    public function __construct(PostCategoryRepository $postCategory)
     {
         $this->middleware('auth:admin');
         $this->postCategory = $postCategory;

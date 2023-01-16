@@ -2,18 +2,20 @@
 
 namespace App\Repositories;
 
-use App\Interface\ProductInterface;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
-class ProductRepository implements ProductInterface
+class ProductRepository
 {
     public function index()
     {
-        return Product::with('category')->select('id', 'product_title', 'product_quantity', 'image_one', 'category_id', 'product_code', 'status')->orderBy('created_at', 'DESC')->paginate(10);
+        return Product::with('category')
+            ->select('id', 'product_title', 'product_quantity', 'image_one', 'category_id', 'product_code', 'status')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
     }
 
     public function getCategories()
