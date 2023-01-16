@@ -2,12 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Interface\FrontProductInterface;
 use App\Models\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
 
-class FrontProductRepository implements FrontProductInterface
+class FrontProductRepository
 {
     public function productView($slug)
     {

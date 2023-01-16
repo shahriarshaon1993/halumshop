@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Interface\PostCategoryInterface;
 use App\Models\PostCategory;
 
-class PostCategoryRepository implements PostCategoryInterface
+class PostCategoryRepository
 {
     public function index()
     {

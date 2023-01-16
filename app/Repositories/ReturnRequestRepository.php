@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Interface\ReturnRequestInterface;
 use App\Models\Order;
 
-class ReturnRequestRepository implements ReturnRequestInterface
+class ReturnRequestRepository
 {
     public function returnRequest()
     {

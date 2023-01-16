@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\OrderInterface;
+use App\Repositories\OrderRepository;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
     protected $order;
 
-    public function __construct(OrderInterface $order)
+    public function __construct(OrderRepository $order)
     {
         $this->middleware('auth:admin');
         $this->order = $order;

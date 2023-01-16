@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PaymentRequest;
-use App\Interface\PaymentInterface;
+use App\Repositories\PaymentRepository;
 
 class PaymentController extends Controller
 {
     protected $payment;
 
-    public function __construct(PaymentInterface $payment)
+    public function __construct(PaymentRepository $payment)
     {
         $this->middleware('auth');
         $this->payment = $payment;

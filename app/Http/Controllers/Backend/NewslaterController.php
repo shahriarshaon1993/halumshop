@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\NewslaterIntterface;
-use Illuminate\Http\Request;
+use App\Repositories\NewslaterRepository;
 
 class NewslaterController extends Controller
 {
     protected $newslater;
 
-    public function __construct(NewslaterIntterface $newslater)
+    public function __construct(NewslaterRepository $newslater)
     {
         $this->middleware('auth:admin');
         $this->newslater = $newslater;

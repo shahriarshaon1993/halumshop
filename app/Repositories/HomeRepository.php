@@ -2,14 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Interface\HomeInterface;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Slider;
 
-class HomeRepository implements HomeInterface
+class HomeRepository
 {
     public function sliders()
     {

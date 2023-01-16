@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\SeoInterface;
+use App\Repositories\SeoRepository;
 use Illuminate\Http\Request;
 
 class SeoController extends Controller
 {
     protected $seosetting;
 
-    public function __construct(SeoInterface $seosetting)
+    public function __construct(SeoRepository $seosetting)
     {
         $this->middleware('auth:admin');
         $this->seosetting = $seosetting;

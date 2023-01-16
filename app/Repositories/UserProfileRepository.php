@@ -2,12 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Interface\UserProfileInterface;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class UserProfileRepository implements UserProfileInterface
+class UserProfileRepository
 {
     public function profileOrder($slug)
     {

@@ -3,16 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\FrontPostInterface;
-use App\Models\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use App\Repositories\FrontPostRepository;
 
 class FrontPostController extends Controller
 {
     protected $posts;
 
-    public function __construct(FrontPostInterface $posts)
+    public function __construct(FrontPostRepository $posts)
     {
         $this->posts = $posts;
     }

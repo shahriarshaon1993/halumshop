@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Frontend\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Interface\UserProfileInterface;
-use App\Models\Order;
-use App\Models\User;
+use App\Repositories\UserProfileRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,7 +11,7 @@ class UserProfileController extends Controller
 {
     protected $profile;
 
-    public function __construct(UserProfileInterface $profile)
+    public function __construct(UserProfileRepository $profile)
     {
         $this->middleware('auth');
         $this->profile = $profile;

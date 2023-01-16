@@ -3,11 +3,10 @@
 namespace App\Repositories;
 
 use App\Models\Product;
-use App\Interface\CartInterface;
 use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class CartRepository implements CartInterface
+class CartRepository
 {
     public function showCart()
     {

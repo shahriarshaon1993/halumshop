@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Interface\PaymentInterface;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\Setting;
@@ -11,7 +10,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-class PaymentRepository implements PaymentInterface
+class PaymentRepository
 {
     public function payment($request)
     {

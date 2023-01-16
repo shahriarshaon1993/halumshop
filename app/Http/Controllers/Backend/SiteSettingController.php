@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\SiteSettingInterface;
+use App\Repositories\SiteSettingRepository;
 use Illuminate\Http\Request;
 
 class SiteSettingController extends Controller
 {
     public $siteSetting;
 
-    public function __construct(SiteSettingInterface $siteSetting)
+    public function __construct(SiteSettingRepository $siteSetting)
     {
         $this->middleware('auth:admin');
         $this->siteSetting = $siteSetting;

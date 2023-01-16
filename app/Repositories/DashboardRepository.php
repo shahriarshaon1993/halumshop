@@ -2,11 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Interface\DashboardInterface;
 use App\Models\Order;
 use Illuminate\Support\Carbon;
 
-class DashboardRepository implements DashboardInterface
+class DashboardRepository
 {
     public function totalSales()
     {

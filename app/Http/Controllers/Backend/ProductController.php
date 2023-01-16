@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Interface\ProductInterface;
 use App\Models\Product;
+use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
     protected $product;
 
-    public function __construct(ProductInterface $product)
+    public function __construct(ProductRepository $product)
     {
         $this->middleware('auth:admin');
         $this->product = $product;

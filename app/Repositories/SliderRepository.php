@@ -2,12 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Interface\SliderInterface;
 use App\Models\Slider;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as Image;
 
-class SliderRepository implements SliderInterface
+class SliderRepository
 {
     public function index()
     {

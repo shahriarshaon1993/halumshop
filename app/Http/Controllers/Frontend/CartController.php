@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserCouponRequest;
-use App\Interface\CartInterface;
 use App\Models\Coupon;
+use App\Repositories\CartRepository;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +15,7 @@ class CartController extends Controller
 {
     protected $cart;
 
-    public function __construct(CartInterface $cart)
+    public function __construct(CartRepository $cart)
     {
         $this->cart = $cart;
         $this->middleware('auth', ['only' => 'checkout']);

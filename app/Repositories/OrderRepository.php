@@ -2,13 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Interface\OrderInterface;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\Product;
 use App\Models\Shipping;
 
-class OrderRepository implements OrderInterface
+class OrderRepository
 {
     public function orderPandding()
     {

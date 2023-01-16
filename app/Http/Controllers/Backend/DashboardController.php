@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Interface\DashboardInterface;
+use App\Repositories\DashboardRepository;
 
 class DashboardController extends Controller
 {
     public $dashboard;
 
-    public function __construct(DashboardInterface $dashboard)
+    public function __construct(DashboardRepository $dashboard)
     {
         $this->middleware('auth:admin');
         $this->dashboard = $dashboard;

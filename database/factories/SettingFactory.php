@@ -24,10 +24,6 @@ class SettingFactory extends Factory
         return [
             'vat' => 15,
             'shipping_charge' => '30',
-            'shopname' => 'halumShop',
-            'email' => 'info@halumshop@gmail.com',
-            'phone' => '+880 1723771208',
-            'address' => '60-49 Road 11378 New York',
             'logo' => $this->faker->imageUrl()
         ];
     }

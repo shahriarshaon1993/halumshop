@@ -68,10 +68,11 @@ class UserAuthController extends Controller
         $user->email = Str::lower(trim($request->email));
         $user->phone_number = $request->phone_number;
         $user->password = bcrypt($request->password);
-        $user->email_verification_token = uniqid(time(), true) . Str::random(16);
+        $user->email_verified_at = now();
+        $user->email_verification_token = null;
         $user->save();
 
-        $user->notify(new UserVerifyNotification($user));
+        // $user->notify(new UserVerifyNotification($user));
 
         $notification = array(
             'message' => 'Account registered',

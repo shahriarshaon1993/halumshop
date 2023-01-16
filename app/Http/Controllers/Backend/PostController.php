@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use App\Interface\PostInterface;
 use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Repositories\PostRepository;
 
 class PostController extends Controller
 {
     protected $post;
 
-    public function __construct(PostInterface $post)
+    public function __construct(PostRepository $post)
     {
         $this->middleware('auth:admin');
         $this->post = $post;

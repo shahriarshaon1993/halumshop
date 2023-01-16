@@ -2,10 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Interface\CouponInterface;
 use App\Models\Coupon;
 
-class CouponRepository implements CouponInterface
+class CouponRepository
 {
     public function index()
     {

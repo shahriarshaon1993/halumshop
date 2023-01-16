@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
-use App\Interface\BrandInterface;
 use App\Models\Brand;
+use App\Repositories\BrandRepository;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
     protected $brand;
 
-    public function __construct(BrandInterface $brand)
+    public function __construct(BrandRepository $brand)
     {
         $this->middleware('auth:admin');
         $this->brand = $brand;
